@@ -1,0 +1,38 @@
+{
+"Absorber:CommonPower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+},
+"Absorber:RarePower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+},
+        "Absorber:DrainLash": {
+                "NAME": "Drain Lash",
+                "DESCRIPTIONS": ["Whenever you Drain, deal","damage to all enemies"]
+        },
+        "Absorber:EntangleThem": {
+                "NAME": "Entangle Them",
+                "DESCRIPTIONS": ["Take no Damage next time"]
+        },
+        "Absorber:HealthDrainPower": {
+                "NAME": "Health Drain",
+                "DESCRIPTIONS": ["Whenever you lose HP on your Turn, drain 1"]
+        },
+        "Absorber:LifeSupportPower": {
+                "NAME": "Life Support",
+                "DESCRIPTIONS": ["At the end of your turn Drain 1 from all enemies"]
+        },
+        "Absorber:ProtectedPower": {
+                "NAME": "Protected",
+                "DESCRIPTIONS": ["Take 25% less damage"]
+        },
+        "Absorber:GremlinArmyPower": {
+                "NAME": "Gremlin Army",
+                "DESCRIPTIONS": ["Next Turn, add","Gremlin Stabs to your hand"]
+        },
+        "Absorber:GremlinStabsPower": {
+                "NAME": "Gremlin Stabs",
+                "DESCRIPTIONS": ["At the Beginning of your turn, add ", "Gremlin Stabs to your hand", "Upgraded Gremlin Stabs to your hand"]
+        }
+}

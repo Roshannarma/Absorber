@@ -1,0 +1,263 @@
+{
+  "Absorber:DefaultCommonAttack": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
+  },
+  "Absorber:DefaultCommonSkill": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block. NL absorber:Multiword_Keyword."
+  },
+  "Absorber:DefaultCommonPower": {
+    "NAME": "Hold Place",
+    "DESCRIPTION": "Gain !M! absorber:Keyword.",
+    "UPGRADE_DESCRIPTION": "Gain !M! absorber:Keywords."
+  },
+  "Absorber:DefaultUncommonAttack": {
+    "NAME": "Big slap",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "Absorber:DefaultUncommonSkill": {
+    "NAME": "A Better Defend",
+    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
+  },
+  "Absorber:DefaultUncommonPower": {
+    "NAME": "Weirdness",
+    "DESCRIPTION": "Gain X absorber:Keywords.",
+    "UPGRADE_DESCRIPTION": "Gain X +1 absorber:Keywords."
+  },
+  "Absorber:DefaultRareAttack": {
+    "NAME": "TOUCH",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "Absorber:DefaultRareSkill": {
+    "NAME": "For Each Loop x2",
+    "DESCRIPTION": "Apply !M! Vulnerable to all enemies, 2 times.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to all enemies, 3 times."
+  },
+  "Absorber:DefaultRarePower": {
+    "NAME": "In-Progress Form",
+    "DESCRIPTION": "At the start of your turn, play a TOUCH."
+  },
+  "Absorber:DefaultAttackWithVariable": {
+    "NAME": "Special Strike",
+    "DESCRIPTION": "Deal !D! damage [E] times. NL (Deal !Absorber:ENERGY_DAMAGE! damage total.)"
+  },
+  "Absorber:DefaultSecondMagicNumberSkill": {
+    "NAME": "Cool 2 Number Card",
+    "DESCRIPTION": "Apply !M! Vulnerable and !Absorber:SecondMagic! poison to an enemy."
+  },
+  "Absorber:OrbSkill": {
+    "NAME": "Get Orb",
+    "DESCRIPTION": "Channel 1 Default Orb."
+  },
+  "Absorber:CorrosiveDagger_S": {
+    "NAME" : "Corrosive Dagger(s)",
+    "DESCRIPTION": "Deal !D! damage apply !M! weak."
+  },
+  "Absorber:CorrosiveDagger_M": {
+    "NAME" : "Corrosive Dagger(M)",
+    "DESCRIPTION": "Deal !D! damage apply !M! weak."
+  },
+  "Absorber:CorrosiveDagger_L": {
+    "NAME" : "Corrosive Dagger(L)",
+    "DESCRIPTION": "Deal !D! damage apply !M! weak."
+  },
+  "Absorber:ConsumeDagger": {
+    "NAME" : "Consume Dagger",
+    "DESCRIPTION": "Deal !D! damage exhaust"
+  },
+  "Absorber:BloodyFeather": {
+    "NAME" : "Bloody Feather",
+    "DESCRIPTION" : "Deal !D! Damage(increases by !M! per turn) exhaust"
+  },
+  "Absorber:AbsorberStrike": {
+    "NAME" : "Strike",
+    "DESCRIPTION": "Deal !D! damage"
+  },
+  "Absorber:AbsorberBlock": {
+    "NAME" : "Defend",
+    "DESCRIPTION": "Gain !B! Block"
+  },
+  "Absorber:KneeStrike": {
+    "NAME" : "Stim Needle",
+    "DESCRIPTION": "Deal !D! damage gain !M! mana and !M! extra cards next turn"
+  },
+  "Absorber:DarklingDrain": {
+    "NAME" : "Darkling Drain",
+    "DESCRIPTION": "Drain !Absorber:DrainVariable! Health"
+  },
+  "Absorber:Leeches": {
+    "NAME" : "Leeches",
+    "DESCRIPTION": "Deal !D! damage and Drain !Absorber:DrainVariable! Health"
+  },
+  "Absorber:VesselBurst": {
+    "NAME" : "Vessel Burst",
+    "DESCRIPTION": "Lose !M! Health and Draw !Absorber:SecondMagic! Cards"
+  },
+  "Absorber:BloodShield": {
+    "NAME" : "Blood Shield",
+    "DESCRIPTION": "Lose !M! Health and Gain !B! Block"
+  },
+  "Absorber:SnakePlant": {
+    "NAME" : "Snake Plant",
+    "DESCRIPTION": "Gain 1 Malleable"
+  },
+  "Absorber:MysticHeal": {
+    "NAME" : "Mystic Heal",
+    "DESCRIPTION": "Heal !M! Health Exhaust"
+  },
+  "Absorber:DrainDamage": {
+    "NAME" : "Drain Damage",
+    "DESCRIPTION": "Deal !Absorber:DrainVariable! 2*X damage where X is the amount of drain done this combat"
+  },
+  "Absorber:FaultySyringe": {
+    "NAME" : "Faulty Syringe",
+    "DESCRIPTION": "Lose !M! Health, Gain !Absorber:SecondMagic! regen exhaust"
+  },
+  "Absorber:BigDrain": {
+    "NAME" : "Big Drain",
+    "DESCRIPTION": "Drain !Absorber:DrainVariable! Health exhaust"
+  },
+  "Absorber:DrainLash": {
+    "NAME" : "Drain Lash",
+    "DESCRIPTION": "Whenever you drain, deal !M! damage to all enemies"
+  },
+  "Absorber:HealthDrain": {
+    "NAME" : "Health Drain",
+    "DESCRIPTION": "Whenever you lose HP on your Turn, drain !Absorber:DrainVariable!"
+  },
+  "Absorber:ByrdPeck": {
+    "NAME" : "Byrd Peck",
+    "DESCRIPTION": "Deal !D! Damage !M! times"
+  },
+  "Absorber:ChosenAttack": {
+    "NAME" : "Chosen Attack",
+    "DESCRIPTION": "Deal !D! damage. If the target is not attacking, gain !M! artifact"
+  },
+  "Absorber:EntangleThem": {
+    "NAME" : "Entangle Them",
+    "DESCRIPTION": "Next turn, Enemy attacks deal 0"
+  },
+  "Absorber:FungiStrength": {
+    "NAME" : "Fungi Strength",
+    "DESCRIPTION": "Gain !M! Strength"
+  },
+  "Absorber:GremlinRally": {
+    "NAME" : "Gremlin Rally",
+    "DESCRIPTION": "Add a Gremlin Stab to your hand at the beginning of each turn",
+    "UPGRADE_DESCRIPTION": "Add an upgraded Gremlin Stab to your hand at the beginning of each turn"
+  },
+  "Absorber:GremlinStab": {
+    "NAME" : "Gremlin Stab",
+    "DESCRIPTION": "Deal !D! Damage twice"
+  },
+  "Absorber:ArmoredTooth": {
+    "NAME" : "Armored Tooth",
+    "DESCRIPTION": "Deal !D! damage, Gain !B! block"
+  },
+  "Absorber:LagavulinDrain": {
+    "NAME" : "Lagavulin Drain",
+    "DESCRIPTION": "Drain X, Drain X strength from target Exhaust",
+    "UPGRADE_DESCRIPTION": "Drain X+1, Drain X+1 strength from target Exhaust"
+  },
+  "Absorber:LooterDagger": {
+    "NAME" : "Looter Dagger",
+    "DESCRIPTION": "Deal !D! damage. If any damage is unblocked, Gain !D! gold"
+  },
+  "Absorber:Harden": {
+    "NAME" : "Harden",
+    "DESCRIPTION": "The first time you take damage each turn, Gain 6 block"
+  },
+  "Absorber:ShelledShield": {
+    "NAME" : "Shelled Shield",
+    "DESCRIPTION": "Gain !M! plated armor"
+  },
+  "Absorber:TaskMasterWhip": {
+    "NAME" : "TaskMaster Whip",
+    "DESCRIPTION": "Deal !D! damage, Gain !M! Strength"
+  },
+  "Absorber:PsychoticWrath": {
+    "NAME" : "Psychotic Wrath",
+    "DESCRIPTION": "Deal !D! damage(equal to missing HP)"
+  },
+  "Absorber:PrepareOperation": {
+    "NAME" : "Prepare Operation",
+    "DESCRIPTION": "Next Turn, Gain !B! Block and !M! Energy"
+  },
+  "Absorber:GiantSlow": {
+    "NAME" : "Giant Slow",
+    "DESCRIPTION": "Apply 1 slow exhaust"
+  },
+  "Absorber:OrbSpray": {
+    "NAME" : "Orb Spray",
+    "DESCRIPTION": "Deal !D! (!M! damage per turn) to all enemies"
+  },
+  "Absorber:SphericShield": {
+    "NAME" : "Spheric Shield",
+    "DESCRIPTION": "Gain !B! Block. Block is not removed at the start of your next turn"
+  },
+  "Absorber:StabbingBook": {
+    "NAME" : "Stabbing Book",
+    "DESCRIPTION": "Deal !D! Damage !M! (number of turns) times exhaust"
+  },
+  "Absorber:Prepare": {
+    "NAME" : "Prepare",
+    "DESCRIPTION": "Gain !B! Block and retain !M! card(s) this turn"
+  },
+  "Absorber:VolatileSteroid": {
+    "NAME" : "Volatile Steroid",
+    "DESCRIPTION": "Lose !M! HP. Take another turn after this one exhaust"
+  },
+  "Absorber:LifeSupport": {
+    "NAME" : "Life Support",
+    "DESCRIPTION": "At the end of the Turn, Drain !Absorber:DrainVariable! from all enemies"
+  },
+  "Absorber:RecklessInjection": {
+    "NAME" : "RecklessInjection",
+    "DESCRIPTION": "Take !M! Health and Deal !D! Damage."
+  },
+  "Absorber:BloodTransfusion": {
+    "NAME" : "Blood Transfusion",
+    "DESCRIPTION": "Take !M! damage, Gain !Absorber:SecondMagic! temp Strength and !Absorber:SecondMagic! temp Dexterity"
+  },
+  "Absorber:ForcedBloodTransfusion": {
+    "NAME" : "Forced Transfusion",
+    "DESCRIPTION": "Take !M! damage, Apply !Absorber:SecondMagic! weak and !Absorber:SecondMagic! vulnerable to each enemy"
+  },
+  "Absorber:Sharpen":{
+  "NAME": "Sharpen",
+  "DESCRIPTION": "Buff Each Attack in your hand by !M! Damage"
+},
+  "Absorber:NeverEndingWall":{
+    "NAME": "Never Ending Wall",
+    "DESCRIPTION": "Gain !Absorber:WallDefend! Block, increase this amount for all Never Ending Walls by !M! this combat"
+  },
+  "Absorber:Crystallize":{
+    "NAME": "Crystallize",
+    "DESCRIPTION": "Gain !B! Block, deal double damage next turn, end you turn exhaust"
+  },
+  "Absorber:BeatDown":{
+    "NAME": "BeatDown",
+    "DESCRIPTION": "Deal !D! damage and Enemy loses !M! strength for the rest of the turn"
+  },
+  "Absorber:Hospitalize":{
+    "NAME": "Hospitalize",
+    "DESCRIPTION": "Deal !D! damage and apply !M! weak"
+  },
+  "Absorber:GremlinArmy":{
+    "NAME": "Gremlin Army",
+    "DESCRIPTION": "Add !M! Gremlin Stabs to your hand next turn"
+  },
+  "Absorber:SentrySlam":{
+    "NAME": "Sentry Slam",
+    "DESCRIPTION": "Deal !D! damage, deals double damage on odd turns"
+  },
+  "Absorber:WideSwing":{
+    "NAME": "Wide Swing",
+    "DESCRIPTION": "Deal !D! damage and !Absorber:DrainVariable! drain from all enemies"
+  },
+  "Absorber:UnbreakableWill":{
+    "NAME": "Unbreakable Will",
+    "DESCRIPTION": "Gain !B! block and Gain !M! protected"
+  }
+}
