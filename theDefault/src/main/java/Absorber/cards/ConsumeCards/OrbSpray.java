@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;
 
-@AutoAdd.Ignore
+//@AutoAdd.Ignore
 public class OrbSpray extends AbstractDynamicCard {
 
 
@@ -31,7 +31,7 @@ public class OrbSpray extends AbstractDynamicCard {
     public static final String IMG = makeFinalCardPath("OrbWalker"); // CorrosiveDagger_S.png
 
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
@@ -59,7 +59,7 @@ public class OrbSpray extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
     }
 
 

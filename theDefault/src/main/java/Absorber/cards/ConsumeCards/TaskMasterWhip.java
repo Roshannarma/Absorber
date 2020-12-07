@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Absorber.DefaultMod.makeCardPath;
 
-@AutoAdd.Ignore
+//@AutoAdd.Ignore
 public class TaskMasterWhip extends AbstractDynamicCard {
 
 
@@ -27,7 +27,7 @@ public class TaskMasterWhip extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("Slavers/TaskMaster.png"); // CorrosiveDagger_S.png
 
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;

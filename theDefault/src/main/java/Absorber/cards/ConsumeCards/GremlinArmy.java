@@ -17,7 +17,7 @@ import Absorber.characters.TheDefault;
 
 import static Absorber.DefaultMod.makeCardPath;
 
-@AutoAdd.Ignore
+//@AutoAdd.Ignore
 public class GremlinArmy extends AbstractDynamicCard {
 
 
@@ -32,7 +32,7 @@ public class GremlinArmy extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
@@ -48,6 +48,7 @@ public class GremlinArmy extends AbstractDynamicCard {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = AMOUNT;
+        this.cardsToPreview = new GremlinStab();
 
     }
 

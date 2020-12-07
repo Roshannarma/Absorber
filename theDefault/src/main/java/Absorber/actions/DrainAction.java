@@ -97,6 +97,9 @@ public class DrainAction extends AbstractGameAction {
         return info;
     }
     public static int on_drain(int amount){
+        if(AbstractDungeon.player==null){
+            return amount;
+        }
         boolean have_double = false;
         for( AbstractPower o:AbstractDungeon.player.powers){
             if(o instanceof DrainPower) {

@@ -17,7 +17,7 @@ import Absorber.actions.UncommonPowerAction;
 import Absorber.characters.TheDefault;
 
 import static Absorber.DefaultMod.makeCardPath;
-@AutoAdd.Ignore
+//@AutoAdd.Ignore
 public class GremlinRally extends AbstractDynamicCard {
 
 
@@ -33,7 +33,7 @@ public class GremlinRally extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
@@ -49,6 +49,7 @@ public class GremlinRally extends AbstractDynamicCard {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = NORMAL;
+        this.cardsToPreview = new GremlinStab();
 
     }
 

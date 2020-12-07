@@ -32,10 +32,10 @@ public class NeverEndingWall extends AbstractDynamicCard {
     private static final int COST = 1;
 
     private static final int BLOCK = 5;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_BLOCK = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int UPGRADE_PLUS_BLOCK = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     private static final int DEFENSE_INCREASE = 2;
-    private static final int UPGRADE_PLUS_DEFENSE_INCREASE = 1;
+//    private static final int UPGRADE_PLUS_DEFENSE_INCREASE = 1;
 
     public NeverEndingWall() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -59,7 +59,7 @@ public class NeverEndingWall extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeMagicNumber(UPGRADE_PLUS_DEFENSE_INCREASE);
+//            upgradeMagicNumber(UPGRADE_PLUS_DEFENSE_INCREASE);
             initializeDescription();
         }
     }

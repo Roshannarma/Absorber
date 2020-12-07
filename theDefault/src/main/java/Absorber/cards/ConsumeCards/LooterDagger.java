@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;
 
-@AutoAdd.Ignore
+//@AutoAdd.Ignore
 public class LooterDagger extends AbstractDynamicCard {
 
 
@@ -27,14 +27,14 @@ public class LooterDagger extends AbstractDynamicCard {
     public static final String IMG = makeFinalCardPath("Looter"); // CorrosiveDagger_S.png
 
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 8;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 12;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     public LooterDagger() {
@@ -54,6 +54,7 @@ public class LooterDagger extends AbstractDynamicCard {
         }
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        this.exhaust = true;
 
     }
 

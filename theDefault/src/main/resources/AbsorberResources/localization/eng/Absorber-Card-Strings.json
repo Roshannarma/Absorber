@@ -108,7 +108,7 @@
   },
   "Absorber:DrainDamage": {
     "NAME" : "Drain Damage",
-    "DESCRIPTION": "Deal !Absorber:DrainVariable! 2*X damage where X is the amount of drain done this combat"
+    "DESCRIPTION": "Deal !Absorber:DrainDamageVariable! 2*X damage where X is the amount of drain done this combat"
   },
   "Absorber:FaultySyringe": {
     "NAME" : "Faulty Syringe",
@@ -149,7 +149,7 @@
   },
   "Absorber:GremlinStab": {
     "NAME" : "Gremlin Stab",
-    "DESCRIPTION": "Deal !D! Damage twice"
+    "DESCRIPTION": "Deal !D! Damage twice exhaust"
   },
   "Absorber:ArmoredTooth": {
     "NAME" : "Armored Tooth",
@@ -182,7 +182,7 @@
   },
   "Absorber:PrepareOperation": {
     "NAME" : "Prepare Operation",
-    "DESCRIPTION": "Next Turn, Gain !B! Block and !M! Energy"
+    "DESCRIPTION": "Gain !B! Block and next turn Gain !M! Energy"
   },
   "Absorber:GiantSlow": {
     "NAME" : "Giant Slow",
@@ -190,7 +190,7 @@
   },
   "Absorber:OrbSpray": {
     "NAME" : "Orb Spray",
-    "DESCRIPTION": "Deal !D! (!M! damage per turn) to all enemies"
+    "DESCRIPTION": "Deal !D! ( !M! damage per turn) to all enemies"
   },
   "Absorber:SphericShield": {
     "NAME" : "Spheric Shield",

@@ -20,7 +20,7 @@ import Absorber.characters.TheDefault;
 
 import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;
-@AutoAdd.Ignore
+//@AutoAdd.Ignore
 public class ShelledShield extends AbstractDynamicCard {
 
 
@@ -35,7 +35,7 @@ public class ShelledShield extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;

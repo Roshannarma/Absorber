@@ -62,7 +62,7 @@ public class GremlinArmyPower extends AbstractPower implements CloneablePowerInt
     public void atStartOfTurn() {
         for(int i =0; i<amount;i++) {
             GremlinStab temp = new GremlinStab();
-            addToBot((AbstractGameAction) new MakeTempCardInHandAction((AbstractCard) temp, 1));
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(temp,1));
         }
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
     }

@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.powers.BlurPower;
 import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;
 
-@AutoAdd.Ignore
+//@AutoAdd.Ignore
 public class SphericShield extends AbstractDynamicCard {
 
 
@@ -27,7 +27,7 @@ public class SphericShield extends AbstractDynamicCard {
     public static final String IMG = makeFinalCardPath("SphericGuardian"); // ConsumeDagger.png
 
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;

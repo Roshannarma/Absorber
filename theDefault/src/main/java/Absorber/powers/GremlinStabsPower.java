@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.cards.tempCards.Shiv;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -69,7 +70,7 @@ public class GremlinStabsPower extends AbstractPower implements CloneablePowerIn
         if (upgraded){
             temp.upgrade();
         }
-        addToBot((AbstractGameAction)new MakeTempCardInHandAction((AbstractCard)temp, amount));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(temp,amount));
     }
     @Override
     public AbstractPower makeCopy() {

@@ -8,6 +8,7 @@ import Absorber.cards.AbstractDynamicCard;
 import Absorber.powers.RarePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -61,7 +62,7 @@ public class PrepareOperation extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom( new ApplyPowerAction(p,p, new NextTurnBlockPower(p,block),block));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,block));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new EnergizedPower(p,ENERGY)));
     }
 

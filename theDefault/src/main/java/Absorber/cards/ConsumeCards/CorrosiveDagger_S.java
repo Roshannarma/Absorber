@@ -26,13 +26,13 @@ public class CorrosiveDagger_S extends AbstractDynamicCard {
     public static final String IMG = makeFinalCardPath("Slime"); // CorrosiveDagger_S.png
 
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 0;
-    private static final int UPGRADED_COST = 0;
+//    private static final int UPGRADED_COST = 0;
 
     private static final int DAMAGE = 4;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
@@ -63,7 +63,7 @@ public class CorrosiveDagger_S extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBaseCost(UPGRADED_COST);
+//            upgradeBaseCost(UPGRADED_COST);
             upgradeMagicNumber(UPGRADE_PLUS_WEAKEN);
             initializeDescription();
         }

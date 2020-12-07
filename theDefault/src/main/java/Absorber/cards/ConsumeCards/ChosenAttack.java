@@ -18,13 +18,13 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;
 
-@AutoAdd.Ignore
+//@AutoAdd.Ignore
 public class ChosenAttack extends AbstractDynamicCard {
     public static final String ID = DefaultMod.makeID("ChosenAttack");
     public static final String IMG = makeFinalCardPath("Chosen"); // CorrosiveDagger_S.png
 
 
-    private static final AbstractCard.CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final AbstractCard.CardRarity RARITY = CardRarity.SPECIAL;
     private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.ENEMY;
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
     public static final AbstractCard.CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
