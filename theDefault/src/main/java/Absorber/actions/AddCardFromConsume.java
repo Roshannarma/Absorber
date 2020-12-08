@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.Darkling;
 import com.megacrit.cardcrawl.monsters.beyond.GiantHead;
+import com.megacrit.cardcrawl.monsters.beyond.Nemesis;
 import com.megacrit.cardcrawl.monsters.beyond.OrbWalker;
 import com.megacrit.cardcrawl.monsters.city.*;
 import com.megacrit.cardcrawl.monsters.exordium.*;
@@ -61,6 +62,7 @@ public class AddCardFromConsume {
         CardMonsterList.put(Darkling.class.getName(), new DarklingDrain());
         CardMonsterList.put(Healer.class.getName(), new MysticHeal());
         CardMonsterList.put(SnakePlant.class.getName(), new SnakePlantCard());
+        CardMonsterList.put(Nemesis.class.getName(),new NemesisIntangible());
     }
 
 
@@ -68,7 +70,7 @@ public class AddCardFromConsume {
         String m = target.getClass().getName();
         DefaultMod.consumed = CardMonsterList.get(m).makeCopy();
     }
-    public static AbstractCard displaycard(AbstractMonster target,boolean check) {
+    public static AbstractCard displaycard(AbstractMonster target) {
         String m = target.getClass().getName();
         AbstractCard temp = CardMonsterList.get(m);
         if(temp != null){

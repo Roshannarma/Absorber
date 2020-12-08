@@ -1,7 +1,8 @@
-package Absorber.cards.starter;
+package Absorber.cards.Normal;
 
 import Absorber.actions.ConsumeAction;
 import Absorber.cards.AbstractDynamicCard;
+import Absorber.powers.ProtectedPower;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -21,41 +22,36 @@ import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;
 
 //@AutoAdd.Ignore
-public class KneeStrike extends AbstractDynamicCard {
+public class SetupSkill extends AbstractDynamicCard {
 
 
-    public static final String ID = DefaultMod.makeID("KneeStrike");
-    public static final String IMG = makeFinalCardPath("StimNeedle"); // ConsumeDagger.png
+    public static final String ID = DefaultMod.makeID("SetupSkill");
+    public static final String IMG = makeCardPath("Skill.png"); // ConsumeDagger.png
 
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
-    private static final int DAMAGE = 10;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
-
-    private static final int ENERGY_DRAW = 1;
-    private static final int UPGRADE_PLUS_ENERGY_DRAW = 1;
+    private static final int ENERGY_DRAW_PROTECTED = 1;
+    private static final int UPGRADE_PLUS_ENERGY_DRAW_PROTECTED = 1;
 
 //    private boolean next_turn = false;
-    public KneeStrike() {
+    public SetupSkill() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = DAMAGE;
-        baseMagicNumber = magicNumber = ENERGY_DRAW;
+        baseMagicNumber = magicNumber = ENERGY_DRAW_PROTECTED;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, magicNumber), magicNumber));
         addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p,p, new ProtectedPower(p,magicNumber,false)));
     }
 
 
@@ -64,8 +60,7 @@ public class KneeStrike extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(UPGRADE_PLUS_ENERGY_DRAW);
+            upgradeMagicNumber(UPGRADE_PLUS_ENERGY_DRAW_PROTECTED);
             initializeDescription();
         }
     }

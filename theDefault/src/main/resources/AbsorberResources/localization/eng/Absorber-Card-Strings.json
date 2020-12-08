@@ -259,5 +259,17 @@
   "Absorber:UnbreakableWill":{
     "NAME": "Unbreakable Will",
     "DESCRIPTION": "Gain !B! block and Gain !M! protected"
+  },
+  "Absorber:NemesisIntangible":{
+    "NAME": "Nemesis Protection",
+    "DESCRIPTION": "Gain !M! Intangible"
+  },
+  "Absorber:SetupSkill":{
+    "NAME": "Setup",
+    "DESCRIPTION": "Gain !M! Protected, and Next turn gain !M! energy and draw !M! cards"
+  },
+  "Absorber:EnergySurge": {
+    "NAME": "Energy Surge",
+    "DESCRIPTION": "Deal !Absorber:BaseDamage! * [E] damage (Deal !Absorber:EnergyScalingVariable! total)"
   }
 }

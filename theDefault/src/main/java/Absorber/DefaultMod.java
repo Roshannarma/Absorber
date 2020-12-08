@@ -435,6 +435,8 @@ public class DefaultMod implements
         BaseMod.addDynamicVariable(new WallDefendVariable());
         BaseMod.addDynamicVariable(new DrainDamageVariable());
         BaseMod.addDynamicVariable(new DrainVariable());
+        BaseMod.addDynamicVariable(new EnergyScalingVariable());
+        BaseMod.addDynamicVariable(new BaseDamageVariable());
 
         
         logger.info("Adding cards");
