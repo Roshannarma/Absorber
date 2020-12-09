@@ -39,7 +39,7 @@ public class GremlinRally extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int NORMAL = 0;
+    private static final int NORMAL = 1;
 
     private static final int UPGRADE_PLUS_NORMAL = 1;
 

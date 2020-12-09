@@ -98,8 +98,8 @@
     "NAME" : "Blood Shield",
     "DESCRIPTION": "Lose !M! Health and Gain !B! Block"
   },
-  "Absorber:SnakePlant": {
-    "NAME" : "Snake Plant",
+  "Absorber:SnakePlantCard": {
+    "NAME" : "Snake PlantCard",
     "DESCRIPTION": "Gain 1 Malleable"
   },
   "Absorber:MysticHeal": {
@@ -218,11 +218,11 @@
   },
   "Absorber:BloodTransfusion": {
     "NAME" : "Blood Transfusion",
-    "DESCRIPTION": "Take !M! damage, Gain !Absorber:SecondMagic! temp Strength and !Absorber:SecondMagic! temp Dexterity"
+    "DESCRIPTION": "Take !M! damage, Gain !Absorber:SecondMagic! temp Strength and !Absorber:SecondMagic! temp Dexterity exhaust"
   },
   "Absorber:ForcedBloodTransfusion": {
     "NAME" : "Forced Transfusion",
-    "DESCRIPTION": "Take !M! damage, Apply !Absorber:SecondMagic! weak and !Absorber:SecondMagic! vulnerable to each enemy"
+    "DESCRIPTION": "Take !M! damage, Apply !Absorber:SecondMagic! weak and !Absorber:SecondMagic! vulnerable to each enemy exhaust"
   },
   "Absorber:Sharpen":{
   "NAME": "Sharpen",
@@ -250,7 +250,7 @@
   },
   "Absorber:SentrySlam":{
     "NAME": "Sentry Slam",
-    "DESCRIPTION": "Deal !D! damage, deals double damage on odd turns"
+    "DESCRIPTION": "Deal !D! damage, attack twice on odd turns"
   },
   "Absorber:WideSwing":{
     "NAME": "Wide Swing",
@@ -271,5 +271,9 @@
   "Absorber:EnergySurge": {
     "NAME": "Energy Surge",
     "DESCRIPTION": "Deal !Absorber:BaseDamage! * [E] damage (Deal !Absorber:EnergyScalingVariable! total)"
+  },
+  "Absorber:SyringeGun": {
+    "NAME": "Syringe Gun",
+    "DESCRIPTION": "Drain !M!, !Absorber:SecondMagic! times"
   }
 }

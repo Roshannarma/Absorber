@@ -3,6 +3,7 @@ package Absorber.actions;
 import Absorber.DefaultMod;
 import Absorber.cards.ConsumeCards.SnakePlantCard;
 import Absorber.cards.starter.ConsumeDagger;
+import Absorber.cards.starter.KneeStrike;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -63,12 +64,21 @@ public class AddCardFromConsume {
         CardMonsterList.put(Healer.class.getName(), new MysticHeal());
         CardMonsterList.put(SnakePlant.class.getName(), new SnakePlantCard());
         CardMonsterList.put(Nemesis.class.getName(),new NemesisIntangible());
+//        CardMonsterList.put(GremlinNob.class.getName(),new KneeStrike());
+//        CardMonsterList.put(SlimeBoss.class.getName(),new CorrosiveDagger_L());
+//        CardMonsterList.put(Centurion.class.getName(),new KneeStrike());
     }
 
 
     public AddCardFromConsume(AbstractCreature target) {
         String m = target.getClass().getName();
-        DefaultMod.consumed = CardMonsterList.get(m).makeCopy();
+        AbstractCard temp = CardMonsterList.get(m);
+        if(temp != null){
+            DefaultMod.consumed = temp.makeCopy();
+        }
+        else{
+            DefaultMod.consumed = new KneeStrike();
+        }
     }
     public static AbstractCard displaycard(AbstractMonster target) {
         String m = target.getClass().getName();
