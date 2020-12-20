@@ -34,7 +34,7 @@ public class LowHealthDouble extends DynamicVariable
     public int value(AbstractCard card)
     {
         AbstractPlayer p = AbstractDungeon.player;
-        if(p.currentHealth<p.maxHealth*.25){
+        if(p.currentHealth<p.maxHealth*.5){
             return card.damage *2;
         }
         else{
@@ -47,7 +47,13 @@ public class LowHealthDouble extends DynamicVariable
     @Override
     public int baseValue(AbstractCard card)
     {
-        return card.baseDamage;
+        AbstractPlayer p = AbstractDungeon.player;
+        if(p.currentHealth<p.maxHealth*.5){
+            return card.baseDamage *2;
+        }
+        else{
+            return card.baseDamage;
+        }
     }
 
     // If the card has it's damage upgraded, this variable will glow green on the upgrade selection screen as well.
@@ -55,6 +61,6 @@ public class LowHealthDouble extends DynamicVariable
     public boolean upgraded(AbstractCard card)
     {
         AbstractPlayer p = AbstractDungeon.player;
-        return card.upgradedDamage || (p.currentHealth<p.maxHealth*.25);
+        return card.upgradedDamage || (p.currentHealth<p.maxHealth*.5);
     }
 }

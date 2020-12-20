@@ -30,6 +30,7 @@ public class LifeSupport extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("Power.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -41,8 +42,7 @@ public class LifeSupport extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 //    private static final Logger logger = LogManager.getLogger(DrainLash.class.getName());
 
-    private static final int COST = 3;
-    private static final int UPGRADE_PLUS_COST = 2;
+    private static final int COST = 2;
 
     private static final int DAMAGE = 1;
 
@@ -51,7 +51,6 @@ public class LifeSupport extends AbstractDynamicCard {
     public LifeSupport() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = DAMAGE;
-
     }
 
     // Actions the card should do.
@@ -67,7 +66,8 @@ public class LifeSupport extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_PLUS_COST);
+            this.isInnate = true;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -210,7 +210,8 @@
   },
   "Absorber:LifeSupport": {
     "NAME" : "Life Support",
-    "DESCRIPTION": "At the end of the Turn, Drain !Absorber:DrainVariable! from all enemies"
+    "DESCRIPTION": "At the end of the Turn, Drain !Absorber:DrainVariable! from all enemies",
+    "UPGRADE_DESCRIPTION": "Innate NL At the end of the Turn, Drain !Absorber:DrainVariable! from all enemies"
   },
   "Absorber:RecklessInjection": {
     "NAME" : "RecklessInjection",
@@ -262,7 +263,7 @@
   },
   "Absorber:NemesisIntangible":{
     "NAME": "Nemesis Protection",
-    "DESCRIPTION": "Gain !M! Intangible"
+    "DESCRIPTION": "Gain !M! Intangible NL Exhaust"
   },
   "Absorber:SetupSkill":{
     "NAME": "Setup",
@@ -270,11 +271,11 @@
   },
   "Absorber:EnergySurge": {
     "NAME": "Energy Surge",
-    "DESCRIPTION": "Deal !Absorber:BaseDamage! * [E] damage (Deal !Absorber:EnergyScalingVariable! total)"
+    "DESCRIPTION": "Deal !Absorber:BaseDamage! * X damage,deal double when energy is above !Absorber:MaxEnergy! (Deal !Absorber:EnergyScalingVariable! total)"
   },
   "Absorber:SyringeGun": {
     "NAME": "Syringe Gun",
-    "DESCRIPTION": "Drain !M!, !Absorber:SecondMagic! times"
+    "DESCRIPTION": "Drain !M! Health !Absorber:SecondMagic! times"
   },
   "Absorber:ManicAttack": {
     "NAME": "Manic Attack",

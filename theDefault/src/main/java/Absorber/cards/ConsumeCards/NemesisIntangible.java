@@ -63,6 +63,7 @@ public class NemesisIntangible extends AbstractDynamicCard {
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom( new ApplyPowerAction(p,p,new IntangiblePlayerPower(p,magicNumber)));
+        this.exhaust = true;
     }
 
     //Upgraded stats.

@@ -50,7 +50,7 @@ public class FaultySyringe extends AbstractDynamicCard {
     private static final int COST = 1;
 
     private static final int HP_LOSS = 3;
-    private static final int UPGRADE_PLUS_HP_LOSS = 1;
+//    private static final int UPGRADE_PLUS_HP_LOSS = 1;
 
     private static final int REGEN_AMOUNT = 4;
     private static final int UPGRADE_PLUS_HEAL_AMOUNT = 1;
@@ -79,7 +79,7 @@ public class FaultySyringe extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_HP_LOSS);
+//            upgradeMagicNumber(UPGRADE_PLUS_HP_LOSS);
             upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_HEAL_AMOUNT);
 //            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();

@@ -66,7 +66,8 @@ public class EnergySurge extends AbstractDynamicCard {
         if(magicNumber > p.energy.energy){
             magicNumber *=2;
         }
-        addToBot(new DamageAction(m,new DamageInfo(m,baseDamage*magicNumber)));
+        int temp = damage = baseDamage;
+        addToBot(new DamageAction(m,new DamageInfo(m,(baseDamage*magicNumber)+temp)));
         this.exhaust = true;
     }
     public int get_total(){

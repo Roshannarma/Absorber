@@ -39,7 +39,7 @@ public class BeatDown extends AbstractDynamicCard {
     private static final int UPGRADE_PLUS_DMG = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     private static final int STRENGTH_DEBUFF = 2;
-    private static final int UPGRADE_PLUS_STRENGTH_DEBUFF = -1;
+    private static final int UPGRADE_PLUS_STRENGTH_DEBUFF = 1;
 
     public BeatDown() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

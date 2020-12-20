@@ -33,7 +33,7 @@ public class ManicAttack extends AbstractDynamicCard {
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 3;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 4;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     private static final int loops = 4;
@@ -48,7 +48,7 @@ public class ManicAttack extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int actual_damage;
-        if(p.currentHealth<p.maxHealth*.25){
+        if(p.currentHealth<p.maxHealth*.5){
             actual_damage = damage *2;
         }
         else{
