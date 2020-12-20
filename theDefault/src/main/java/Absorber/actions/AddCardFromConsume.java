@@ -90,7 +90,5 @@ public class AddCardFromConsume {
             return null;
         }
     }
-
-
 }
 

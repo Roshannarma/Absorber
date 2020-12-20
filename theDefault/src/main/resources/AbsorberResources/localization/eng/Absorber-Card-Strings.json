@@ -275,5 +275,13 @@
   "Absorber:SyringeGun": {
     "NAME": "Syringe Gun",
     "DESCRIPTION": "Drain !M!, !Absorber:SecondMagic! times"
+  },
+  "Absorber:ManicAttack": {
+    "NAME": "Manic Attack",
+    "DESCRIPTION": "Deals !Absorber:LowHealthDouble! damage 4 times(double damage below 25% hp)"
+  },
+  "Absorber:FinalAttack": {
+    "NAME": "Final Attack",
+    "DESCRIPTION": "Deals !D! damage, Next turn, Draw !M! less cards and Gain !M! less mana"
   }
 }

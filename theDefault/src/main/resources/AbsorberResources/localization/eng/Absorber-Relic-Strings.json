@@ -67,5 +67,12 @@
     "DESCRIPTIONS": [
       "If you didn't play any attacks the previous turn, gain a protected"
     ]
+  },
+  "Absorber:ChannelRelic": {
+    "NAME": "Channel Relic",
+    "FLAVOR": "Patience is the greatest virtue",
+    "DESCRIPTIONS": [
+      "Whenever you end a turn with extra mana, draw that many extra cards next turn"
+    ]
   }
 }

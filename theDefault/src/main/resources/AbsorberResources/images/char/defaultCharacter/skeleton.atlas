@@ -1,97 +1,97 @@
 
 skeleton.png
-size: 512,512
+size: 4096,2048
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 shoes
   rotate: false
-  xy: 243, 343
-  size: 213, 58
+  xy: 1029, 515
+  size: 512, 512
   orig: 512, 512
-  offset: 118, 41
+  offset: 0, 0
   index: -1
 head
   rotate: false
-  xy: 1, 207
-  size: 166, 130
+  xy: 1, 1
+  size: 512, 512
   orig: 512, 512
-  offset: 207, 358
+  offset: 0, 0
   index: -1
 armUpperL
   rotate: false
-  xy: 373, 403
-  size: 94, 97
+  xy: 1543, 1
+  size: 512, 512
   orig: 512, 512
-  offset: 249, 260
+  offset: 0, 0
   index: -1
 armLowerL
   rotate: false
-  xy: 243, 230
-  size: 117, 111
+  xy: 1543, 515
+  size: 512, 512
   orig: 512, 512
-  offset: 310, 258
+  offset: 0, 0
   index: -1
 legUpperL
   rotate: false
-  xy: 410, 1
-  size: 96, 85
+  xy: 1, 515
+  size: 512, 512
   orig: 512, 512
-  offset: 224, 146
+  offset: 0, 0
   index: -1
 legLowerL
   rotate: false
-  xy: 410, 88
-  size: 79, 103
+  xy: 515, 515
+  size: 512, 512
   orig: 512, 512
-  offset: 243, 78
+  offset: 0, 0
   index: -1
 legUpperR
   rotate: false
-  xy: 1, 339
-  size: 128, 154
+  xy: 1029, 1029
+  size: 512, 512
   orig: 512, 512
-  offset: 130, 70
+  offset: 0, 0
   index: -1
 legLowerR
   rotate: false
-  xy: 243, 403
-  size: 128, 78
+  xy: 1029, 1
+  size: 512, 512
   orig: 512, 512
-  offset: 126, 71
+  offset: 0, 0
   index: -1
 coatLower
   rotate: false
-  xy: 1, 1
-  size: 235, 204
+  xy: 515, 1
+  size: 512, 512
   orig: 512, 512
-  offset: 18, 75
+  offset: 0, 0
   index: -1
 coatUpper
   rotate: false
-  xy: 238, 1
-  size: 170, 227
+  xy: 515, 1029
+  size: 512, 512
   orig: 512, 512
-  offset: 148, 185
+  offset: 0, 0
   index: -1
 bag
   rotate: false
-  xy: 362, 230
-  size: 110, 100
+  xy: 1, 1029
+  size: 512, 512
   orig: 512, 512
-  offset: 115, 94
+  offset: 0, 0
   index: -1
 armUpperR
   rotate: false
-  xy: 131, 339
-  size: 110, 126
+  xy: 2057, 1
+  size: 512, 512
   orig: 512, 512
-  offset: 145, 224
+  offset: 0, 0
   index: -1
 armLowerR
   rotate: false
-  xy: 169, 207
-  size: 49, 127
+  xy: 1543, 1029
+  size: 512, 512
   orig: 512, 512
-  offset: 143, 172
+  offset: 0, 0
   index: -1

@@ -52,6 +52,7 @@ public class SentrySlam extends AbstractDynamicCard {
             baseMagicNumber = magicNumber = ODD_TURNS;
             this.upgradedDamage = true;
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+            odd_turn = false;
 //            rawDescription = UPGRADE_DESCRIPTION;
         }
         else {
@@ -68,7 +69,7 @@ public class SentrySlam extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(odd_turn){
+        if(!odd_turn){
             AbstractDungeon.actionManager.addToBottom(
                     new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }

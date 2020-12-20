@@ -437,6 +437,7 @@ public class DefaultMod implements
         BaseMod.addDynamicVariable(new DrainVariable());
         BaseMod.addDynamicVariable(new EnergyScalingVariable());
         BaseMod.addDynamicVariable(new BaseDamageVariable());
+        BaseMod.addDynamicVariable(new LowHealthDouble());
 
         
         logger.info("Adding cards");
