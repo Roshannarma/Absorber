@@ -144,8 +144,8 @@
   },
   "Absorber:GremlinRally": {
     "NAME" : "Gremlin Rally",
-    "DESCRIPTION": "Add a Gremlin Stab to your hand at the beginning of each turn",
-    "UPGRADE_DESCRIPTION": "Add an upgraded Gremlin Stab to your hand at the beginning of each turn"
+    "DESCRIPTION": "Add 2 Gremlin Stabs to your hand at the beginning of each turn",
+    "UPGRADE_DESCRIPTION": "Add 2 upgraded Gremlin Stabs to your hand at the beginning of each turn"
   },
   "Absorber:GremlinStab": {
     "NAME" : "Gremlin Stab",
@@ -297,5 +297,9 @@
   "Absorber:Overdose": {
     "NAME": "Overdose",
     "DESCRIPTION": "Gain !Absorber:SecondMagic! energy and take !M! damage next turn"
+  },
+  "Absorber:BoosterShot": {
+    "NAME": "Booster Shot",
+    "DESCRIPTION": "Gain !M! HP and !Absorber:SecondMagic! protected"
   }
 }

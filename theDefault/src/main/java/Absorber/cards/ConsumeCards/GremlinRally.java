@@ -6,6 +6,7 @@ import Absorber.cards.AbstractDynamicCard;
 import Absorber.powers.RarePower;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -39,7 +40,7 @@ public class GremlinRally extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int NORMAL = 1;
+    private static final int NORMAL = 2;
 
     private static final int UPGRADE_PLUS_NORMAL = 1;
 
@@ -50,7 +51,6 @@ public class GremlinRally extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = NORMAL;
         this.cardsToPreview = new GremlinStab();
-
     }
 
     // Actions the card should do.
@@ -69,8 +69,11 @@ public class GremlinRally extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_NORMAL);
+//            upgradeMagicNumber(UPGRADE_PLUS_NORMAL);
             rawDescription = UPGRADE_DESCRIPTION;
+            AbstractCard card_to_show = new GremlinStab();
+            card_to_show.upgrade();
+            this.cardsToPreview = card_to_show;
             initializeDescription();
         }
     }
