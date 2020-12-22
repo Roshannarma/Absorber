@@ -6,8 +6,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
-public abstract class DrainCard extends AbstractDynamicCard {
-    public DrainCard(final String id,
+public abstract class SyringeCard extends AbstractDynamicCard {
+    public SyringeCard(final String id,
               final String img,
               final int cost,
               final CardType type,
@@ -15,8 +15,7 @@ public abstract class DrainCard extends AbstractDynamicCard {
               final CardRarity rarity,
               final CardTarget target) {
 
-        super(id,  img, cost,  type, color, rarity, target);
-
+        super(id, img, cost,  type, color, rarity, target);
     }
 
 

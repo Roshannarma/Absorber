@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import static Absorber.DefaultMod.makeID;
 
-public class EnergyScalingVariable extends DynamicVariable
+public class EnergyScalingFullVariable extends DynamicVariable
 {   // Custom Dynamic Variables are what you do if you need your card text to display a cool, changing number that the base game doesn't provide.
     // If the !D! and !B! (for Damage and Block) etc. are not enough for you, this is how you make your own one. It Changes In Real Time!
 
@@ -16,7 +16,7 @@ public class EnergyScalingVariable extends DynamicVariable
     @Override
     public String key()
     {
-        return makeID("EnergyScalingVariable");
+        return makeID("EnergyScalingFullVariable");
     }
 
     // Checks whether the current value is different than the base one.
@@ -33,10 +33,10 @@ public class EnergyScalingVariable extends DynamicVariable
     public int value(AbstractCard card)
     {
         if(EnergyPanel.getCurrentEnergy() > AbstractDungeon.player.energy.energy){
-            return card.damage * 2;
+            return card.damage * EnergyPanel.getCurrentEnergy() * 2;
         }
         else{
-            return card.damage ;
+            return card.damage * EnergyPanel.getCurrentEnergy();
         }
     }
 
@@ -47,10 +47,10 @@ public class EnergyScalingVariable extends DynamicVariable
     {
         {
             if(EnergyPanel.getCurrentEnergy() > AbstractDungeon.player.energy.energy){
-                return card.baseDamage * 2;
+                return card.baseDamage * EnergyPanel.getCurrentEnergy() * 2;
             }
             else{
-                return card.baseDamage;
+                return card.baseDamage * EnergyPanel.getCurrentEnergy();
             }
         }
     }

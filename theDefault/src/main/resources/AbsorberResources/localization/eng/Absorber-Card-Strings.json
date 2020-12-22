@@ -271,7 +271,12 @@
   },
   "Absorber:EnergySurge": {
     "NAME": "Energy Surge",
-    "DESCRIPTION": "Deal !Absorber:BaseDamage! * X damage,deal double when energy is above !Absorber:MaxEnergy! (Deal !Absorber:EnergyScalingVariable! total)"
+    "DESCRIPTION": "Deal !M! times X damage NL Deal double when energy is above !Absorber:MaxEnergy!",
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deals !D! damage.)",
+      ""
+    ]
   },
   "Absorber:SyringeGun": {
     "NAME": "Syringe Gun",
@@ -284,5 +289,13 @@
   "Absorber:FinalAttack": {
     "NAME": "Final Attack",
     "DESCRIPTION": "Deals !D! damage, Next turn, Draw !M! less cards and Gain !M! less mana"
+  },
+  "Absorber:Adrenaline": {
+    "NAME": "Adrenaline",
+    "DESCRIPTION": "Convert all damgae this turn into damage taken at the end of next turn"
+  },
+  "Absorber:Overdose": {
+    "NAME": "Overdose",
+    "DESCRIPTION": "Gain !Absorber:SecondMagic! energy and take !M! damage next turn"
   }
 }

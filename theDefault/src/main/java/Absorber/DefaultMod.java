@@ -13,6 +13,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -406,6 +407,7 @@ public class DefaultMod implements
         BaseMod.addRelicToCustomPool(new SurgicalGlovesRelic(),TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new EKGRelic(),TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new DoctorScrubsRelic(),TheDefault.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new SyringeHolder(),TheDefault.Enums.COLOR_GRAY);
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         
@@ -438,6 +440,8 @@ public class DefaultMod implements
         BaseMod.addDynamicVariable(new EnergyScalingVariable());
         BaseMod.addDynamicVariable(new BaseDamageVariable());
         BaseMod.addDynamicVariable(new LowHealthDouble());
+        BaseMod.addDynamicVariable(new MaxEnergy());
+        BaseMod.addDynamicVariable(new EnergyScalingFullVariable());
 
         
         logger.info("Adding cards");
@@ -488,7 +492,7 @@ public class DefaultMod implements
         // RelicStrings
         BaseMod.loadCustomStringsFile(RelicStrings.class,
                 getModID() + "Resources/localization/eng/Absorber-Relic-Strings.json");
-        
+
         // Event Strings
         BaseMod.loadCustomStringsFile(EventStrings.class,
                 getModID() + "Resources/localization/eng/Absorber-Event-Strings.json");

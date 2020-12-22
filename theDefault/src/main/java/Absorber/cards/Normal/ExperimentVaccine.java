@@ -29,12 +29,12 @@ import Absorber.characters.TheDefault;
 
 import static Absorber.DefaultMod.makeCardPath;
 
-public class FaultySyringe extends SyringeCard {
+public class ExperimentVaccine extends SyringeCard {
 
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID("FaultySyringe");
+    public static final String ID = DefaultMod.makeID("ExperimentVaccine");
     public static final String IMG = makeCardPath("Skill.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -58,7 +58,7 @@ public class FaultySyringe extends SyringeCard {
 
     // /STAT DECLARATION/
 
-    public FaultySyringe() {
+    public ExperimentVaccine() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = HP_LOSS;
         defaultBaseSecondMagicNumber = defaultSecondMagicNumber = REGEN_AMOUNT;

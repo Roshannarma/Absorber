@@ -17,13 +17,14 @@ import Absorber.DefaultMod;
 import Absorber.characters.TheDefault;
 
 import static Absorber.DefaultMod.makeCardPath;
+import static Absorber.DefaultMod.makeFinalCardPath;
 
 //@AutoAdd.Ignore
 public class SentrySlam extends AbstractDynamicCard {
 
 
     public static final String ID = DefaultMod.makeID("SentrySlam");
-    public static final String IMG = makeCardPath("Attack.png"); // ConsumeDagger.png
+    public static final String IMG = makeFinalCardPath("Sentry"); // ConsumeDagger.png
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 //    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 //    public static final String NORMAL_DESCRIPTION = cardStrings.DESCRIPTION;

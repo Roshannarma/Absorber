@@ -74,5 +74,12 @@
     "DESCRIPTIONS": [
       "Whenever you end a turn with extra mana, draw that many extra cards next turn"
     ]
+  },
+  "Absorber:SyringeHolder": {
+    "NAME": "Syringe Holder",
+    "FLAVOR": "This holds syringes",
+    "DESCRIPTIONS": [
+      "When you play the first syringe each combat, gain 1 max hp"
+    ]
   }
 }

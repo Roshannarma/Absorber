@@ -1,6 +1,7 @@
 package Absorber.cards.Normal;
 
 import Absorber.actions.DrainAction;
+import Absorber.cards.SyringeCard;
 import Absorber.powers.EntangleThemPower;
 import Absorber.powers.GremlinStabsPower;
 import Absorber.powers.LousePower;
@@ -12,6 +13,8 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.unique.RegenAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -62,7 +65,7 @@ public class ForcedBloodTransfusion extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = HP_LOSS;
         defaultBaseSecondMagicNumber = defaultSecondMagicNumber = TEMP_BUFF;
-
+//        this.tags.add();
     }
 
     // Actions the card should do.
@@ -75,6 +78,9 @@ public class ForcedBloodTransfusion extends AbstractDynamicCard {
                 AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new ApplyPowerAction((AbstractCreature)mo, (AbstractCreature)p, (AbstractPower)new WeakPower((AbstractCreature)mo, defaultSecondMagicNumber, false), defaultSecondMagicNumber, true, AbstractGameAction.AttackEffect.NONE));
             }
         this.exhaust = true;
+    }
+    public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
+
     }
 
     //Upgraded stats.

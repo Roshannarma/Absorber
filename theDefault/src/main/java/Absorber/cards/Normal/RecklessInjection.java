@@ -2,6 +2,7 @@ package Absorber.cards.Normal;
 
 import Absorber.actions.ConsumeAction;
 import Absorber.cards.AbstractDynamicCard;
+import Absorber.cards.SyringeCard;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -18,7 +19,7 @@ import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;
 
 //@AutoAdd.Ignore
-public class RecklessInjection extends AbstractDynamicCard {
+public class RecklessInjection extends SyringeCard {
 
 
     public static final String ID = DefaultMod.makeID("RecklessInjection");

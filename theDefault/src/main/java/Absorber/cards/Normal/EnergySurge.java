@@ -9,6 +9,7 @@ import Absorber.powers.RarePower;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -22,6 +23,8 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import Absorber.DefaultMod;
 import Absorber.actions.UncommonPowerAction;
 import Absorber.characters.TheDefault;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;
@@ -36,6 +39,7 @@ public class EnergySurge extends AbstractDynamicCard {
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    private static final Logger logger = LogManager.getLogger(EnergySurge.class.getName());
 
     // /TEXT DECLARATION/
 
@@ -48,50 +52,70 @@ public class EnergySurge extends AbstractDynamicCard {
 
     private static final int COST = -1;
 
-    private static final int DAMAGE = 9;
+    private static final int DAMAGE = 7;
     private static final int UPGRADE_PLUS_DAMAGE = 3;
 
     // /STAT DECLARATION/
 
     public EnergySurge() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = DAMAGE;
+        baseMagicNumber = magicNumber = DAMAGE;
 
     }
 
     // Actions the card should do.
-    @Override
-    public void use(final AbstractPlayer p, final AbstractMonster m) {
-        magicNumber = get_total();
-        if(magicNumber > p.energy.energy){
-            magicNumber *=2;
-        }
-        int temp = damage = baseDamage;
-        addToBot(new DamageAction(m,new DamageInfo(m,(baseDamage*magicNumber)+temp)));
-        this.exhaust = true;
-    }
-    public int get_total(){
-        AbstractPlayer p = AbstractDungeon.player;
+    public int get_cost(){
         int effect = EnergyPanel.totalCount;
-        if (energyOnUse != -1) {
-            effect = energyOnUse;
+        if (this.energyOnUse != -1) {
+            effect = this.energyOnUse;
         }
-        if (p.hasRelic(ChemicalX.ID)) {
+        if (AbstractDungeon.player.hasRelic("Chemical X")) {
             effect += 2;
-            p.getRelic(ChemicalX.ID).flash();
+            AbstractDungeon.player.getRelic("Chemical X").flash();
         }
-        if (upgraded) {
-            ++effect;
-        }
-        p.energy.use(EnergyPanel.totalCount);
         return effect;
     }
+    @Override
+    public void use(final AbstractPlayer p, final AbstractMonster m) {
+        int temp = get_cost();
+        if (temp > 0) {
+            this.baseDamage = temp * magicNumber;
+            calculateCardDamage((AbstractMonster)null);
+            EnergyPanel.setEnergy(0);
+            addToBot(new DamageAction(m, new DamageInfo(m, damage)));
+            this.exhaust = true;
+//            EnergyPanel.setEnergy(0);
+        }
+    }
     //Upgraded stats.
+    @Override
+    public void applyPowers(){
+        int temp  = get_cost();
+        if(temp > 0){
+            this.baseDamage = temp * magicNumber;
+            super.applyPowers();
+            calculateCardDamage((AbstractMonster)null);
+            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+            initializeDescription();
+        }
+
+    }
+    public void onMoveToDiscard() {
+        this.rawDescription = cardStrings.DESCRIPTION;
+        initializeDescription();
+    }
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+             super.calculateCardDamage(mo);
+             this.rawDescription = cardStrings.DESCRIPTION;
+             this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
+             initializeDescription();
+           }
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeMagicNumber(UPGRADE_PLUS_DAMAGE);
 //            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

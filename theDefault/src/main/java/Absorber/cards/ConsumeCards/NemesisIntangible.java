@@ -32,7 +32,7 @@ public class NemesisIntangible extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID("NemesisIntangible");
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeFinalCardPath("Nemesis");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 

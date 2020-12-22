@@ -1,6 +1,8 @@
 package Absorber.cards.Normal;
 
 import Absorber.actions.DrainAction;
+import Absorber.cards.SyringeCard;
+import Absorber.cards.SyringeDrainCard;
 import Absorber.powers.EntangleThemPower;
 import Absorber.powers.GremlinStabsPower;
 import Absorber.powers.LousePower;
@@ -23,7 +25,7 @@ import Absorber.characters.TheDefault;
 import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;
 
-public class SyringeGun extends AbstractDynamicCard {
+public class SyringeGun extends SyringeDrainCard {
 
 
     // TEXT DECLARATION

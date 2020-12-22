@@ -9,7 +9,7 @@
 },
         "Absorber:DrainLash": {
                 "NAME": "Drain Lash",
-                "DESCRIPTIONS": ["Whenever you Drain, deal","damage to all enemies"]
+                "DESCRIPTIONS": ["Whenever you Drain, deal "," damage to all enemies"]
         },
         "Absorber:EntangleThem": {
                 "NAME": "Entangle Them",
@@ -29,10 +29,18 @@
         },
         "Absorber:GremlinArmyPower": {
                 "NAME": "Gremlin Army",
-                "DESCRIPTIONS": ["Next Turn, add","Gremlin Stabs to your hand"]
+                "DESCRIPTIONS": ["Next Turn, add "," Gremlin Stabs to your hand"]
         },
         "Absorber:GremlinStabsPower": {
                 "NAME": "Gremlin Stabs",
-                "DESCRIPTIONS": ["At the Beginning of your turn, add ", "Gremlin Stabs to your hand", "Upgraded Gremlin Stabs to your hand"]
+                "DESCRIPTIONS": ["At the Beginning of your turn, add ", " Gremlin Stabs to your hand", " Upgraded Gremlin Stabs to your hand"]
+        },
+        "Absorber:DamageNextTurnPower": {
+                "NAME": "Damage Next Turn",
+                "DESCRIPTIONS": ["Next turn take ", " damage"]
+        },
+        "Absorber:DamageThisTurnPower": {
+                "NAME": "Damage This Turn",
+                "DESCRIPTIONS": ["At the end of the turn, take ", " damage"]
         }
 }
