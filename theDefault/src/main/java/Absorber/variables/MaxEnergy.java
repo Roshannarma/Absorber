@@ -24,7 +24,7 @@ public class MaxEnergy extends DynamicVariable
     @Override
     public boolean isModified(AbstractCard card)
     {
-        return card.isDamageModified;
+        return false;
     }
 
     // The value the variable should display.

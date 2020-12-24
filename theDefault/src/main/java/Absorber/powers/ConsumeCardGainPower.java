@@ -43,8 +43,6 @@ public class ConsumeCardGainPower extends AbstractPower implements CloneablePowe
 
     public void onVictory(AbstractCreature target) {
         AddCardFromConsume temp = new AddCardFromConsume(target);
-
-
     }
     @Override
     public AbstractPower makeCopy() {

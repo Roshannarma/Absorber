@@ -76,7 +76,7 @@
     ]
   },
   "Absorber:SyringeHolder": {
-    "NAME": "Syringe Holder",
+    "NAME": "Centrifuge",
     "FLAVOR": "This holds syringes",
     "DESCRIPTIONS": [
       "When you play the first syringe each combat, gain 1 max hp"

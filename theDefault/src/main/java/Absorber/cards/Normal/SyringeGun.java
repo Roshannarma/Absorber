@@ -46,7 +46,7 @@ public class SyringeGun extends SyringeDrainCard {
 
     private static final int COST = 1;
 
-    private static final int DRAIN_AMOUNT = 1;
+    private static final int DRAIN_AMOUNT = 2;
     private static final int UPGRADE_PLUS_DRAIN_AMOUNT = 1;
 
     private static final int TIMES = 3;

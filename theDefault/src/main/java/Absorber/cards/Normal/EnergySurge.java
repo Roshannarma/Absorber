@@ -60,15 +60,16 @@ public class EnergySurge extends AbstractDynamicCard {
     public EnergySurge() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = DAMAGE;
+        this.baseDamage = 0;
 
     }
 
     // Actions the card should do.
     public int get_cost(){
         int effect = EnergyPanel.totalCount;
-        if (this.energyOnUse != -1) {
-            effect = this.energyOnUse;
-        }
+//        if (this.energyOnUse != -1) {
+//            effect = this.energyOnUse;
+//        }
         if (AbstractDungeon.player.hasRelic("Chemical X")) {
             effect += 2;
             AbstractDungeon.player.getRelic("Chemical X").flash();
@@ -78,23 +79,49 @@ public class EnergySurge extends AbstractDynamicCard {
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         int temp = get_cost();
+        logger.info(2);
+        logger.info(temp);
         if (temp > 0) {
-            this.baseDamage = temp * magicNumber;
-            calculateCardDamage((AbstractMonster)null);
+            if(EnergyPanel.totalCount>AbstractDungeon.player.energy.energy){
+                this.baseDamage = temp * magicNumber *2;
+            }
+            else{
+                this.baseDamage = temp * magicNumber;
+            }
+            calculateCardDamage(m);
             EnergyPanel.setEnergy(0);
             addToBot(new DamageAction(m, new DamageInfo(m, damage)));
             this.exhaust = true;
 //            EnergyPanel.setEnergy(0);
+        }
+        else{
+            this.baseDamage = 0;
+            calculateCardDamage(m);
+            EnergyPanel.setEnergy(0);
+            addToBot(new DamageAction(m, new DamageInfo(m, damage)));
+            this.exhaust = true;
         }
     }
     //Upgraded stats.
     @Override
     public void applyPowers(){
         int temp  = get_cost();
+        logger.info(temp);
         if(temp > 0){
-            this.baseDamage = temp * magicNumber;
+            if(EnergyPanel.totalCount>AbstractDungeon.player.energy.energy){
+                this.baseDamage = temp* magicNumber *2;
+            }
+            else{
+                this.baseDamage = temp * magicNumber;
+            }
             super.applyPowers();
-            calculateCardDamage((AbstractMonster)null);
+//            calculateCardDamage((AbstractMonster)null);
+            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+            initializeDescription();
+        }
+        else{
+            this.baseDamage = 0;
+            super.applyPowers();
             this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
             initializeDescription();
         }
@@ -108,7 +135,7 @@ public class EnergySurge extends AbstractDynamicCard {
     public void calculateCardDamage(AbstractMonster mo) {
              super.calculateCardDamage(mo);
              this.rawDescription = cardStrings.DESCRIPTION;
-             this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
+            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
              initializeDescription();
            }
     @Override

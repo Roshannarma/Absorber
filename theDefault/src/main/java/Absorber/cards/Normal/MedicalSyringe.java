@@ -5,7 +5,10 @@ import Absorber.cards.SyringeCard;
 import Absorber.powers.*;
 import Absorber.cards.AbstractDynamicCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.unique.RegenAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -23,12 +26,12 @@ import Absorber.characters.TheDefault;
 
 import static Absorber.DefaultMod.makeCardPath;
 
-public class Adrenaline extends SyringeCard {
+public class MedicalSyringe extends SyringeCard {
 
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID("Adrenaline");
+    public static final String ID = DefaultMod.makeID("MedicalSyringe");
     public static final String IMG = makeCardPath("Skill.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -37,7 +40,7 @@ public class Adrenaline extends SyringeCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
@@ -45,26 +48,27 @@ public class Adrenaline extends SyringeCard {
     private static final int COST = 1;
     private static final int UPGRADE_PLUS_COST = 0;
 
-    private static final int DRAW = 1;
-    private static final int UPGRADE_PLUS_DRAW = 1;
+    private static final int HP_LOSS = 4;
+    private static final int UPGRADE_PLUS_HP_LOSS = -1;
 
+    private static final int MAX_HP_INCREASE = 1;
+//    private static final int UPGRADE_PLUS_PROTECTED = 1;
 
     // /STAT DECLARATION/
 
-    public Adrenaline() {
+    public MedicalSyringe() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = DRAW;
+        baseMagicNumber = magicNumber = HP_LOSS;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = MAX_HP_INCREASE;
+
     }
 
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
+        AbstractDungeon.player.increaseMaxHp(defaultSecondMagicNumber,true);
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p,p,new DamageNextTurnPower(p,p))
-        );
-        AbstractDungeon.actionManager.addToBottom(
-                new DrawCardAction(p,magicNumber)
-        );
+                new LoseHPAction(p, p, magicNumber));
         this.exhaust = true;
     }
 
@@ -73,8 +77,9 @@ public class Adrenaline extends SyringeCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            updateCost(UPGRADE_PLUS_COST);
-            upgradeMagicNumber(UPGRADE_PLUS_DRAW);
+            upgradeBaseCost(UPGRADE_PLUS_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_HP_LOSS);
+//            upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_PROTECTED);
 //            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

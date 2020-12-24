@@ -157,8 +157,7 @@
   },
   "Absorber:LagavulinDrain": {
     "NAME" : "Lagavulin Drain",
-    "DESCRIPTION": "Drain X, Drain X strength from target Exhaust",
-    "UPGRADE_DESCRIPTION": "Drain X+1, Drain X+1 strength from target Exhaust"
+    "DESCRIPTION": "Drain !M! and Drain !M! strength from target Exhaust"
   },
   "Absorber:LooterDagger": {
     "NAME" : "Looter Dagger",
@@ -241,8 +240,8 @@
     "NAME": "BeatDown",
     "DESCRIPTION": "Deal !D! damage and Enemy loses !M! strength for the rest of the turn"
   },
-  "Absorber:Hospitalize":{
-    "NAME": "Hospitalize",
+  "Absorber:BoneSaw":{
+    "NAME": "Bone Saw",
     "DESCRIPTION": "Deal !D! damage and apply !M! weak"
   },
   "Absorber:GremlinArmy":{
@@ -266,7 +265,7 @@
     "DESCRIPTION": "Gain !M! Intangible NL Exhaust"
   },
   "Absorber:SetupSkill":{
-    "NAME": "Setup",
+    "NAME": "Steady Hands",
     "DESCRIPTION": "Gain !M! Protected, and Next turn gain !M! energy and draw !M! cards"
   },
   "Absorber:EnergySurge": {
@@ -292,7 +291,7 @@
   },
   "Absorber:Adrenaline": {
     "NAME": "Adrenaline",
-    "DESCRIPTION": "Convert all damgae this turn into damage taken at the end of next turn"
+    "DESCRIPTION": "Convert all damage this turn into damage taken at the end of next turn NL Draw !M! cards"
   },
   "Absorber:Overdose": {
     "NAME": "Overdose",
@@ -301,5 +300,9 @@
   "Absorber:BoosterShot": {
     "NAME": "Booster Shot",
     "DESCRIPTION": "Gain !M! HP and !Absorber:SecondMagic! protected"
+  },
+  "Absorber:MedicalSyringe": {
+    "NAME": "Medical Syringe",
+    "DESCRIPTION": "Gain !Absorber:SecondMagic! Max-HP and lose !M! HP"
   }
 }

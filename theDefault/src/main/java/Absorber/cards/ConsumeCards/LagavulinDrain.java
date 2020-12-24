@@ -44,9 +44,10 @@ public class LagavulinDrain extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = -1;
+    private static final int COST = 2;
 
-    private static final int DRAIN_AMOUNT = 1;
+    private static final int DRAIN_AMOUNT = 2;
+    private static final int UPGRADE_PLUS_DRAIN_AMOUNT = 1;
 
     // /STAT DECLARATION/
 
@@ -59,37 +60,36 @@ public class LagavulinDrain extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        magicNumber = get_total();
         AbstractDungeon.actionManager.addToBottom(new DrainAction(m, magicNumber));
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p,p,new StrengthPower(p,magicNumber),magicNumber));
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(m,p,new StrengthPower(p,-1*magicNumber),-1*magicNumber));
         this.exhaust = true;
-
     }
-    public int get_total(){
-        AbstractPlayer p = AbstractDungeon.player;
-        int effect = EnergyPanel.totalCount;
-        if (energyOnUse != -1) {
-            effect = energyOnUse;
-        }
-        if (p.hasRelic(ChemicalX.ID)) {
-            effect += 2;
-            p.getRelic(ChemicalX.ID).flash();
-        }
-        if (upgraded) {
-            ++effect;
-        }
-        p.energy.use(EnergyPanel.totalCount);
-        return effect;
-    }
+//    public int get_total(){
+//        AbstractPlayer p = AbstractDungeon.player;
+//        int effect = EnergyPanel.totalCount;
+//        if (energyOnUse != -1) {
+//            effect = energyOnUse;
+//        }
+//        if (p.hasRelic(ChemicalX.ID)) {
+//            effect += 2;
+//            p.getRelic(ChemicalX.ID).flash();
+//        }
+//        if (upgraded) {
+//            ++effect;
+//        }
+//        p.energy.use(EnergyPanel.totalCount);
+//        return effect;
+//    }
     //Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(UPGRADE_PLUS_DRAIN_AMOUNT);
+//            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

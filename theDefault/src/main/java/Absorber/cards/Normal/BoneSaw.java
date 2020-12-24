@@ -12,39 +12,35 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Absorber.DefaultMod;
 import Absorber.characters.TheDefault;
-import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
-import com.megacrit.cardcrawl.powers.DrawReductionPower;
-import com.megacrit.cardcrawl.powers.EnergizedPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import org.graalvm.compiler.core.common.type.ArithmeticOpTable;
 
 import static Absorber.DefaultMod.makeCardPath;
 
 //@AutoAdd.Ignore
-public class FinalAttack extends AbstractDynamicCard {
+public class BoneSaw extends AbstractDynamicCard {
 
 
-    public static final String ID = DefaultMod.makeID("FinalAttack");
+    public static final String ID = DefaultMod.makeID("BoneSaw");
     public static final String IMG = makeCardPath("Attack.png"); // ConsumeDagger.png
 
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 4;
+    private static final int COST = 2;
 
-    private static final int DAMAGE = 50;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 15;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int DAMAGE = 13;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_DMG = 4;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
-    private static final int MINUS_DRAW_ENERGY  = 1;
-//    private static final int UPGRADE_PLUS_MINUS_DRAW_ENERGY = 1;
+    private static final int WEAKEN  = 2;
+    private static final int UPGRADE_PLUS_WEAKEN = 1;
 
-    public FinalAttack() {
+    public BoneSaw() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        baseMagicNumber = magicNumber = MINUS_DRAW_ENERGY;
+        baseMagicNumber = magicNumber = WEAKEN;
     }
 
 
@@ -53,11 +49,8 @@ public class FinalAttack extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-//        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new DrawReduce(p,magicNumber)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new DrawReductionPower(p,magicNumber)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new EnergizedPower(p,-1*magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p,new WeakPower(m,magicNumber,false)));
     }
-
 
 
     // Upgraded stats.
@@ -66,7 +59,7 @@ public class FinalAttack extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-//            upgradeMagicNumber(UPGRADE_PLUS_MINUS_DRAW_ENERGY);
+            upgradeMagicNumber(UPGRADE_PLUS_WEAKEN);
             initializeDescription();
         }
     }

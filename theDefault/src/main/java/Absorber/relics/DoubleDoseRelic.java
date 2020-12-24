@@ -31,7 +31,7 @@ import org.apache.logging.log4j.Logger;
 import static Absorber.DefaultMod.makeRelicOutlinePath;
 import static Absorber.DefaultMod.makeRelicPath;
 
-public class SyringeHolder extends CustomRelic { // You must implement things you want to use from StSlib
+public class DoubleDoseRelic extends CustomRelic { // You must implement things you want to use from StSlib
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
      * StSLib for Clickable Relics
@@ -41,14 +41,14 @@ public class SyringeHolder extends CustomRelic { // You must implement things yo
 
     // ID, images, text.
 //    private static final Logger logger = LogManager.getLogger(SurgicalGlovesRelic .class.getName());
-    public static final String ID = DefaultMod.makeID("SyringeHolder");
+    public static final String ID = DefaultMod.makeID("DoubleDoseRelic");
 
     private static final Texture FRESH = TextureLoader.getTexture(makeRelicPath("default_clickable_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("default_clickable_relic.png"));
 
     private static boolean first = true;
 
-    public SyringeHolder() {
+    public DoubleDoseRelic() {
         super(ID, FRESH, OUTLINE, RelicTier.UNCOMMON, LandingSound.CLINK);
         tips.clear();
         tips.add(new PowerTip(name, description));
