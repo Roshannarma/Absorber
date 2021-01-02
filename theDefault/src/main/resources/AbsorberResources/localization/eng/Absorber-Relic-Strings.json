@@ -35,7 +35,7 @@
     "NAME": "Fresh Samples",
     "FLAVOR": "I like flesh",
     "DESCRIPTIONS": [
-      "Usable once per turn. NL #yEvoke your rightmost Orb.",
+      "click to gain 1 energy and draw 1 card, refill when fatal with dagger",
       "YOU ARE MINE!"
     ]
   },
@@ -80,6 +80,13 @@
     "FLAVOR": "This holds syringes",
     "DESCRIPTIONS": [
       "When you play the first syringe each combat, gain 1 max hp"
+    ]
+  },
+  "Absorber:DoubleDoseRelic": {
+    "NAME": "Double Dose",
+    "FLAVOR": "Syringes have always been helpful to you",
+    "DESCRIPTIONS": [
+      "Your First Syringe card each turn is played twice"
     ]
   }
 }

@@ -6,6 +6,7 @@ import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -65,7 +66,7 @@ public class FreshSamplesRelic extends CustomRelic implements ClickableRelic { /
 //                    new CollectorCurseEffect(AbstractDungeon.getRandomMonster().hb.cX, AbstractDungeon.getRandomMonster().hb.cY), 2.0F));
 
 //            AbstractDungeon.actionManager.addToBottom(new EvokeOrbAction(1)); // Evoke your rightmost orb
-            AbstractDungeon.player.gainEnergy(1);
+            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player,1));
             setTexture(USED);
         }

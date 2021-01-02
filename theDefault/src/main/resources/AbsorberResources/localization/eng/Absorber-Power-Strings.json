@@ -42,5 +42,9 @@
         "Absorber:DamageThisTurnPower": {
                 "NAME": "Damage This Turn",
                 "DESCRIPTIONS": ["At the end of the turn, take ", " damage"]
+        },
+        "Absorber:DrawLessNextTurnPower": {
+                "NAME" : "Draw Reduction",
+                "DESCRIPTIONS": ["Draw 1 less card next turn", "Draw ", " less cards next turn"]
         }
 }

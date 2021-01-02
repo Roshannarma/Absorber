@@ -2,10 +2,12 @@ package Absorber.cards.Normal;
 
 import Absorber.actions.ConsumeAction;
 import Absorber.cards.AbstractDynamicCard;
+import Absorber.powers.DrawLessNextTurnPower;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -21,10 +23,10 @@ import org.graalvm.compiler.core.common.type.ArithmeticOpTable;
 import static Absorber.DefaultMod.makeCardPath;
 
 //@AutoAdd.Ignore
-public class FinalAttack extends AbstractDynamicCard {
+public class OverExert extends AbstractDynamicCard {
 
 
-    public static final String ID = DefaultMod.makeID("FinalAttack");
+    public static final String ID = DefaultMod.makeID("OverExert");
     public static final String IMG = makeCardPath("Attack.png"); // ConsumeDagger.png
 
 
@@ -33,15 +35,15 @@ public class FinalAttack extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 4;
+    private static final int COST = 3;
 
-    private static final int DAMAGE = 50;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 15;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int DAMAGE = 20;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_DMG = 8;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     private static final int MINUS_DRAW_ENERGY  = 1;
 //    private static final int UPGRADE_PLUS_MINUS_DRAW_ENERGY = 1;
 
-    public FinalAttack() {
+    public OverExert() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = MINUS_DRAW_ENERGY;
@@ -54,11 +56,24 @@ public class FinalAttack extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 //        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new DrawReduce(p,magicNumber)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new DrawReductionPower(p,magicNumber)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new EnergizedPower(p,-1*magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new DrawLessNextTurnPower(p,p,magicNumber)));
+//        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new EnergizedPower(p,-1*magicNumber)));
     }
-
-
+    public void triggerOnOtherCardPlayed(AbstractCard c) {
+        if(c.type==CardType.ATTACK){
+            int temp;
+            if(c.costForTurn== -1){
+                temp = costForTurn - AbstractDungeon.player.energy.energyMaster;
+            }
+            else {
+                temp = costForTurn - c.costForTurn;
+            }
+            if(temp<0){
+                temp = 0;
+            }
+            setCostForTurn(temp);
+        }
+    }
 
     // Upgraded stats.
     @Override

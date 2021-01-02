@@ -38,8 +38,6 @@ public class ManicAttack extends AbstractDynamicCard {
 
     private static final int loops = 4;
 
-    private static boolean double_damage = false;
-
     public ManicAttack() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
@@ -61,32 +59,30 @@ public class ManicAttack extends AbstractDynamicCard {
                     new DamageAction(m, new DamageInfo(p, actual_damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
     }
-    @Override
-    public void tookDamage(){
-        AbstractPlayer p = AbstractDungeon.player;
-        if(p.currentHealth<p.maxHealth*.5 && !double_damage) {
-            baseDamage = baseDamage * 2;
-            double_damage = true;
-        }
-        if(!(p.currentHealth<p.maxHealth*.5)){
-            double_damage = false;
-            baseDamage = baseDamage/2;
-        }
-    }
-    @Override
-    public void atTurnStart(){
-        AbstractPlayer p = AbstractDungeon.player;
-        if(p.currentHealth<p.maxHealth*.5 && !double_damage) {
-            baseDamage = baseDamage * 2;
-            double_damage = true;
-        }
-        if(!(p.currentHealth<p.maxHealth*.5)){
-            double_damage = false;
-            baseDamage = baseDamage/2;
-        }
-    }
-
-
+//    @Override
+//    public void tookDamage(){
+//        AbstractPlayer p = AbstractDungeon.player;
+//        if(p.currentHealth<p.maxHealth*.5 && !double_damage) {
+//            baseDamage = baseDamage * 2;
+//            double_damage = true;
+//        }
+//        if(!(p.currentHealth<p.maxHealth*.5)){
+//            double_damage = false;
+//            baseDamage = baseDamage/2;
+//        }
+//    }
+//    @Override
+//    public void atTurnStart(){
+//        AbstractPlayer p = AbstractDungeon.player;
+//        if(p.currentHealth<p.maxHealth*.5 && !double_damage) {
+//            baseDamage = baseDamage * 2;
+//            double_damage = true;
+//        }
+//        if(!(p.currentHealth<p.maxHealth*.5)){
+//            double_damage = false;
+//            baseDamage = baseDamage/2;
+//        }
+//    }
 
 
     // Upgraded stats.

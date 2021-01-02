@@ -25,7 +25,8 @@ public class LowHealthDouble extends DynamicVariable
     @Override
     public boolean isModified(AbstractCard card)
     {
-        return false;
+        AbstractPlayer p = AbstractDungeon.player;
+        return p.currentHealth<p.maxHealth*.5;
     }
 
     // The value the variable should display.

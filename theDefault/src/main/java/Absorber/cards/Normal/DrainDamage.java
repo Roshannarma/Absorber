@@ -8,7 +8,9 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Absorber.DefaultMod;
 import Absorber.characters.TheDefault;
@@ -23,6 +25,8 @@ public class DrainDamage extends AbstractDynamicCard {
 
     public static final String ID = DefaultMod.makeID("DrainDamage");
     public static final String IMG = makeFinalCardPath("DrainDamage"); // ConsumeDagger.png
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -57,6 +61,7 @@ public class DrainDamage extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_DMG);
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

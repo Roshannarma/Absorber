@@ -38,6 +38,7 @@ public class AbsorberStrike extends AbstractDynamicCard {
         baseDamage = damage = DAMAGE;
 
         this.tags.add(CardTags.STRIKE);
+        this.tags.add(CardTags.STARTER_STRIKE);
     }
 
 

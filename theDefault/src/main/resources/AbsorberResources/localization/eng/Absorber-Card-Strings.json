@@ -108,7 +108,8 @@
   },
   "Absorber:DrainDamage": {
     "NAME" : "Drain Damage",
-    "DESCRIPTION": "Deal !Absorber:DrainDamageVariable! 2*X damage where X is the amount of drain done this combat"
+    "DESCRIPTION": "Deal !Absorber:DrainDamageVariable! 2*X damage where X is the amount of drain done this combat",
+    " UPGRADE_DESCRIPTION": "Deal !Absorber:DrainDamageVariable! 2*X damage where X is the amount of drain done this combat"
   },
   "Absorber:FaultySyringe": {
     "NAME" : "Faulty Syringe",
@@ -189,120 +190,124 @@
   },
   "Absorber:OrbSpray": {
     "NAME" : "Orb Spray",
-    "DESCRIPTION": "Deal !D! ( !M! damage per turn) to all enemies"
+    "DESCRIPTION": "Deal !D! ( !M! damage per turn) to all enemies exhaust"
   },
   "Absorber:SphericShield": {
     "NAME" : "Spheric Shield",
     "DESCRIPTION": "Gain !B! Block. Block is not removed at the start of your next turn"
   },
   "Absorber:StabbingBook": {
-    "NAME" : "Stabbing Book",
-    "DESCRIPTION": "Deal !D! Damage !M! (number of turns) times exhaust"
-  },
-  "Absorber:Prepare": {
-    "NAME" : "Prepare",
-    "DESCRIPTION": "Gain !B! Block and retain !M! card(s) this turn"
-  },
-  "Absorber:VolatileSteroid": {
-    "NAME" : "Volatile Steroid",
-    "DESCRIPTION": "Lose !M! HP. Take another turn after this one exhaust"
-  },
-  "Absorber:LifeSupport": {
-    "NAME" : "Life Support",
-    "DESCRIPTION": "At the end of the Turn, Drain !Absorber:DrainVariable! from all enemies",
-    "UPGRADE_DESCRIPTION": "Innate NL At the end of the Turn, Drain !Absorber:DrainVariable! from all enemies"
-  },
-  "Absorber:RecklessInjection": {
-    "NAME" : "RecklessInjection",
-    "DESCRIPTION": "Take !M! Health and Deal !D! Damage."
-  },
-  "Absorber:BloodTransfusion": {
-    "NAME" : "Blood Transfusion",
-    "DESCRIPTION": "Take !M! damage, Gain !Absorber:SecondMagic! temp Strength and !Absorber:SecondMagic! temp Dexterity exhaust"
-  },
-  "Absorber:ForcedBloodTransfusion": {
-    "NAME" : "Forced Transfusion",
-    "DESCRIPTION": "Take !M! damage, Apply !Absorber:SecondMagic! weak and !Absorber:SecondMagic! vulnerable to each enemy exhaust"
-  },
-  "Absorber:Sharpen":{
-  "NAME": "Sharpen",
-  "DESCRIPTION": "Buff Each Attack in your hand by !M! Damage"
-},
-  "Absorber:NeverEndingWall":{
-    "NAME": "Never Ending Wall",
-    "DESCRIPTION": "Gain !Absorber:WallDefend! Block, increase this amount for all Never Ending Walls by !M! this combat"
-  },
-  "Absorber:Crystallize":{
-    "NAME": "Crystallize",
-    "DESCRIPTION": "Gain !B! Block, deal double damage next turn, end you turn exhaust"
-  },
-  "Absorber:BeatDown":{
-    "NAME": "BeatDown",
-    "DESCRIPTION": "Deal !D! damage and Enemy loses !M! strength for the rest of the turn"
-  },
-  "Absorber:BoneSaw":{
-    "NAME": "Bone Saw",
-    "DESCRIPTION": "Deal !D! damage and apply !M! weak"
-  },
-  "Absorber:GremlinArmy":{
-    "NAME": "Gremlin Army",
-    "DESCRIPTION": "Add !M! Gremlin Stabs to your hand next turn"
-  },
-  "Absorber:SentrySlam":{
-    "NAME": "Sentry Slam",
-    "DESCRIPTION": "Deal !D! damage, attack twice on odd turns"
-  },
-  "Absorber:WideSwing":{
-    "NAME": "Wide Swing",
-    "DESCRIPTION": "Deal !D! damage and !Absorber:DrainVariable! drain from all enemies"
-  },
-  "Absorber:UnbreakableWill":{
-    "NAME": "Unbreakable Will",
-    "DESCRIPTION": "Gain !B! block and Gain !M! protected"
-  },
-  "Absorber:NemesisIntangible":{
-    "NAME": "Nemesis Protection",
-    "DESCRIPTION": "Gain !M! Intangible NL Exhaust"
-  },
-  "Absorber:SetupSkill":{
-    "NAME": "Steady Hands",
-    "DESCRIPTION": "Gain !M! Protected, and Next turn gain !M! energy and draw !M! cards"
-  },
-  "Absorber:EnergySurge": {
-    "NAME": "Energy Surge",
-    "DESCRIPTION": "Deal !M! times X damage NL Deal double when energy is above !Absorber:MaxEnergy!",
-    "UPGRADE_DESCRIPTION": "",
-    "EXTENDED_DESCRIPTION": [
-      " NL (Deals !D! damage.)",
-      ""
-    ]
-  },
-  "Absorber:SyringeGun": {
-    "NAME": "Syringe Gun",
-    "DESCRIPTION": "Drain !M! Health !Absorber:SecondMagic! times"
-  },
-  "Absorber:ManicAttack": {
-    "NAME": "Manic Attack",
-    "DESCRIPTION": "Deals !Absorber:LowHealthDouble! damage 4 times(double damage below 25% hp)"
-  },
-  "Absorber:FinalAttack": {
-    "NAME": "Final Attack",
-    "DESCRIPTION": "Deals !D! damage, Next turn, Draw !M! less cards and Gain !M! less mana"
-  },
-  "Absorber:Adrenaline": {
-    "NAME": "Adrenaline",
-    "DESCRIPTION": "Convert all damage this turn into damage taken at the end of next turn NL Draw !M! cards"
-  },
-  "Absorber:Overdose": {
-    "NAME": "Overdose",
-    "DESCRIPTION": "Gain !Absorber:SecondMagic! energy and take !M! damage next turn"
-  },
-  "Absorber:BoosterShot": {
-    "NAME": "Booster Shot",
-    "DESCRIPTION": "Gain !M! HP and !Absorber:SecondMagic! protected"
-  },
-  "Absorber:MedicalSyringe": {
-    "NAME": "Medical Syringe",
-    "DESCRIPTION": "Gain !Absorber:SecondMagic! Max-HP and lose !M! HP"
+      "NAME": "Stabbing Book",
+      "DESCRIPTION": "Deal !D! Damage !M! (number of turns) times "
+    },
+    "Absorber:Prepare": {
+      "NAME": "Prepare",
+      "DESCRIPTION": "Gain !B! Block and retain !M! card(s) this turn"
+    },
+    "Absorber:VolatileSteroid": {
+      "NAME": "Volatile Steroid",
+      "DESCRIPTION": "Lose !M! HP. Take another turn after this one exhaust"
+    },
+    "Absorber:LifeSupport": {
+      "NAME": "Life Support",
+      "DESCRIPTION": "At the end of the Turn, Drain !Absorber:DrainVariable! from all enemies",
+      "UPGRADE_DESCRIPTION": "Innate NL At the end of the Turn, Drain !Absorber:DrainVariable! from all enemies"
+    },
+    "Absorber:RecklessInjection": {
+      "NAME": "RecklessInjection",
+      "DESCRIPTION": "Take !M! Health and Deal !D! Damage."
+    },
+    "Absorber:BloodTransfusion": {
+      "NAME": "Blood Transfusion",
+      "DESCRIPTION": "Take !M! damage, Gain !Absorber:SecondMagic! temp Strength and !Absorber:SecondMagic! temp Dexterity exhaust"
+    },
+    "Absorber:ForcedBloodTransfusion": {
+      "NAME": "Forced Transfusion",
+      "DESCRIPTION": "Take !M! damage, Apply !Absorber:SecondMagic! weak and !Absorber:SecondMagic! vulnerable to each enemy exhaust"
+    },
+    "Absorber:Sharpen": {
+      "NAME": "Sharpen",
+      "DESCRIPTION": "Buff Each Attack in your hand by !M! Damage"
+    },
+    "Absorber:NeverEndingWall": {
+      "NAME": "Never Ending Wall",
+      "DESCRIPTION": "Gain !Absorber:WallDefend! Block, increase this amount for all Never Ending Walls by !M! this combat"
+    },
+    "Absorber:Crystallize": {
+      "NAME": "Crystallize",
+      "DESCRIPTION": "Gain !B! Block, deal double damage next turn, end you turn exhaust"
+    },
+    "Absorber:BeatDown": {
+      "NAME": "BeatDown",
+      "DESCRIPTION": "Deal !D! damage and Enemy loses !M! strength for the rest of the turn"
+    },
+    "Absorber:BoneSaw": {
+      "NAME": "Bone Saw",
+      "DESCRIPTION": "Deal !D! damage and apply !M! weak"
+    },
+    "Absorber:GremlinArmy": {
+      "NAME": "Gremlin Army",
+      "DESCRIPTION": "Add !M! Gremlin Stabs to your hand next turn"
+    },
+    "Absorber:SentrySlam": {
+      "NAME": "Sentry Slam",
+      "DESCRIPTION": "Deal !D! damage, attack twice on odd turns"
+    },
+    "Absorber:WideSwing": {
+      "NAME": "Wide Swing",
+      "DESCRIPTION": "Deal !D! damage and !Absorber:DrainVariable! drain from all enemies"
+    },
+    "Absorber:UnbreakableWill": {
+      "NAME": "Unbreakable Will",
+      "DESCRIPTION": "Gain !B! block and Gain !M! protected"
+    },
+    "Absorber:NemesisIntangible": {
+      "NAME": "Nemesis Protection",
+      "DESCRIPTION": "Gain !M! Intangible NL Exhaust"
+    },
+    "Absorber:SetupSkill": {
+      "NAME": "Steady Hands",
+      "DESCRIPTION": "Gain !M! Protected, and Next turn gain !M! energy and draw !M! cards"
+    },
+    "Absorber:EnergySurge": {
+      "NAME": "Energy Surge",
+      "DESCRIPTION": "Deal !M! times X damage NL Deal double when energy is above !Absorber:MaxEnergy!",
+      "UPGRADE_DESCRIPTION": "",
+      "EXTENDED_DESCRIPTION": [
+        " NL (Deals !D! damage.)",
+        ""
+      ]
+    },
+    "Absorber:SyringeGun": {
+      "NAME": "Syringe Gun",
+      "DESCRIPTION": "Drain !M! Health !Absorber:SecondMagic! times exhaust"
+    },
+    "Absorber:ManicAttack": {
+      "NAME": "Manic Attack",
+      "DESCRIPTION": "Deals !Absorber:LowHealthDouble! damage 4 times(double damage below 25% hp)"
+    },
+    "Absorber:OverExert": {
+      "NAME": "Over Exert",
+      "DESCRIPTION": "Costs less energy for every energy spent on Attacks this turn NL Deals !D! damage, Next turn, Draw !M! less cards next turn"
+    },
+    "Absorber:Adrenaline": {
+      "NAME": "Adrenaline",
+      "DESCRIPTION": "Convert all damage this turn into damage taken at the end of next turn NL Draw !M! cards"
+    },
+    "Absorber:Overdose": {
+      "NAME": "Overdose",
+      "DESCRIPTION": "Gain !Absorber:SecondMagic! energy and take !M! damage next turn exhaust"
+    },
+    "Absorber:BoosterShot": {
+      "NAME": "Booster Shot",
+      "DESCRIPTION": "Gain !M! HP and !Absorber:SecondMagic! protected"
+    },
+    "Absorber:MedicalSyringe": {
+      "NAME": "Medical Syringe",
+      "DESCRIPTION": "Gain !Absorber:SecondMagic! Max-HP and lose !M! HP exhaust"
+    },
+  "Absorber:Draw_Attack": {
+    "NAME": "Draw Attack",
+    "DESCRIPTION": "Deal !D! damage, draw !M! cards NL Stimulated:Draw !Absorber:SecondMagic! cards instead"
   }
-}
+  }

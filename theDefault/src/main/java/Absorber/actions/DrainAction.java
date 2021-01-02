@@ -79,16 +79,16 @@ public class DrainAction extends AbstractGameAction {
             }
         }
         for(AbstractRelic o: AbstractDungeon.player.relics){
-            if(o instanceof DrainRelic) {
-                if (!(o instanceof EKGRelic)) {
-                    info = ((DrainRelic) o).activate(info);
-                }
-            }
-        }
-        for(AbstractRelic o: AbstractDungeon.player.relics){
-            if(o instanceof DrainRelic) {
-                if (o instanceof EKGRelic) {
-                    info = ((DrainRelic) o).activate(info);
+                        if(o instanceof DrainRelic) {
+                            if (!(o instanceof EKGRelic)) {
+                                info = ((DrainRelic) o).activate(info);
+                            }
+                        }
+                    }
+                    for(AbstractRelic o: AbstractDungeon.player.relics){
+                        if(o instanceof DrainRelic) {
+                            if (o instanceof EKGRelic) {
+                                info = ((DrainRelic) o).activate(info);
                 }
             }
 

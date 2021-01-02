@@ -15,10 +15,13 @@ import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -56,13 +59,33 @@ public class DoubleDoseRelic extends CustomRelic { // You must implement things 
     @Override
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
         if((targetCard instanceof SyringeCard || targetCard instanceof SyringeDrainCard)&& first){
-//            AbstractDungeon.player.increaseMaxHp(1,true);
-            AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player,AbstractDungeon.player,1));
+            flash();
+            AbstractMonster m = null;
+            if (useCardAction.target != null) {
+                m = (AbstractMonster)useCardAction.target;
+            }
+
+            AbstractCard tmp = targetCard.makeSameInstanceOf();
+            AbstractDungeon.player.limbo.addToBottom(tmp);
+            tmp.current_x = targetCard.current_x;
+            tmp.current_y = targetCard.current_y;
+            tmp.target_x = Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+            tmp.target_y = Settings.HEIGHT / 2.0F;
+            if (m != null) {
+                tmp.calculateCardDamage(m);
+            }
+            tmp.purgeOnUse = true;
+            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, targetCard.energyOnUse, true, true), true);
+//            AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player,AbstractDungeon.player,3));
             first = false;
         }
     }
     @Override
     public void atBattleStart() {
+        first = true;
+    }
+    @Override
+    public void atTurnStart(){
         first = true;
     }
 

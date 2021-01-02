@@ -45,8 +45,8 @@ public class Crystallize extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 2;
-    private static final int UPGRADE_FINAL_COST = 1;
+    private static final int COST = 1;
+//    private static final int UPGRADE_FINAL_COST = 1;
     private static final int SHIELD = 5;
 
     private static final int UPGRADE_PLUS_SHIELD = 5;
@@ -74,7 +74,7 @@ public class Crystallize extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_FINAL_COST);
+//            upgradeBaseCost(UPGRADE_FINAL_COST);
             upgradeMagicNumber(UPGRADE_PLUS_SHIELD);
             initializeDescription();
         }

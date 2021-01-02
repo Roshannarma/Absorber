@@ -64,7 +64,7 @@ public class StabbingBook extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(
                     new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
-        this.exhaust = true;
+//        this.exhaust = true;
     }
 
 
