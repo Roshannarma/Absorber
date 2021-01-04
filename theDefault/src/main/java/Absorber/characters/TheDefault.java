@@ -6,7 +6,7 @@ import Absorber.cards.Normal.UnbreakableWill;
 import Absorber.cards.starter.AbsorberBlock;
 import Absorber.cards.starter.AbsorberStrike;
 import Absorber.cards.starter.ConsumeDagger;
-import Absorber.cards.starter.KneeStrike;
+import Absorber.cards.starter.StimNeedle;
 import Absorber.relics.FreshSamplesRelic;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
@@ -167,7 +167,7 @@ public class TheDefault extends CustomPlayer {
 //        retVal.add(DefaultCommonSkill.ID);
 //        retVal.add(DefaultUncommonSkill.ID);
 //        retVal.add(DefaultRareSkill.ID);
-        retVal.add(KneeStrike.ID);
+        retVal.add(StimNeedle.ID);
         retVal.add(ConsumeDagger.ID);
         retVal.add(AbsorberBlock.ID);
         retVal.add(AbsorberBlock.ID);

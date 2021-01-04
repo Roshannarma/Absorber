@@ -52,45 +52,28 @@ public class DrainAction extends AbstractGameAction {
         if (amount>target.currentHealth){
             amount = target.currentHealth;
         }
-        AbstractDungeon.actionManager.addToBottom( new HealAction(temp,temp,amount));
         AbstractDungeon.actionManager.addToBottom( new LoseHPAction(target,temp,amount));
+        AbstractDungeon.actionManager.addToBottom( new HealAction(temp,temp,amount));
+        after_drain(info);
     }
 
     @Override
     public void update() {
-//        logger.info("Made it this far1");
-//        TheDefault temp = (TheDefault)AbstractDungeon.player;
-//        on_drain(info);
-//        logger.info("Made it this far2");
-//        if (amount>target.currentHealth){
-//            amount = target.currentHealth;
-//        }
-//        logger.info("Made it this far3  ");
-//        AbstractDungeon.actionManager.addToBottom( new HealAction(temp,temp,amount));
-//        AbstractDungeon.actionManager.addToBottom( new LoseHPAction(target,temp,amount));
-//        logger.info(amount);
-//        target.healthBarUpdatedEvent();
         isDone = true;
     }
     public DamageInfo on_drain(DamageInfo info){
         for( AbstractPower o:AbstractDungeon.player.powers){
             if(o instanceof DrainPower) {
-                info = ((DrainPower) o).activate(info);
+                info = ((DrainPower) o).PreDrain(info);
             }
         }
         for(AbstractRelic o: AbstractDungeon.player.relics){
-                        if(o instanceof DrainRelic) {
-                            if (!(o instanceof EKGRelic)) {
-                                info = ((DrainRelic) o).activate(info);
-                            }
-                        }
-                    }
-                    for(AbstractRelic o: AbstractDungeon.player.relics){
-                        if(o instanceof DrainRelic) {
-                            if (o instanceof EKGRelic) {
-                                info = ((DrainRelic) o).activate(info);
-                }
+            if(o instanceof DrainRelic) {
+                info = ((DrainRelic) o).PreDrain(info);
             }
+        }
+        if(AbstractDungeon.player.hasRelic("EKGRelic")){
+            info = new DamageInfo(info.owner,info.base*2);
 
         }
         DrainAction.add(info);
@@ -100,30 +83,34 @@ public class DrainAction extends AbstractGameAction {
         if(AbstractDungeon.player==null){
             return amount;
         }
-        boolean have_double = false;
         for( AbstractPower o:AbstractDungeon.player.powers){
             if(o instanceof DrainPower) {
-                amount = ((DrainPower) o).damage_check(amount);
+                amount = ((DrainPower) o).PreDrainCheck(amount);
             }
         }
         for(AbstractRelic o: AbstractDungeon.player.relics){
             if(o instanceof DrainRelic) {
-                if (!(o instanceof EKGRelic)) {
-                    amount = ((DrainRelic) o).damage_check(amount);
-                }
+                amount = ((DrainRelic) o).PreDrainCheck(amount);
             }
         }
-        for(AbstractRelic o: AbstractDungeon.player.relics){
-            if(o instanceof DrainRelic) {
-                if (o instanceof EKGRelic) {
-                    amount = ((DrainRelic) o).damage_check(amount);
-                }
-            }
+        if(AbstractDungeon.player.hasRelic("EKGRelic")){
+            amount = amount*2;
 
         }
-
-//        DrainAction.add(amount);
+//        DrainAction.add(info);
         return amount;
+    }
+    public static void after_drain(DamageInfo info){
+        for( AbstractPower o:AbstractDungeon.player.powers){
+            if(o instanceof DrainPower) {
+                info = ((DrainPower) o).AfterDrain(info);
+            }
+        }
+        for(AbstractRelic o: AbstractDungeon.player.relics){
+            if(o instanceof DrainRelic) {
+                info = ((DrainRelic) o).AfterDrain(info);
+            }
+        }
     }
     public static void add(DamageInfo info){
         TOTAL += info.base;

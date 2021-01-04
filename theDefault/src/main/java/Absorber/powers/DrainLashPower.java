@@ -46,7 +46,7 @@ public class DrainLashPower extends DrainPower implements CloneablePowerInterfac
         updateDescription();
     }
     @Override
-    public DamageInfo activate(DamageInfo info){
+    public DamageInfo AfterDrain(DamageInfo info){
         int temp = AbstractDungeon.getCurrRoom().monsters.monsters.size();
         int[] templist = new int[temp];
         for(int i=0;i<temp;i++){
@@ -54,11 +54,6 @@ public class DrainLashPower extends DrainPower implements CloneablePowerInterfac
         }
         AbstractDungeon.actionManager.addToBottom( new DamageAllEnemiesAction(AbstractDungeon.player, templist, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_HEAVY, false));
         return info;
-    }
-
-    @Override
-    public int damage_check(int amount) {
-        return amount;
     }
 
     public void stackPower(int stackAmount) {

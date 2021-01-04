@@ -75,7 +75,7 @@ public class Crystallize extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
 //            upgradeBaseCost(UPGRADE_FINAL_COST);
-            upgradeMagicNumber(UPGRADE_PLUS_SHIELD);
+            upgradeBlock(UPGRADE_PLUS_SHIELD);
             initializeDescription();
         }
     }

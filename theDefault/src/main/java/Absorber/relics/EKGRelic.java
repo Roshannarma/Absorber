@@ -49,22 +49,4 @@ public class EKGRelic extends DrainRelic{ // You must implement things you want 
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
     }
-
-
-    @Override
-    public DamageInfo activate(DamageInfo info) {
-        if (AbstractDungeon.player.currentHealth < AbstractDungeon.player.maxHealth * .25 ){
-            return new DamageInfo(info.owner, 2 * info.base);
-        }
-        return new DamageInfo(info.owner,info.base);
-    }
-
-    @Override
-    public int damage_check(int amount) {
-        if(AbstractDungeon.player.currentHealth < AbstractDungeon.player.maxHealth *.25){
-            return amount*2;
-        }
-        return amount;
-
-    }
 }

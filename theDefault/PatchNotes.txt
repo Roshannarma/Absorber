@@ -1,0 +1,20 @@
+Patch 0.0.7:
+New/Removed Cards:
+Removed CorrosiveDagger S
+Removed CorrosiveDagger L
+Removed Faulty Syringe
+Removed Hospitalize
+Added Surgical Precision
+Added Energy Wall
+
+Bug Fixes:
+Upgraded Crystallize
+Glow for Stimulated Cards
+Pyschotic Wrath created through Attack Potion
+Drain ordering
+Renamed Medical Syringe to Experimental Vaccine
+DrainDamage scaling
+NeverEndingWall scaling
+
+Balance Patches:
+Nerfed Stim Needle: Upgraded only draws 1 extra card

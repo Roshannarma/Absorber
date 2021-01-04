@@ -3,7 +3,7 @@ package Absorber.actions;
 import Absorber.DefaultMod;
 import Absorber.cards.ConsumeCards.SnakePlantCard;
 import Absorber.cards.starter.ConsumeDagger;
-import Absorber.cards.starter.KneeStrike;
+import Absorber.cards.starter.StimNeedle;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -77,7 +77,7 @@ public class AddCardFromConsume {
             DefaultMod.consumed = temp.makeCopy();
         }
         else{
-            DefaultMod.consumed = new KneeStrike();
+            DefaultMod.consumed = new StimNeedle();
         }
     }
     public static AbstractCard displaycard(AbstractMonster target) {

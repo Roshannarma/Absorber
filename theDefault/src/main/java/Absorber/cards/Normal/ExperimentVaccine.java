@@ -49,29 +49,29 @@ public class ExperimentVaccine extends SyringeCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
+    private static final int UPGRADE_PLUS_COST = 0;
 
-    private static final int HP_LOSS = 3;
-//    private static final int UPGRADE_PLUS_HP_LOSS = 1;
+    private static final int HP_LOSS = 4;
+    private static final int UPGRADE_PLUS_HP_LOSS = -1;
 
-    private static final int REGEN_AMOUNT = 4;
-    private static final int UPGRADE_PLUS_HEAL_AMOUNT = 1;
+    private static final int MAX_HP_INCREASE = 1;
+//    private static final int UPGRADE_PLUS_PROTECTED = 1;
 
     // /STAT DECLARATION/
 
     public ExperimentVaccine() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = HP_LOSS;
-        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = REGEN_AMOUNT;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = MAX_HP_INCREASE;
 
     }
 
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
+        AbstractDungeon.player.increaseMaxHp(defaultSecondMagicNumber,true);
         AbstractDungeon.actionManager.addToBottom(
                 new LoseHPAction(p, p, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(
-                (AbstractGameAction)new ApplyPowerAction((AbstractCreature)AbstractDungeon.player, (AbstractCreature)AbstractDungeon.player, (AbstractPower)new RegenPower((AbstractCreature)AbstractDungeon.player, defaultSecondMagicNumber), defaultSecondMagicNumber));
         this.exhaust = true;
     }
 
@@ -80,8 +80,9 @@ public class ExperimentVaccine extends SyringeCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-//            upgradeMagicNumber(UPGRADE_PLUS_HP_LOSS);
-            upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_HEAL_AMOUNT);
+            upgradeBaseCost(UPGRADE_PLUS_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_HP_LOSS);
+//            upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_PROTECTED);
 //            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

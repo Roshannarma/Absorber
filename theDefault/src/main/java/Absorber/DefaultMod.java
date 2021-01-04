@@ -1,6 +1,8 @@
 package Absorber;
 
 import Absorber.actions.AddCardFromConsume;
+import Absorber.cards.Normal.Draw_Attack;
+import Absorber.cards.starter.StimNeedle;
 import Absorber.relics.*;
 import Absorber.relics.Garbage.BottledPlaceholderRelic;
 import Absorber.relics.Garbage.PlaceholderRelic2;
@@ -20,6 +22,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -37,6 +40,7 @@ import Absorber.util.TextureLoader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Iterator;
 import java.util.Properties;
 
 //TODO: DON'T MASS RENAME/REFACTOR
@@ -138,7 +142,7 @@ public class DefaultMod implements
     // Atlas and JSON files for the Animations
     public static final String THE_DEFAULT_SKELETON_ATLAS = "AbsorberResources/images/char/defaultCharacter/skeleton.atlas";
     public static final String THE_DEFAULT_SKELETON_JSON = "AbsorberResources/images/char/defaultCharacter/skeleton.json";
-    
+
     // =============== MAKE IMAGE PATHS =================
     
     public static String makeCardPath(String resourcePath) {
@@ -177,8 +181,23 @@ public class DefaultMod implements
     
     public DefaultMod() {
         logger.info("Subscribe to BaseMod hooks");
-        
+        BaseMod.subscribe(new OnPowersModifiedSubscriber(){
+            @Override
+            public void receivePowersModified() {
+                logger.info("we made it this far");
+                logger.info(AbstractDungeon.player.hand.group);
+                logger.info(AbstractDungeon.player.hand.group.size());
+
+                for (AbstractCard c : AbstractDungeon.player.hand.group) {
+                    logger.info(c);
+                    if(c instanceof StimulatedCards){
+                        ((StimulatedCards) c).update_glow();
+                    }
+                }
+            }
+        });
         BaseMod.subscribe(this);
+
         
       /*
            (   ( /(  (     ( /( (            (  `   ( /( )\ )    )\ ))\ )
@@ -435,8 +454,6 @@ public class DefaultMod implements
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
         BaseMod.addDynamicVariable(new MissingHpVariable());
-        BaseMod.addDynamicVariable(new WallDefendVariable());
-        BaseMod.addDynamicVariable(new DrainDamageVariable());
         BaseMod.addDynamicVariable(new DrainVariable());
         BaseMod.addDynamicVariable(new EnergyScalingVariable());
         BaseMod.addDynamicVariable(new BaseDamageVariable());

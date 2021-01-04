@@ -61,9 +61,9 @@ public class Leeches extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DrainAction(m, magicNumber));
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
+        AbstractDungeon.actionManager.addToBottom(new DrainAction(m, magicNumber));
     }
 
     //Upgraded stats.

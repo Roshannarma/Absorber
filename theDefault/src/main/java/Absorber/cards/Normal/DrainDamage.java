@@ -49,9 +49,37 @@ public class DrainDamage extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int temp = damage +(magicNumber * DrainAction.returnTotal());
+        this.baseDamage = magicNumber * DrainAction.returnTotal();
+        calculateCardDamage(m);
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, temp, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        this.exhaust = true;
+    }
+    @Override
+    public void applyPowers(){
+        if(DrainAction.returnTotal()>0) {
+            this.baseDamage = magicNumber * DrainAction.returnTotal();
+            super.applyPowers();
+            this.rawDescription = cardStrings.DESCRIPTION;
+            initializeDescription();
+        }
+        else {
+            this.baseDamage = 0;
+            super.applyPowers();
+            this.rawDescription = cardStrings.DESCRIPTION;
+            initializeDescription();
+        }
+    }
+    public void onMoveToDiscard() {
+        this.rawDescription = cardStrings.DESCRIPTION;
+        initializeDescription();
+    }
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+        this.rawDescription = cardStrings.DESCRIPTION;
+//        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        initializeDescription();
     }
 
 

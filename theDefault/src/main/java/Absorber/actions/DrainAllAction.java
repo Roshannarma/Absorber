@@ -55,6 +55,7 @@ public class DrainAllAction extends AbstractGameAction {
             DrainAction.add(new DamageInfo(o,amount));
         }
         AbstractDungeon.actionManager.addToBottom(new HealAction(p,p,healing_total));
+        after_drain(info);
     }
 
     @Override
@@ -64,17 +65,53 @@ public class DrainAllAction extends AbstractGameAction {
     public DamageInfo on_drain(DamageInfo info){
         for( AbstractPower o:AbstractDungeon.player.powers){
             if(o instanceof DrainPower) {
-                info = ((DrainPower) o).activate(info);
+                info = ((DrainPower) o).PreDrain(info);
             }
         }
         for(AbstractRelic o: AbstractDungeon.player.relics){
-            if(o instanceof DrainRelic){
-                info = ((DrainRelic) o).activate(info);
+            if(o instanceof DrainRelic) {
+                info = ((DrainRelic) o).PreDrain(info);
             }
+        }
+        if(AbstractDungeon.player.hasRelic("EKGRelic")){
+            info = new DamageInfo(info.owner,info.base*2);
 
         }
         DrainAction.add(info);
         return info;
+    }
+    public static int on_drain(int amount){
+        if(AbstractDungeon.player==null){
+            return amount;
+        }
+        for( AbstractPower o:AbstractDungeon.player.powers){
+            if(o instanceof DrainPower) {
+                amount = ((DrainPower) o).PreDrainCheck(amount);
+            }
+        }
+        for(AbstractRelic o: AbstractDungeon.player.relics){
+            if(o instanceof DrainRelic) {
+                amount = ((DrainRelic) o).PreDrainCheck(amount);
+            }
+        }
+        if(AbstractDungeon.player.hasRelic("EKGRelic")){
+            amount = amount*2;
+
+        }
+//        DrainAction.add(info);
+        return amount;
+    }
+    public static void after_drain(DamageInfo info){
+        for( AbstractPower o:AbstractDungeon.player.powers){
+            if(o instanceof DrainPower) {
+                info = ((DrainPower) o).AfterDrain(info);
+            }
+        }
+        for(AbstractRelic o: AbstractDungeon.player.relics){
+            if(o instanceof DrainRelic) {
+                info = ((DrainRelic) o).AfterDrain(info);
+            }
+        }
     }
 
 }

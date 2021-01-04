@@ -48,7 +48,13 @@ public class PsychoticWrath extends AbstractDynamicCard {
 
     public PsychoticWrath() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 0;
+        try{
+            AbstractPlayer p = AbstractDungeon.player;
+            baseDamage = p.maxHealth-p.currentHealth;
+        }
+        catch(Exception e){
+            baseDamage = damage = 0;
+        }
     }
 
     // Actions the card should do.
@@ -56,7 +62,6 @@ public class PsychoticWrath extends AbstractDynamicCard {
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
-
     }
     @Override
     public void atTurnStart(){

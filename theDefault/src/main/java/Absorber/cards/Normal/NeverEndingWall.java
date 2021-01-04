@@ -9,7 +9,9 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Absorber.DefaultMod;
 import Absorber.characters.TheDefault;
@@ -22,6 +24,7 @@ public class NeverEndingWall extends AbstractDynamicCard {
 
     public static final String ID = DefaultMod.makeID("NeverEndingWall");
     public static final String IMG = makeCardPath("Skill.png"); // ConsumeDagger.png
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -47,10 +50,28 @@ public class NeverEndingWall extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int temp = block + WallDefendAction.returnTotal();
-        AbstractDungeon.actionManager.addToBottom(
-                new GainBlockAction(p,p,temp));
+        baseBlock = BLOCK +  WallDefendAction.returnTotal();
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,block));
         AbstractDungeon.actionManager.addToBottom(new WallDefendAction(magicNumber));
+    }
+    @Override
+    public void applyPowers(){
+        if(WallDefendAction.returnTotal()>0){
+            this.baseBlock = BLOCK +  WallDefendAction.returnTotal();
+            super.applyPowers();
+            this.rawDescription = cardStrings.DESCRIPTION;
+            initializeDescription();
+        }
+        else{
+            this.baseBlock = BLOCK;
+            super.applyPowers();
+            this.rawDescription = cardStrings.DESCRIPTION;
+            initializeDescription();
+        }
+    }
+    public void onMoveToDiscard() {
+        this.rawDescription = cardStrings.DESCRIPTION;
+        initializeDescription();
     }
 
     // Upgraded stats.

@@ -47,12 +47,12 @@ public class BloodSurgeRelic extends DrainRelic{ // You must implement things yo
     }
 
     @Override
-    public DamageInfo activate(DamageInfo info) {
+    public DamageInfo PreDrain(DamageInfo info){
         return new DamageInfo(info.owner,info.base+1);
     }
 
     @Override
-    public int damage_check(int amount) {
+    public int PreDrainCheck(int amount){
         return amount+1;
     }
 }

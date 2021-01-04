@@ -21,10 +21,10 @@ import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;
 
 //@AutoAdd.Ignore
-public class KneeStrike extends AbstractDynamicCard {
+public class StimNeedle extends AbstractDynamicCard {
 
 
-    public static final String ID = DefaultMod.makeID("KneeStrike");
+    public static final String ID = DefaultMod.makeID("StimNeedle");
     public static final String IMG = makeFinalCardPath("StimNeedle"); // ConsumeDagger.png
 
 
@@ -38,14 +38,17 @@ public class KneeStrike extends AbstractDynamicCard {
     private static final int DAMAGE = 10;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
-    private static final int ENERGY_DRAW = 1;
-    private static final int UPGRADE_PLUS_ENERGY_DRAW = 1;
+    private static final int ENERGY = 1;
+    private static final int UPGRADE_PLUS_ENERGY = 1;
+
+    private static final int DRAW = 1;
 
 //    private boolean next_turn = false;
-    public KneeStrike() {
+    public StimNeedle() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
-        baseMagicNumber = magicNumber = ENERGY_DRAW;
+        baseMagicNumber = magicNumber = ENERGY;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = DRAW;
     }
 
 
@@ -55,7 +58,7 @@ public class KneeStrike extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, magicNumber), magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, magicNumber), defaultSecondMagicNumber));
     }
 
 
@@ -65,7 +68,7 @@ public class KneeStrike extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(UPGRADE_PLUS_ENERGY_DRAW);
+            upgradeMagicNumber(UPGRADE_PLUS_ENERGY);
             initializeDescription();
         }
     }

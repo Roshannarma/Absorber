@@ -5,6 +5,14 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public abstract class DrainPower extends AbstractPower implements CloneablePowerInterface {
-    abstract public DamageInfo activate(DamageInfo info);
-    abstract public int damage_check(int amount);
+    public DamageInfo PreDrain(DamageInfo info){
+        return info;
+    }
+    public int PreDrainCheck(int amount){
+        return amount;
+    }
+    public DamageInfo AfterDrain(DamageInfo info){
+        return info;
+    }
+
 }

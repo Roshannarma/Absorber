@@ -50,16 +50,8 @@
     "NAME": "Get Orb",
     "DESCRIPTION": "Channel 1 Default Orb."
   },
-  "Absorber:CorrosiveDagger_S": {
-    "NAME" : "Corrosive Dagger(s)",
-    "DESCRIPTION": "Deal !D! damage apply !M! weak."
-  },
   "Absorber:CorrosiveDagger_M": {
-    "NAME" : "Corrosive Dagger(M)",
-    "DESCRIPTION": "Deal !D! damage apply !M! weak."
-  },
-  "Absorber:CorrosiveDagger_L": {
-    "NAME" : "Corrosive Dagger(L)",
+    "NAME" : "Corrosive Dagger",
     "DESCRIPTION": "Deal !D! damage apply !M! weak."
   },
   "Absorber:ConsumeDagger": {
@@ -78,7 +70,7 @@
     "NAME" : "Defend",
     "DESCRIPTION": "Gain !B! Block"
   },
-  "Absorber:KneeStrike": {
+  "Absorber:StimNeedle": {
     "NAME" : "Stim Needle",
     "DESCRIPTION": "Deal !D! damage gain !M! mana and !M! extra cards next turn"
   },
@@ -108,8 +100,8 @@
   },
   "Absorber:DrainDamage": {
     "NAME" : "Drain Damage",
-    "DESCRIPTION": "Deal !Absorber:DrainDamageVariable! 2*X damage where X is the amount of drain done this combat",
-    " UPGRADE_DESCRIPTION": "Deal !Absorber:DrainDamageVariable! 2*X damage where X is the amount of drain done this combat"
+    "DESCRIPTION": "Deal !D! 2*X damage where X is the amount of drain done this combat",
+    "UPGRADE_DESCRIPTION": "Deal !D! 3*X damage where X is the amount of drain done this combat"
   },
   "Absorber:FaultySyringe": {
     "NAME" : "Faulty Syringe",
@@ -145,8 +137,8 @@
   },
   "Absorber:GremlinRally": {
     "NAME" : "Gremlin Rally",
-    "DESCRIPTION": "Add 2 Gremlin Stabs to your hand at the beginning of each turn",
-    "UPGRADE_DESCRIPTION": "Add 2 upgraded Gremlin Stabs to your hand at the beginning of each turn"
+    "DESCRIPTION": "Add a Gremlin Stabs to your hand at the beginning of each turn",
+    "UPGRADE_DESCRIPTION": "Add an upgraded Gremlin Stabs to your hand at the beginning of each turn"
   },
   "Absorber:GremlinStab": {
     "NAME" : "Gremlin Stab",
@@ -231,7 +223,7 @@
     },
     "Absorber:NeverEndingWall": {
       "NAME": "Never Ending Wall",
-      "DESCRIPTION": "Gain !Absorber:WallDefend! Block, increase this amount for all Never Ending Walls by !M! this combat"
+      "DESCRIPTION": "Gain !B! Block, increase this amount for all Never Ending Walls by !M! this combat"
     },
     "Absorber:Crystallize": {
       "NAME": "Crystallize",
@@ -267,7 +259,7 @@
     },
     "Absorber:SetupSkill": {
       "NAME": "Steady Hands",
-      "DESCRIPTION": "Gain !M! Protected, and Next turn gain !M! energy and draw !M! cards"
+      "DESCRIPTION": "Gain !M! Protected, and Next turn gain !M! energy and retain !M! cards"
     },
     "Absorber:EnergySurge": {
       "NAME": "Energy Surge",
@@ -284,7 +276,7 @@
     },
     "Absorber:ManicAttack": {
       "NAME": "Manic Attack",
-      "DESCRIPTION": "Deals !Absorber:LowHealthDouble! damage 4 times(double damage below 25% hp)"
+      "DESCRIPTION": "Deals !Absorber:LowHealthDouble! damage 4 times(double damage below 50% hp)"
     },
     "Absorber:OverExert": {
       "NAME": "Over Exert",
@@ -302,12 +294,20 @@
       "NAME": "Booster Shot",
       "DESCRIPTION": "Gain !M! HP and !Absorber:SecondMagic! protected"
     },
-    "Absorber:MedicalSyringe": {
-      "NAME": "Medical Syringe",
+    "Absorber:ExperimentVaccine": {
+      "NAME": "Experimental Vaccine",
       "DESCRIPTION": "Gain !Absorber:SecondMagic! Max-HP and lose !M! HP exhaust"
     },
   "Absorber:Draw_Attack": {
     "NAME": "Draw Attack",
     "DESCRIPTION": "Deal !D! damage, draw !M! cards NL Stimulated:Draw !Absorber:SecondMagic! cards instead"
+  },
+  "Absorber:SurgicalPrecision":{
+  "NAME": "Surgical Precision",
+  "DESCRIPTION": "Deal !D! damage NL Stimulated: Gain !M! energy and draw !M! card"
+  },
+  "Absorber:EnergyWall":{
+    "NAME": "Energy Wall",
+    "DESCRIPTION": "Gain !B! block NL Stimulated: Gain !M! extra Block"
   }
-  }
+}
