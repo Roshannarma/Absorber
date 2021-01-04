@@ -1,14 +1,18 @@
 package Absorber.cards.Normal;
 
 import Absorber.actions.ConsumeAction;
+import Absorber.actions.DrainAction;
 import Absorber.cards.AbstractDynamicCard;
 import basemod.AutoAdd;
+import basemod.helpers.dynamicvariables.MagicNumberVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Absorber.DefaultMod;
 import Absorber.characters.TheDefault;
@@ -30,67 +34,71 @@ public class ManicAttack extends AbstractDynamicCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 4;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 3;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     private static final int loops = 4;
 
     public ManicAttack() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = DAMAGE;
+        baseMagicNumber = magicNumber = DAMAGE;
+        baseDamage = damage = 4;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int actual_damage;
         if(p.currentHealth<p.maxHealth*.5){
-            actual_damage = damage *2;
+            this.baseDamage = magicNumber * 2;
         }
         else{
-            actual_damage = damage;
+            this.baseDamage = magicNumber;
         }
+        calculateCardDamage(m);
         for(int i=0; i<loops;i++){
             AbstractDungeon.actionManager.addToBottom(
-                    new DamageAction(m, new DamageInfo(p, actual_damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                    new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
     }
-//    @Override
-//    public void tookDamage(){
-//        AbstractPlayer p = AbstractDungeon.player;
-//        if(p.currentHealth<p.maxHealth*.5 && !double_damage) {
-//            baseDamage = baseDamage * 2;
-//            double_damage = true;
-//        }
-//        if(!(p.currentHealth<p.maxHealth*.5)){
-//            double_damage = false;
-//            baseDamage = baseDamage/2;
-//        }
-//    }
-//    @Override
-//    public void atTurnStart(){
-//        AbstractPlayer p = AbstractDungeon.player;
-//        if(p.currentHealth<p.maxHealth*.5 && !double_damage) {
-//            baseDamage = baseDamage * 2;
-//            double_damage = true;
-//        }
-//        if(!(p.currentHealth<p.maxHealth*.5)){
-//            double_damage = false;
-//            baseDamage = baseDamage/2;
-//        }
-//    }
-
+    @Override
+    public void applyPowers(){
+        AbstractPlayer p = AbstractDungeon.player;
+        if(p.currentHealth<p.maxHealth*.5) {
+            this.baseDamage = magicNumber * 2;
+            super.applyPowers();
+            this.rawDescription = cardStrings.DESCRIPTION;
+            initializeDescription();
+        }
+        else {
+            this.baseDamage = magicNumber;
+            super.applyPowers();
+            this.rawDescription = cardStrings.DESCRIPTION;
+            initializeDescription();
+        }
+    }
+    public void onMoveToDiscard() {
+        this.rawDescription = cardStrings.DESCRIPTION;
+        initializeDescription();
+    }
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+        this.rawDescription = cardStrings.DESCRIPTION;
+        initializeDescription();
+    }
 
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_PLUS_DMG);
             initializeDescription();
         }
     }

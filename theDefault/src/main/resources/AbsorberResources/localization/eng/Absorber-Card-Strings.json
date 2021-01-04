@@ -276,7 +276,7 @@
     },
     "Absorber:ManicAttack": {
       "NAME": "Manic Attack",
-      "DESCRIPTION": "Deals !Absorber:LowHealthDouble! damage 4 times(double damage below 50% hp)"
+      "DESCRIPTION": "Deals !D! damage 4 times(double damage below 50% hp)"
     },
     "Absorber:OverExert": {
       "NAME": "Over Exert",

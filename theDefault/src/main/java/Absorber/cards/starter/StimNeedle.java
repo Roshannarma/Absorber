@@ -58,7 +58,7 @@ public class StimNeedle extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, magicNumber), magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, magicNumber), defaultSecondMagicNumber));
+        addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, defaultSecondMagicNumber), defaultSecondMagicNumber));
     }
 
 

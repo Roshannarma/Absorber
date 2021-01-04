@@ -28,10 +28,14 @@ public abstract class StimulatedCards extends AbstractDynamicCard {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
+    @Override
+    public void triggerWhenDrawn() {
+        update_glow();
+    }
+
 
     @Override
     public void triggerOnGainEnergy(int e, boolean dueToCard) {
-//        logger.info("energy gained");
         update_glow();
     }
 

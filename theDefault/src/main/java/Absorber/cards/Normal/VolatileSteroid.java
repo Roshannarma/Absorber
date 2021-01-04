@@ -9,6 +9,7 @@ import Absorber.powers.RarePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.actions.watcher.SkipEnemiesTurnAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -60,6 +61,7 @@ public class VolatileSteroid extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom( new SkipEnemiesTurnAction());
         AbstractDungeon.actionManager.addToBottom( new LoseHPAction(p,p,magicNumber));
         this.exhaust = true;
+        AbstractDungeon.actionManager.addToBottom(new PressEndTurnButtonAction());
     }
 
     //Upgraded stats.

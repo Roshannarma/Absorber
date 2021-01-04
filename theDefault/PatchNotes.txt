@@ -25,3 +25,34 @@ Nerfed Stim Needle: Upgraded only draws 1 extra card
 Starting HP Buffed to 70 HP
 DrainLash 5 -> 3 damage to all enemies
 DrainDamage exhausts
+
+
+
+Patch 0.0.8:
+New/Removed Cards
+
+
+
+
+Bug Fixes:
+Description of Upgraded StimNeedle
+OverDose Designed to give 3 energy upgraded, not 5
+Description for Surgical Precision
+
+
+Balance Patches:
+Nerfed Draw_Attack: Upgraded Draw 3 -> 2 when stimulated
+Nerfed Manic Attack: Damage 4 -> 3
+Nerfed Upgraded Manic Attack: Damage 5 -> 4
+Buffed Sharpen: Buffs scaling 4 -> 5
+Buffer Upgraded Sharpen: Buffs Scaling: 5 -> 6
+Nerfed? Volatile Steriod to End Turn after playing
+Nerfed Draw_Attack: Damage 9 -> 8
+Nerfed Upgraded Draw_Attack: Damage 13-> 11
+Nerfed Crystallize Block: 5 -> 4
+Nerfed Upgraded Crystallize: Block 10 -> 8
+Nerfed Nemesis Intangible: Cost 0 -> 1
+Nerfed Nemesis Intangible+: Intangible 2 -> 1
+Changed NeverEndingWall+: Block 7 -> 5, Block Increase 2 -> 3
+Nerfed OverExert: Damage 20 -> 15
+Nerfed OverExert+: Damage 28 -> 20

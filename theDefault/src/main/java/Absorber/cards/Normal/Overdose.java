@@ -48,7 +48,7 @@ public class Overdose extends SyringeCard {
 //    private static final int UPGRADE_PLUS_HP_LOSS = 1;
 
     private static final int MANA_GAIN = 2;
-    private static final int UPGRADE_PLUS_MANA_GAIN = 3;
+    private static final int UPGRADE_PLUS_MANA_GAIN = 1;
 
     // /STAT DECLARATION/
 
