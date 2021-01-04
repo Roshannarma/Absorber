@@ -49,8 +49,8 @@ public class ChannelRelic extends CustomRelic { // You must implement things you
     @Override
     public void onPlayerEndTurn() {
         AbstractPlayer p  = AbstractDungeon.player;
-        if(p.energy.energy>0){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new DrawCardNextTurnPower(p,p.energy.energy)));
+        if(p.energy.energyMaster>0){
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new DrawCardNextTurnPower(p,p.energy.energyMaster)));
         }
     }
 

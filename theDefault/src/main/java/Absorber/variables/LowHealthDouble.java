@@ -25,8 +25,13 @@ public class LowHealthDouble extends DynamicVariable
     @Override
     public boolean isModified(AbstractCard card)
     {
-        AbstractPlayer p = AbstractDungeon.player;
-        return p.currentHealth<p.maxHealth*.5;
+        try {
+            AbstractPlayer p = AbstractDungeon.player;
+            return p.currentHealth < p.maxHealth * .5;
+        }
+        catch(Exception e){
+            return false;
+     }
     }
 
     // The value the variable should display.
@@ -48,13 +53,7 @@ public class LowHealthDouble extends DynamicVariable
     @Override
     public int baseValue(AbstractCard card)
     {
-        AbstractPlayer p = AbstractDungeon.player;
-        if(p.currentHealth<p.maxHealth*.5){
-            return card.baseDamage *2;
-        }
-        else{
             return card.baseDamage;
-        }
     }
 
     // If the card has it's damage upgraded, this variable will glow green on the upgrade selection screen as well.

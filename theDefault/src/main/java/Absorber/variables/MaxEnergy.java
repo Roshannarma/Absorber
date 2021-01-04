@@ -40,7 +40,7 @@ public class MaxEnergy extends DynamicVariable
 
     @Override
     public int baseValue(AbstractCard abstractCard) {
-        return AbstractDungeon.player.energy.energy;
+        return 3;
     }
 
     @Override

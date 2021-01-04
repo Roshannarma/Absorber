@@ -428,6 +428,7 @@ public class DefaultMod implements
         BaseMod.addRelicToCustomPool(new DoctorScrubsRelic(),TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new SyringeHolder(),TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new DoubleDoseRelic(),TheDefault.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new ChannelRelic(),TheDefault.Enums.COLOR_GRAY);
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         

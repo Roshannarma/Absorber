@@ -15,6 +15,13 @@ Drain ordering
 Renamed Medical Syringe to Experimental Vaccine
 DrainDamage scaling
 NeverEndingWall scaling
+ChannelRelic using current energy not total energy
+Manic Attack fix game crashing bug
+Energy Surge fix game crashing bug
+
 
 Balance Patches:
 Nerfed Stim Needle: Upgraded only draws 1 extra card
+Starting HP Buffed to 70 HP
+DrainLash 5 -> 3 damage to all enemies
+DrainDamage exhausts
