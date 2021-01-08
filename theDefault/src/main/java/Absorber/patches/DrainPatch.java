@@ -4,6 +4,8 @@ import Absorber.DefaultMod;
 import Absorber.actions.DrainAction;
 import Absorber.actions.WallDefendAction;
 import Absorber.cards.ConsumeCards.BloodyFeather;
+import Absorber.cards.ConsumeCards.GiantHeadSlam;
+import Absorber.cards.starter.ConsumeDagger;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
@@ -53,6 +55,8 @@ public class DrainPatch {// Don't worry about the "never used" warning - *You* u
         DrainAction.clear();
         WallDefendAction.clear();
         BloodyFeather.first_turn = true;
+        GiantHeadSlam.turn_counter = 0;
+        ConsumeDagger.first_turn = true;
 //        DefaultMod.DidConsume = false;
 //        DefaultMod.consumed = null;
         // Incredible.

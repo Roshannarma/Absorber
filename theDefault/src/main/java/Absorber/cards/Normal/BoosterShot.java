@@ -59,6 +59,7 @@ public class BoosterShot extends SyringeCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = HP_GAIN;
         defaultBaseSecondMagicNumber = defaultSecondMagicNumber = PROTECTED;
+        this.tags.add(CardTags.HEALING);
 
     }
 

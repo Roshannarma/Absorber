@@ -1,28 +1,23 @@
 [
   {
     "NAMES": [
-      "keyword",
-      "keywords"
-    ],
-    "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
-  },
-  {
-    "PROPER_NAME": "Multiword Keyword",
-    "NAMES": [
-      "Multiword Keyword",
-      "multiword_keyword",
-      "multiword_keywords",
-      "multikey",
-      "multikeyword"
-    ],
-    "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
-  },
-  {
-    "PROPER_NAME": "Protected",
-    "NAMES": [
       "Protected",
       "protected"
     ],
-    "DESCRIPTION": "Take 33% percent less Damage."
+    "DESCRIPTION": "Take 33% percent less damage."
+  },
+  {
+    "NAMES": [
+      "Stimulated",
+      "stimulated"
+    ],
+    "DESCRIPTION": "If you have above your max Energy, do the following effect"
+  },
+  {
+    "NAMES": [
+      "Drain",
+      "drain"
+    ],
+    "DESCRIPTION": "Enemy Loses HP and you gain HP"
   }
 ]

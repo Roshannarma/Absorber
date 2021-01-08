@@ -49,7 +49,7 @@ public class Sharpen extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int INCREASE_DAMAGE = 5;
+    private static final int INCREASE_DAMAGE = 3;
 
     private static final int UPGRADE_PLUS_INCREASE_DAMAGE = 1;
     private static final Logger logger = LogManager.getLogger(Sharpen.class.getName());
@@ -59,14 +59,12 @@ public class Sharpen extends AbstractDynamicCard {
     public Sharpen() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = INCREASE_DAMAGE;
-
     }
 
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new SharpenAction(p,p,magicNumber));
-        this.exhaust = true;
 
     }
     //Upgraded stats.

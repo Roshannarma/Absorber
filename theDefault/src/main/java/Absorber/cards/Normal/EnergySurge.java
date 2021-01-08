@@ -91,7 +91,7 @@ public class EnergySurge extends AbstractDynamicCard {
             calculateCardDamage(m);
             EnergyPanel.setEnergy(0);
             addToBot(new DamageAction(m, new DamageInfo(m, damage)));
-            this.exhaust = true;
+//            this.exhaust = true;
 //            EnergyPanel.setEnergy(0);
         }
         else{
@@ -99,7 +99,7 @@ public class EnergySurge extends AbstractDynamicCard {
             calculateCardDamage(m);
             EnergyPanel.setEnergy(0);
             addToBot(new DamageAction(m, new DamageInfo(m, damage)));
-            this.exhaust = true;
+//            this.exhaust = true;
         }
     }
     //Upgraded stats.

@@ -91,9 +91,9 @@ public class DefaultMod implements
     public static boolean enablePlaceholder = true; // The boolean we'll be setting on/off (true/false)
 
     //This is for the in-game mod settings panel.
-    private static final String MODNAME = "Default Mod";
-    private static final String AUTHOR = "Gremious"; // And pretty soon - You!
-    private static final String DESCRIPTION = "A base for Slay the Spire to start your own mod from, feat. the Default.";
+    private static final String MODNAME = "Absorber";
+    private static final String AUTHOR = "Roshan"; // And pretty soon - You!
+    private static final String DESCRIPTION = "Passion Project, if you are interested in giving feedback, there is a discord or comments through github.";
     public static boolean DidConsume = false;
     public static AbstractCard consumed = null;
     public static AbstractCard temporary;
@@ -181,18 +181,15 @@ public class DefaultMod implements
     
     public DefaultMod() {
         logger.info("Subscribe to BaseMod hooks");
-        BaseMod.subscribe(new OnPowersModifiedSubscriber(){
-            @Override
-            public void receivePowersModified() {
-                logger.info("we made it this far");
-                logger.info(AbstractDungeon.player.hand.group);
-                logger.info(AbstractDungeon.player.hand.group.size());
+        BaseMod.subscribe((OnPowersModifiedSubscriber) () -> {
+            logger.info("we made it this far");
+            logger.info(AbstractDungeon.player.hand.group);
+            logger.info(AbstractDungeon.player.hand.group.size());
 
-                for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                    logger.info(c);
-                    if(c instanceof StimulatedCards){
-                        ((StimulatedCards) c).update_glow();
-                    }
+            for (AbstractCard c : AbstractDungeon.player.hand.group) {
+                logger.info(c);
+                if(c instanceof StimulatedCards){
+                    ((StimulatedCards) c).update_glow();
                 }
             }
         });
@@ -427,7 +424,7 @@ public class DefaultMod implements
         BaseMod.addRelicToCustomPool(new EKGRelic(),TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new DoctorScrubsRelic(),TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new SyringeHolder(),TheDefault.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new DoubleDoseRelic(),TheDefault.Enums.COLOR_GRAY);
+//        BaseMod.addRelicToCustomPool(new DoubleDoseRelic(),TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new ChannelRelic(),TheDefault.Enums.COLOR_GRAY);
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);

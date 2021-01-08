@@ -54,6 +54,7 @@ public class DrainAction extends AbstractGameAction {
         }
         AbstractDungeon.actionManager.addToBottom( new LoseHPAction(target,temp,amount));
         AbstractDungeon.actionManager.addToBottom( new HealAction(temp,temp,amount));
+        DrainAction.add(new DamageInfo(info.owner,amount));
         after_drain(info);
     }
 
@@ -74,9 +75,7 @@ public class DrainAction extends AbstractGameAction {
         }
         if(AbstractDungeon.player.hasRelic("EKGRelic")){
             info = new DamageInfo(info.owner,info.base*2);
-
         }
-        DrainAction.add(info);
         return info;
     }
     public static int on_drain(int amount){

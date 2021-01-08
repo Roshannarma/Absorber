@@ -57,6 +57,7 @@ public class SnakePlantCard extends AbstractDynamicCard {
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p ,p ,new MalleablePower(p,magicNumber)));
+        this.exhaust = true;
     }
 
     //Upgraded stats.

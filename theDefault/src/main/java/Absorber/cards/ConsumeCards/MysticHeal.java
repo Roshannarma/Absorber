@@ -63,6 +63,7 @@ public class MysticHeal extends AbstractDynamicCard {
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new HealAction(p, p, magicNumber));
+        this.exhaust = true;
     }
 
     //Upgraded stats.

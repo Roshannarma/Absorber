@@ -31,11 +31,10 @@ public class WideSwing extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 5;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int DAMAGE = 6;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_DMG = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     private static final int DRAIN = 1;
-    private static final int UPGRADE_PLUS_DRAIN = 1;
 
     public WideSwing() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -60,7 +59,6 @@ public class WideSwing extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(UPGRADE_PLUS_DRAIN);
             initializeDescription();
         }
     }

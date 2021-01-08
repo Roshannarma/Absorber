@@ -36,7 +36,7 @@ public class DrainDamage extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 2;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 1;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     public DrainDamage() {

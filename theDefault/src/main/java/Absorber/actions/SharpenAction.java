@@ -31,7 +31,7 @@ public class SharpenAction extends AbstractGameAction {
 
     public void update() {
         for(AbstractCard o: AbstractDungeon.player.hand.group){
-            o.baseDamage +=amount;
+            o.baseDamage += amount;
             o.upgradedDamage = true;
             logger.info(o);
             isDone = true;

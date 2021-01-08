@@ -1,71 +1,70 @@
-package Absorber.cards.starter;
+package Absorber.cards.ConsumeCards;
 
 import Absorber.actions.ConsumeAction;
+import Absorber.actions.Stimulated;
 import Absorber.cards.AbstractDynamicCard;
-import Absorber.patches.DefaultInsertPatch;
+import Absorber.cards.StimulatedCards;
 import basemod.AutoAdd;
-import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DamageHooks;
+import basemod.interfaces.PostEnergyRechargeSubscriber;
+import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.tempCards.ThroughViolence;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.Hitbox;
-import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Absorber.DefaultMod;
 import Absorber.characters.TheDefault;
-import com.megacrit.cardcrawl.powers.ThornsPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.Iterator;
 
 import static Absorber.DefaultMod.makeCardPath;
 
 //@AutoAdd.Ignore
-public class ConsumeDagger extends AbstractDynamicCard {
+public class GremlinSmashCard extends StimulatedCards {
 
 
-    public static final String ID = DefaultMod.makeID("ConsumeDagger");
-    public static final String IMG = makeCardPath("ConsumeDagger.png"); // ConsumeDagger.png
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String ID = DefaultMod.makeID("GremlinSmashCard");
+    public static final String IMG = makeCardPath("Attack.png"); // ConsumeDagger.png
 
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
-    private static final Logger logger = LogManager.getLogger(ConsumeDagger.class.getName());
 
     private static final int COST = 1;
 
     private static final int DAMAGE = 10;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 5;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int UPGRADE_PLUS_DAMAGE = 4;
 
-    public static boolean first_turn;
+    private static final int VULNERABLE = 2;
 
-    public ConsumeDagger() {
+    public GremlinSmashCard() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        baseMagicNumber = magicNumber = VULNERABLE;
     }
-
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        AbstractDungeon.actionManager.addToBottom(
-                new ConsumeAction(m,new DamageInfo(p, damage, damageTypeForTurn)));
-        this.exhaust = true;
-    }
-    public void previewupdate(){
-        this.cardsToPreview = DefaultMod.temporary;
-        this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + DefaultMod.temporary + cardStrings.EXTENDED_DESCRIPTION[1];
-        initializeDescription();
-//        logger.info(DefaultMod.temporary);
+        if(Stimulated.update()){
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p,new VulnerablePower(m,magicNumber,false),magicNumber));
+        }
     }
 
     // Upgraded stats.
@@ -73,7 +72,7 @@ public class ConsumeDagger extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }
     }

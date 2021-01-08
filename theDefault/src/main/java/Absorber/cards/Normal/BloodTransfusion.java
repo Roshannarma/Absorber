@@ -53,7 +53,7 @@ public class BloodTransfusion extends AbstractDynamicCard {
     private static final int UPGRADE_PLUS_HP_LOSS = -1;
 
     private static final int TEMP_BUFF = 3;
-    private static final int UPGRADE_PLUS_TEMP_BUFF = 4;
+    private static final int UPGRADE_PLUS_TEMP_BUFF = 2;
 
     // /STAT DECLARATION/
 

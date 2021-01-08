@@ -63,6 +63,7 @@ public class ExperimentVaccine extends SyringeCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = HP_LOSS;
         defaultBaseSecondMagicNumber = defaultSecondMagicNumber = MAX_HP_INCREASE;
+        this.tags.add(CardTags.HEALING);
 
     }
 

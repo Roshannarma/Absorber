@@ -50,7 +50,7 @@ public class SurgicalGlovesRelic extends CustomRelic { // You must implement thi
     public void atBattleStart() {
         logger.info("battlestart?");
         AbstractPlayer p  = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new ProtectedPower(p,1,false)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new ProtectedPower(p,2,false)));
     }
 
 

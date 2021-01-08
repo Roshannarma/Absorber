@@ -58,8 +58,8 @@ public class DrainLash extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        logger.info("got here atleast");
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, (AbstractPower)new DrainLashPower(p, p, magicNumber), magicNumber));
+//        logger.info("got here atleast");
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrainLashPower(p, p, magicNumber), magicNumber));
     }
 
 

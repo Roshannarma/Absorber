@@ -44,10 +44,10 @@ public class Overdose extends SyringeCard {
 
     private static final int COST = 0;
 
-    private static final int HP_LOSS = 5;
+    private static final int HP_LOSS = 4;
 //    private static final int UPGRADE_PLUS_HP_LOSS = 1;
 
-    private static final int MANA_GAIN = 2;
+    private static final int MANA_GAIN = 1;
     private static final int UPGRADE_PLUS_MANA_GAIN = 1;
 
     // /STAT DECLARATION/
@@ -67,7 +67,6 @@ public class Overdose extends SyringeCard {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p,p,new DamageNextTurnPower(p,p,magicNumber))
         );
-        this.exhaust = true;
     }
 
     //Upgraded stats.

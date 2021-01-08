@@ -1,3 +1,78 @@
+Patch 0.0.9:
+New/Removed Cards:
+Added GremlinSmash
+Added Reptomancer Cards
+Added GiantHeadSlam
+Removed GiantHeadSlow
+
+
+Bug Fixes:
+Double Dose Removed while fixing Syringe Cards
+Added Exhaust to many Exhaust cards descriptions
+Made Consume Dagger more clear
+KEYWORDS WORK:
+Drain
+Protected
+Stimulated
+Tagged Healing Cards as Healing Cards so they are not randomally generated
+
+
+
+Balance Patches:
+Nerfed DrainDamage: Damage 2*X -> X
+Nerfed DrainDamage+: Damage 3*X -> 2X
+Buffed WideSwing: Damage 5 -> 6
+Changed WideSwing+: Damage 7 -> 9, Drain 2 -> 1
+Nerfed SyringeGun: Drain 2 -> 1
+Nerfed SyringeGun+: Drain 3 -> 2
+Nerfed BloodTransfusion+: Buff 7 -> 5
+Buffed SurgicalGloves: Potency 1 -> 2
+Changed Sharpen: Buff 5 -> 3, does not exhaust
+Changed Sharpen+: Buff 6 -> 4, does not exhaust
+Buffed Prepare: Block 7 -> 8
+Buffed Prepare+: Block 8 -> 12, Retain 2 -> 1
+Changed OverDose: Mana Gain 2 -> 1, HP Loss 5 -> 4, does not exhaust
+Changed OverDose+: Mana Gain 3 -> 2, HP Loss 5 -> 4, does not exhaust
+Buffed EnergySurge: does not exhaust
+Changed Orb Spray: Damage Starts at 6 -> 0, does not exhaust
+Nerfed SnakePlant(please do not pick this card until it is reworked)
+Nerfed SphericalShield: does exhaust(name changed from SphericShield to SphericalShield)
+
+
+
+
+
+
+Patch 0.0.8:
+New/Removed Cards
+
+
+
+
+Bug Fixes:
+Description of Upgraded StimNeedle
+OverDose Designed to give 3 energy upgraded, not 5
+Description for Surgical Precision
+
+
+Balance Patches:
+Nerfed Draw_Attack: Upgraded Draw 3 -> 2 when stimulated
+Nerfed Manic Attack: Damage 4 -> 3
+Nerfed Upgraded Manic Attack: Damage 5 -> 4
+Buffed Sharpen: Buffs scaling 4 -> 5
+Buffed Sharpen+: Buffs Scaling: 5 -> 6
+Nerfed? Volatile Steroid to End Turn after playing
+Nerfed Draw_Attack: Damage 9 -> 8
+Nerfed Upgraded Draw_Attack: Damage 13-> 11
+Nerfed Crystallize Block: 5 -> 4
+Nerfed Upgraded Crystallize: Block 10 -> 8
+Nerfed Nemesis Intangible: Cost 0 -> 1
+Nerfed Nemesis Intangible+: Intangible 2 -> 1
+Changed NeverEndingWall+: Block 7 -> 5, Block Increase 2 -> 3
+Nerfed OverExert: Damage 20 -> 15
+Nerfed OverExert+: Damage 28 -> 20
+
+
 Patch 0.0.7:
 New/Removed Cards:
 Removed CorrosiveDagger S
@@ -25,34 +100,3 @@ Nerfed Stim Needle: Upgraded only draws 1 extra card
 Starting HP Buffed to 70 HP
 DrainLash 5 -> 3 damage to all enemies
 DrainDamage exhausts
-
-
-
-Patch 0.0.8:
-New/Removed Cards
-
-
-
-
-Bug Fixes:
-Description of Upgraded StimNeedle
-OverDose Designed to give 3 energy upgraded, not 5
-Description for Surgical Precision
-
-
-Balance Patches:
-Nerfed Draw_Attack: Upgraded Draw 3 -> 2 when stimulated
-Nerfed Manic Attack: Damage 4 -> 3
-Nerfed Upgraded Manic Attack: Damage 5 -> 4
-Buffed Sharpen: Buffs scaling 4 -> 5
-Buffed Sharpen+: Buffs Scaling: 5 -> 6
-Nerfed? Volatile Steriod to End Turn after playing
-Nerfed Draw_Attack: Damage 9 -> 8
-Nerfed Upgraded Draw_Attack: Damage 13-> 11
-Nerfed Crystallize Block: 5 -> 4
-Nerfed Upgraded Crystallize: Block 10 -> 8
-Nerfed Nemesis Intangible: Cost 0 -> 1
-Nerfed Nemesis Intangible+: Intangible 2 -> 1
-Changed NeverEndingWall+: Block 7 -> 5, Block Increase 2 -> 3
-Nerfed OverExert: Damage 20 -> 15
-Nerfed OverExert+: Damage 28 -> 20

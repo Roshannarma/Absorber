@@ -2,28 +2,20 @@ package Absorber.actions;
 
 import Absorber.DefaultMod;
 import Absorber.cards.ConsumeCards.SnakePlantCard;
-import Absorber.cards.starter.ConsumeDagger;
+import Absorber.cards.ConsumeCards.GremlinSmashCard;
+import Absorber.cards.ConsumeCards.ReptoDag;
 import Absorber.cards.starter.StimNeedle;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.monsters.beyond.Darkling;
-import com.megacrit.cardcrawl.monsters.beyond.GiantHead;
-import com.megacrit.cardcrawl.monsters.beyond.Nemesis;
-import com.megacrit.cardcrawl.monsters.beyond.OrbWalker;
+import com.megacrit.cardcrawl.monsters.beyond.*;
 import com.megacrit.cardcrawl.monsters.city.*;
 import com.megacrit.cardcrawl.monsters.exordium.*;
 import Absorber.cards.ConsumeCards.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import sun.jvm.hotspot.utilities.Hashtable;
 
-import javax.smartcardio.Card;
-import java.util.Dictionary;
 import java.util.HashMap;
-import java.util.Map;
 
 public class AddCardFromConsume {
     private static final Logger logger = LogManager.getLogger(AddCardFromConsume.class.getName());
@@ -64,6 +56,9 @@ public class AddCardFromConsume {
         CardMonsterList.put(Healer.class.getName(), new MysticHeal());
         CardMonsterList.put(SnakePlant.class.getName(), new SnakePlantCard());
         CardMonsterList.put(Nemesis.class.getName(),new NemesisIntangible());
+        CardMonsterList.put(GremlinNob.class.getName(),new GremlinSmashCard());
+        CardMonsterList.put(Reptomancer.class.getName(),new ReptoDag());
+        CardMonsterList.put(GiantHead.class.getName(),new GiantHeadSlam());
 //        CardMonsterList.put(GremlinNob.class.getName(),new KneeStrike());
 //        CardMonsterList.put(SlimeBoss.class.getName(),new CorrosiveDagger_L());
 //        CardMonsterList.put(Centurion.class.getName(),new KneeStrike());

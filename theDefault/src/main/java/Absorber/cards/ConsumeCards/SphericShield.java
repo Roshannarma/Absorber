@@ -50,6 +50,7 @@ public class SphericShield extends AbstractDynamicCard {
                 new GainBlockAction(p,p,block));
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p,p, new BlurPower(p,1),1));
+        this.exhaust = true;
     }
 
     // Upgraded stats.
