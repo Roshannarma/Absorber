@@ -52,133 +52,128 @@
   },
   "Absorber:CorrosiveDagger_M": {
     "NAME" : "Corrosive Dagger",
-    "DESCRIPTION": "Deal !D! damage apply !M! weak."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! weak."
   },
   "Absorber:ConsumeDagger": {
     "NAME" : "Consume Dagger",
-    "DESCRIPTION": "Deal !D! damage NL Fatal: Add a card to your card reward pool Exhaust",
+    "DESCRIPTION": "Deal !D! damage. NL Fatal: Add a card to your card reward pool Exhaust",
     "EXTENDED_DESCRIPTION": [
-      "Deal !D! damage NL Fatal: Add ",
+      "Deal !D! damage. NL Fatal: Add ",
       " to your card reward pool Exhaust"
     ]
   },
   "Absorber:BloodyFeather": {
     "NAME" : "Bloody Feather",
-    "DESCRIPTION" : "Deal !D! Damage(increases by !M! per turn) exhaust"
+    "DESCRIPTION" : "Deal !D! damage. NL (Increases by !M! per turn.)"
   },
   "Absorber:AbsorberStrike": {
     "NAME" : "Strike",
-    "DESCRIPTION": "Deal !D! damage"
+    "DESCRIPTION": "Deal !D! damage."
   },
   "Absorber:AbsorberBlock": {
     "NAME" : "Defend",
-    "DESCRIPTION": "Gain !B! Block"
+    "DESCRIPTION": "Gain !B! Block."
   },
   "Absorber:StimNeedle": {
     "NAME" : "Stim Needle",
-    "DESCRIPTION": "Deal !D! damage gain !M! mana and !M! extra cards next turn"
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, gain !M! mana and draw !M! extra card."
   },
   "Absorber:DarklingDrain": {
     "NAME" : "Darkling Drain",
-    "DESCRIPTION": "absorber:Drain !Absorber:DrainVariable! Health"
+    "DESCRIPTION": "absorber:Drain !Absorber:DrainVariable! HP."
   },
   "Absorber:Leeches": {
     "NAME" : "Leeches",
-    "DESCRIPTION": "Deal !D! damage and absorber:drain !Absorber:DrainVariable! Health"
+    "DESCRIPTION": "Deal !D! damage. NL absorber:Drain !Absorber:DrainVariable! HP."
   },
   "Absorber:VesselBurst": {
     "NAME" : "Vessel Burst",
-    "DESCRIPTION": "Lose !M! Health and Draw !Absorber:SecondMagic! Cards"
+    "DESCRIPTION": "Lose !M! HP. NL Draw !Absorber:SecondMagic! cards."
   },
   "Absorber:BloodShield": {
     "NAME" : "Blood Shield",
-    "DESCRIPTION": "Lose !M! Health and Gain !B! Block"
-  },
-  "Absorber:SnakePlantCard": {
-    "NAME" : "Snake PlantCard",
-    "DESCRIPTION": "Gain 1 Malleable Exhaust"
+    "DESCRIPTION": "Lose !M! HP. NL Gain !B! Block."
   },
   "Absorber:MysticHeal": {
     "NAME" : "Mystic Heal",
-    "DESCRIPTION": "Heal !M! Health Exhaust"
+    "DESCRIPTION": "Heal !M! HP Exhaust."
   },
   "Absorber:DrainDamage": {
     "NAME" : "Drain Damage",
-    "DESCRIPTION": "Deal !D! X damage where X is the amount of absorber:Drain done this combat Exhaust",
-    "UPGRADE_DESCRIPTION": "Deal !D! 2*X damage where X is the amount of absorber:Drain done this combat Exhaust "
+    "DESCRIPTION": "Deal damage equal to the amount of drain done this combat",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to 2 times the amount of drain done this combat",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deals !D! damage.)"
+    ]
   },
   "Absorber:FaultySyringe": {
     "NAME" : "Faulty Syringe",
-    "DESCRIPTION": "Lose !M! Health, Gain !Absorber:SecondMagic! regen exhaust"
+    "DESCRIPTION": "Lose !M! Health. NL Gain !Absorber:SecondMagic! regen Exhaust."
   },
   "Absorber:BigDrain": {
     "NAME" : "Big Drain",
-    "DESCRIPTION": "absorber:Drain !Absorber:DrainVariable! Health Exhaust"
+    "DESCRIPTION": "absorber:Drain !Absorber:DrainVariable! HP Exhaust."
   },
   "Absorber:DrainLash": {
     "NAME" : "Drain Lash",
-    "DESCRIPTION": "Whenever you absorber:Drain, deal !M! damage to all enemies"
+    "DESCRIPTION": "Whenever you absorber:drain, deal !M! damage to all enemies."
   },
   "Absorber:HealthDrain": {
     "NAME" : "Health Drain",
-    "DESCRIPTION": "Whenever you lose HP on your Turn, absorber:Drain !Absorber:DrainVariable!"
+    "DESCRIPTION": "Whenever you lose HP on your Turn, absorber:drain !Absorber:DrainVariable! from all enemies."
   },
   "Absorber:ByrdPeck": {
     "NAME" : "Byrd Peck",
-    "DESCRIPTION": "Deal !D! Damage !M! times"
+    "DESCRIPTION": "Deal !D! damage !M! times."
   },
   "Absorber:ChosenAttack": {
     "NAME" : "Chosen Attack",
-    "DESCRIPTION": "Deal !D! damage. If the target is not attacking, gain !M! artifact"
+    "DESCRIPTION": "Deal !D! damage. NL If the target is not attacking, gain !M! artifact."
   },
   "Absorber:EntangleThem": {
     "NAME" : "Entangle Them",
-    "DESCRIPTION": "Next turn, Enemy attacks deal 0"
+    "DESCRIPTION": "Next turn, enemy attacks deal 0."
   },
   "Absorber:FungiStrength": {
     "NAME" : "Fungi Strength",
-    "DESCRIPTION": "Gain !M! Strength"
+    "DESCRIPTION": "Gain !M! Strength."
   },
   "Absorber:GremlinRally": {
     "NAME" : "Gremlin Rally",
-    "DESCRIPTION": "Add a Gremlin Stabs to your hand at the beginning of each turn",
-    "UPGRADE_DESCRIPTION": "Add an upgraded Gremlin Stabs to your hand at the beginning of each turn"
+    "DESCRIPTION": "At the start of your turn, add a Gremlin Stab to your hand.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, add an upgraded Gremlin Stab to your hand."
   },
   "Absorber:GremlinStab": {
     "NAME" : "Gremlin Stab",
-    "DESCRIPTION": "Deal !D! Damage twice NL Exhaust"
+    "DESCRIPTION": "Deal !D! damage twice Exhaust."
   },
   "Absorber:ArmoredTooth": {
     "NAME" : "Armored Tooth",
-    "DESCRIPTION": "Deal !D! damage, Gain !B! block"
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block."
   },
   "Absorber:LagavulinDrain": {
     "NAME" : "Lagavulin Drain",
-    "DESCRIPTION": "absorber:Drain !M! and absorber:Drain !M! strength from target Exhaust"
+    "DESCRIPTION": "absorber:Drain !M! HP. NL absorber:Drain !M! strength from target Exhaust."
   },
   "Absorber:LooterDagger": {
     "NAME" : "Looter Dagger",
-    "DESCRIPTION": "Deal !D! damage, gain gold equal to unblocked damage"
-  },
-  "Absorber:Harden": {
-    "NAME" : "Harden",
-    "DESCRIPTION": "The first time you take damage each turn, Gain 6 block"
+    "DESCRIPTION": "Deal !D! damage. NL Gain gold equal to unblocked damage."
   },
   "Absorber:ShelledShield": {
     "NAME" : "Shelled Shield",
-    "DESCRIPTION": "Gain !M! plated armor"
+    "DESCRIPTION": "Gain !M! plated armor."
   },
   "Absorber:TaskMasterWhip": {
     "NAME" : "TaskMaster Whip",
-    "DESCRIPTION": "Deal !D! damage, Gain !M! Strength"
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Strength"
   },
   "Absorber:PsychoticWrath": {
     "NAME" : "Psychotic Wrath",
-    "DESCRIPTION": "Deal !D! damage(equal to missing HP)"
+    "DESCRIPTION": "Deal !D! damage (Equal to missing HP.)"
   },
   "Absorber:PrepareOperation": {
     "NAME" : "Prepare Operation",
-    "DESCRIPTION": "Gain !B! Block and next turn Gain !M! Energy"
+    "DESCRIPTION": "Gain !B! Block. Nl Next turn, gain !M! Energy"
   },
   "Absorber:GiantHeadSlam": {
     "NAME" : "Giant Head Slam",
@@ -186,88 +181,80 @@
   },
   "Absorber:OrbSpray": {
     "NAME" : "Orb Spray",
-    "DESCRIPTION": "Deal !D! ( !M! damage per turn) to all enemies"
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL (Increase by !M! damage per turn.)"
   },
   "Absorber:SphericShield": {
     "NAME" : "Spherical Shield",
-    "DESCRIPTION": "Gain !B! Block. Block is not removed at the start of your next turn Exhaust"
+    "DESCRIPTION": "Gain !B! Block. Block is not removed at the start of your next turn. NL Exhaust."
   },
   "Absorber:StabbingBook": {
       "NAME": "Stabbing Book",
-      "DESCRIPTION": "Deal !D! Damage !M! (number of turns) times "
+      "DESCRIPTION": "Deal !D! damage !M! times. NL Increases number of attacks each turn."
   },
   "Absorber:Prepare": {
     "NAME": "Prepare",
-    "DESCRIPTION": "Gain !B! Block and retain !M! card(s) this turn"
+    "DESCRIPTION": "Gain !B! Block. NL Retain !M! card this turn"
   },
   "Absorber:VolatileSteroid": {
     "NAME": "Volatile Steroid",
-    "DESCRIPTION": "Lose !M! HP. Take another turn after this one exhaust NL End your Turn"
+    "DESCRIPTION": "Lose !M! HP. Take another turn after this one. NL End your Turn. Exhaust."
   },
   "Absorber:LifeSupport": {
     "NAME": "Life Support",
-    "DESCRIPTION": "At the end of the Turn, absorber:Drain !Absorber:DrainVariable! from all enemies",
-    "UPGRADE_DESCRIPTION": "Innate NL At the end of the Turn, absorber:Drain !Absorber:DrainVariable! from all enemies"
+    "DESCRIPTION": "At the end of the turn, absorber:drain !M! HP from all enemies",
+    "UPGRADE_DESCRIPTION": "Innate NL At the end of the turn, absorber:drain !M! HP from all enemies"
   },
   "Absorber:RecklessInjection": {
     "NAME": "RecklessInjection",
-    "DESCRIPTION": "Take !M! Health and Deal !D! Damage."
-  },
-  "Absorber:BloodTransfusion": {
-    "NAME": "Blood Transfusion",
-    "DESCRIPTION": "Take !M! damage, Gain !Absorber:SecondMagic! temp Strength and !Absorber:SecondMagic! temp Dexterity exhaust"
-  },
-  "Absorber:ForcedBloodTransfusion": {
-    "NAME": "Forced Transfusion",
-    "DESCRIPTION": "Take !M! damage, Apply !Absorber:SecondMagic! weak and !Absorber:SecondMagic! vulnerable to each enemy exhaust"
+    "DESCRIPTION": "Lose !M! HP. NL Deal !D! damage."
   },
   "Absorber:Sharpen": {
     "NAME": "Sharpen",
-    "DESCRIPTION": "Buff Each Attack in your hand by !M! Damage"
+    "DESCRIPTION": "Buff each attack in your hand by !M! damage."
   },
   "Absorber:NeverEndingWall": {
     "NAME": "Never Ending Wall",
-    "DESCRIPTION": "Gain !B! Block, increase this amount for all Never Ending Walls by !M! this combat"
+    "DESCRIPTION": "Gain !B! Block. NL Increase this amount for all Never Ending Walls by !M! this combat."
   },
   "Absorber:Crystallize": {
     "NAME": "Crystallize",
-    "DESCRIPTION": "Gain !B! Block, deal double damage next turn, end you turn exhaust"
+    "DESCRIPTION": "Gain !B! Block. NL Deal double damage next turn. NL End your turn Exhaust."
   },
   "Absorber:BeatDown": {
     "NAME": "BeatDown",
-    "DESCRIPTION": "Deal !D! damage and Enemy loses !M! strength for the rest of the turn"
+    "DESCRIPTION": "Deal !D! damage. NL Enemy loses !M! Strength for the rest of the turn."
   },
   "Absorber:BoneSaw": {
     "NAME": "Bone Saw",
-    "DESCRIPTION": "Deal !D! damage and apply !M! weak"
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! weak."
   },
   "Absorber:GremlinArmy": {
     "NAME": "Gremlin Army",
-    "DESCRIPTION": "Add !M! Gremlin Stabs to your hand next turn"
+    "DESCRIPTION": "Next turn, add !M! Gremlin Stabs to your hand."
   },
   "Absorber:SentrySlam": {
     "NAME": "Sentry Slam",
-    "DESCRIPTION": "Deal !D! damage, attack twice on odd turns"
+    "DESCRIPTION": "Deal !D! damage. NL Attack twice on odd turns."
   },
   "Absorber:WideSwing": {
     "NAME": "Wide Swing",
-    "DESCRIPTION": "Deal !D! damage and !Absorber:DrainVariable! absorber:drain from all enemies"
+    "DESCRIPTION": "Deal !D! damage. NL absorber:Drain !Absorber:DrainVariable! HP from all enemies."
   },
   "Absorber:UnbreakableWill": {
     "NAME": "Unbreakable Will",
-    "DESCRIPTION": "Gain !B! block and Gain !M! absorber:protected"
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! absorber:protected."
   },
   "Absorber:NemesisIntangible": {
     "NAME": "Nemesis Protection",
-    "DESCRIPTION": "Gain !M! Intangible NL Exhaust"
+    "DESCRIPTION": "Gain !M! Intangible. NL Exhaust."
   },
   "Absorber:SetupSkill": {
     "NAME": "Steady Hands",
-    "DESCRIPTION": "Gain !M! absorber:protected, and Next turn gain !M! energy and retain !M! cards"
+    "DESCRIPTION": "Gain !M! absorber:protected. NL Retain !Absorber:SecondMagic! card. NL Next turn, Gain !Absorber:SecondMagic! energy."
   },
   "Absorber:EnergySurge": {
     "NAME": "Energy Surge",
-    "DESCRIPTION": "Deal !M! times X damage NL Deal double when energy is above !Absorber:MaxEnergy!",
+    "DESCRIPTION": "Deal !M! times X damage. NL Deal double when energy is above !Absorber:MaxEnergy!.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       " NL (Deals !D! damage.) ",
@@ -276,31 +263,31 @@
   },
   "Absorber:SyringeGun": {
     "NAME": "Syringe Gun",
-    "DESCRIPTION": "absorber:Drain !M! Health !Absorber:SecondMagic! times exhaust"
+    "DESCRIPTION": "absorber:Drain !M! Health !Absorber:SecondMagic! times. NL Exhaust."
   },
   "Absorber:ManicAttack": {
     "NAME": "Manic Attack",
-    "DESCRIPTION": "Deals !D! damage 4 times(double damage below 50% hp)"
+    "DESCRIPTION": "Deals !D! damage 4 times. NL (Double damage below 50% HP.)"
   },
   "Absorber:OverExert": {
     "NAME": "Over Exert",
-    "DESCRIPTION": "Costs less energy for every energy spent on Attacks this turn NL Deals !D! damage, Next turn, Draw !M! less cards next turn"
+    "DESCRIPTION": "Deals !D! damage. NL Next turn, Draw !M! less card next turn. NL Costs decreases by Energy spend on attacks this turn."
   },
   "Absorber:Adrenaline": {
     "NAME": "Adrenaline",
-    "DESCRIPTION": "Convert all damage this turn into damage taken at the end of next turn NL Draw !M! cards Exhaust"
+    "DESCRIPTION": "Convert all HP loss to damage taken next turn. NL Draw !M! cards Exhaust."
   },
   "Absorber:Overdose": {
     "NAME": "Overdose",
-    "DESCRIPTION": "Gain !Absorber:SecondMagic! energy and take !M! damage next turn"
+    "DESCRIPTION": "Gain !Absorber:SecondMagic! Energy. Next turn, take !M! damage."
   },
   "Absorber:BoosterShot": {
     "NAME": "Booster Shot",
-    "DESCRIPTION": "Gain !M! HP and !Absorber:SecondMagic! absorber:protected exhaust"
+    "DESCRIPTION": "Gain !M! HP. NL !Absorber:SecondMagic! absorber:protected Exhaust."
   },
   "Absorber:ExperimentVaccine": {
     "NAME": "Experimental Vaccine",
-    "DESCRIPTION": "Gain !Absorber:SecondMagic! Max-HP and lose !M! HP Exhaust"
+    "DESCRIPTION": "Gain !Absorber:SecondMagic! Max-HP. NL Lose !M! HP NL Exhaust."
   },
 "Absorber:Draw_Attack": {
   "NAME": "Draw Attack",
@@ -312,34 +299,34 @@
   },
   "Absorber:EnergyWall":{
     "NAME": "Energy Wall",
-    "DESCRIPTION": "Gain !B! block NL absorber:Stimulated: Gain !M! extra Block"
+    "DESCRIPTION": "Gain !B! block NL absorber:Stimulated: Gain !M! extra Block."
   },
   "Absorber:GremlinSmashCard": {
     "NAME": "Gremlin Smash",
-    "DESCRIPTION": "Deal !D! Damage NL absorber:Stimulated: Apply !M! Vulnerable"
+    "DESCRIPTION": "Deal !D! Damage NL absorber:Stimulated: Apply !M! Vulnerable."
   },
   "Absorber:ReptoDaggerR": {
     "NAME": "Red Dagger",
-    "DESCRIPTION": "Deal !D! damage exhaust"
+    "DESCRIPTION": "Deal !D! damage. Exhaust."
   },
   "Absorber:ReptoDaggerB": {
     "NAME": "Blue Dagger",
-    "DESCRIPTION": "Deal !D! damage NL Draw !M! Cards Exhaust"
+    "DESCRIPTION": "Deal !D! damage NL Draw !M! Cards Exhaust."
   },
   "Absorber:ReptoDaggerG": {
     "NAME": "Green Dagger",
-    "DESCRIPTION": "Deal !D! damage NL Gain !B! Block Exhaust"
+    "DESCRIPTION": "Deal !D! damage NL Gain !B! Block Exhaust."
   },
   "Absorber:ReptoDaggerP": {
     "NAME": "Purple Dagger",
-    "DESCRIPTION": "Deal !D! damage NL Add !M! miracle to your hand"
+    "DESCRIPTION": "Deal !D! damage NL Add !M! *Miracle+ to your hand Exhaust."
   },
   "Absorber:ReptoDaggerM": {
     "NAME": "MultiDagger",
-    "DESCRIPTION": "Deal !D! damage, Draw !M! cards, Gain !B! block, Add !M! Miracle to your hand"
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! cards. NL Gain !B! Block. NL Add !M! *Miracle+ to your hand."
   },
   "Absorber:ReptoDag": {
     "NAME": "Reptomancer Daggers",
-    "DESCRIPTION": "Choose A Dagger NL absorber:Stimulated Combine the Daggers"
+    "DESCRIPTION": "Choose A Dagger NL absorber:Stimulated Combine the Daggers."
   }
 }

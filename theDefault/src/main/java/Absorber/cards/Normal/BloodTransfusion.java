@@ -6,6 +6,7 @@ import Absorber.powers.GremlinStabsPower;
 import Absorber.powers.LousePower;
 import Absorber.cards.AbstractDynamicCard;
 import Absorber.powers.RarePower;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -27,7 +28,7 @@ import Absorber.characters.TheDefault;
 
 import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;
-
+@AutoAdd.Ignore
 public class BloodTransfusion extends AbstractDynamicCard {
 
 

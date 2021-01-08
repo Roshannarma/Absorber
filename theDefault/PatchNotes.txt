@@ -1,3 +1,21 @@
+Patch 0.0.10:
+New/Removed Cards:
+
+
+
+Bug Fixes:
+Fixes Card Texts for Most Cards
+
+
+Balance Patches:
+Nerfed SetupSkill+: Protected 2 -> 1, Retain 2 -> 1
+Buffed PrepareOperation: Block 6 -> 7
+Changed PrepareOperation+: Block 8 -> 9, Energy Gain 2 -> 1
+
+
+
+
+
 Patch 0.0.9:
 New/Removed Cards:
 Added GremlinSmash

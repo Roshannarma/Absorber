@@ -37,13 +37,17 @@ public class SetupSkill extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int ENERGY_DRAW_PROTECTED = 1;
-    private static final int UPGRADE_PLUS_ENERGY_DRAW_PROTECTED = 1;
+    private static final int ENERGY = 1;
+    private static final int UPGRADE_PLUS_ENERGY = 1;
+
+    private static final int DRAW_PROTECTED = 1;
+//    private static final int UPGRADE_PLUS_DRAW_PROTECTED = 1;
 
 //    private boolean next_turn = false;
     public SetupSkill() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = ENERGY_DRAW_PROTECTED;
+        baseMagicNumber = magicNumber = ENERGY;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = DRAW_PROTECTED;
     }
 
 
@@ -52,8 +56,8 @@ public class SetupSkill extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, magicNumber), magicNumber));
 //        addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, magicNumber), magicNumber));
-        addToBot(new RetainCardsAction(p,magicNumber));
-        addToBot(new ApplyPowerAction(p,p, new ProtectedPower(p,magicNumber,false)));
+        addToBot(new RetainCardsAction(p,defaultSecondMagicNumber));
+        addToBot(new ApplyPowerAction(p,p, new ProtectedPower(p,defaultSecondMagicNumber,false)));
     }
 
 
@@ -62,7 +66,7 @@ public class SetupSkill extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_ENERGY_DRAW_PROTECTED);
+            upgradeMagicNumber(UPGRADE_PLUS_ENERGY);
             initializeDescription();
         }
     }

@@ -50,7 +50,6 @@ public class Prepare extends AbstractDynamicCard {
     private static final int UPGRADE_PLUS_BLOCK = 4;
 
     private static final int RETAIN = 1;
-//    private static final int UPGRADE_PLUS_RETAIN = 1;
 
     // /STAT DECLARATION/
 
@@ -67,7 +66,6 @@ public class Prepare extends AbstractDynamicCard {
         if (p.isPlayer && !AbstractDungeon.player.hand.isEmpty() && !AbstractDungeon.player.hasRelic("Runic Pyramid") && !AbstractDungeon.player.hasPower("Equilibrium")) {
             AbstractDungeon.actionManager.addToBottom(new RetainCardsAction(p, magicNumber));
         }
-
     }
 
     //Upgraded stats.

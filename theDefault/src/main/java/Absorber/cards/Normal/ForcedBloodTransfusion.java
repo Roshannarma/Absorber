@@ -7,6 +7,7 @@ import Absorber.powers.GremlinStabsPower;
 import Absorber.powers.LousePower;
 import Absorber.cards.AbstractDynamicCard;
 import Absorber.powers.RarePower;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -30,7 +31,7 @@ import Absorber.characters.TheDefault;
 
 import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;
-
+@AutoAdd.Ignore
 public class ForcedBloodTransfusion extends AbstractDynamicCard {
 
 
@@ -74,8 +75,8 @@ public class ForcedBloodTransfusion extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
                 new LoseHPAction(p, p, magicNumber));
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new ApplyPowerAction((AbstractCreature)mo, (AbstractCreature)p, (AbstractPower)new VulnerablePower((AbstractCreature)mo, defaultSecondMagicNumber, false), defaultSecondMagicNumber, true, AbstractGameAction.AttackEffect.NONE));
-                AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new ApplyPowerAction((AbstractCreature)mo, (AbstractCreature)p, (AbstractPower)new WeakPower((AbstractCreature)mo, defaultSecondMagicNumber, false), defaultSecondMagicNumber, true, AbstractGameAction.AttackEffect.NONE));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new VulnerablePower(mo, defaultSecondMagicNumber, false), defaultSecondMagicNumber, true, AbstractGameAction.AttackEffect.NONE));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new WeakPower(mo, defaultSecondMagicNumber, false), defaultSecondMagicNumber, true, AbstractGameAction.AttackEffect.NONE));
             }
         this.exhaust = true;
     }

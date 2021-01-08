@@ -59,26 +59,37 @@ public class DrainDamage extends AbstractDynamicCard {
     public void applyPowers(){
         if(DrainAction.returnTotal()>0) {
             this.baseDamage = magicNumber * DrainAction.returnTotal();
-            super.applyPowers();
-            this.rawDescription = cardStrings.DESCRIPTION;
-            initializeDescription();
         }
         else {
             this.baseDamage = 0;
-            super.applyPowers();
-            this.rawDescription = cardStrings.DESCRIPTION;
-            initializeDescription();
         }
+        super.applyPowers();
+        if(upgraded){
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        }
+        else{
+            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        }
+        initializeDescription();
     }
     public void onMoveToDiscard() {
-        this.rawDescription = cardStrings.DESCRIPTION;
+        if(upgraded){
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        }
+        else{
+            this.rawDescription = cardStrings.DESCRIPTION;
+        }
         initializeDescription();
     }
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         super.calculateCardDamage(mo);
-        this.rawDescription = cardStrings.DESCRIPTION;
-//        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        if(upgraded){
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        }
+        else{
+            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        }
         initializeDescription();
     }
 

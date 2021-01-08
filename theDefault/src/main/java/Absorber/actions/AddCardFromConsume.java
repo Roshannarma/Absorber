@@ -1,7 +1,6 @@
 package Absorber.actions;
 
 import Absorber.DefaultMod;
-import Absorber.cards.ConsumeCards.SnakePlantCard;
 import Absorber.cards.ConsumeCards.GremlinSmashCard;
 import Absorber.cards.ConsumeCards.ReptoDag;
 import Absorber.cards.starter.StimNeedle;
@@ -54,7 +53,6 @@ public class AddCardFromConsume {
         CardMonsterList.put(Sentry.class.getName(), new SentrySlam());
         CardMonsterList.put(Darkling.class.getName(), new DarklingDrain());
         CardMonsterList.put(Healer.class.getName(), new MysticHeal());
-        CardMonsterList.put(SnakePlant.class.getName(), new SnakePlantCard());
         CardMonsterList.put(Nemesis.class.getName(),new NemesisIntangible());
         CardMonsterList.put(GremlinNob.class.getName(),new GremlinSmashCard());
         CardMonsterList.put(Reptomancer.class.getName(),new ReptoDag());

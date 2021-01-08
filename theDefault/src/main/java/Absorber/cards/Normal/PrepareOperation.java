@@ -45,11 +45,11 @@ public class PrepareOperation extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int BLOCK = 6;
+    private static final int BLOCK = 7;
     private static final int UPGRADE_PLUS_BLOCK = 2;
 
     private static final int ENERGY = 1;
-    private static final int UPGRADE_PLUS_ENERGY = 1;
+//    private static final int UPGRADE_PLUS_ENERGY = 1;
 
     // /STAT DECLARATION/
 
@@ -72,7 +72,6 @@ public class PrepareOperation extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeMagicNumber(UPGRADE_PLUS_ENERGY);
             initializeDescription();
         }
     }

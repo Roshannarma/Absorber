@@ -56,10 +56,10 @@ public class GremlinRally extends AbstractDynamicCard {
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         if(magicNumber==0){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GremlinStabsPower(p, p, magicNumber,false), magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GremlinStabsPower(p, p, 1,false), 1));
         }
         else{
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GremlinStabsPower(p, p, magicNumber,true), magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GremlinStabsPower(p, p, 1,true), 1));
         }
     }
 
