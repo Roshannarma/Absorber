@@ -41,8 +41,8 @@ public class ConsumeDagger extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 10;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 5;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int DAMAGE = 7;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_DMG = 4;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     public static boolean first_turn;
 
@@ -76,5 +76,8 @@ public class ConsumeDagger extends AbstractDynamicCard {
             upgradeDamage(UPGRADE_PLUS_DMG);
             initializeDescription();
         }
+    }
+    public void buff(int amount){
+        upgradeDamage(amount);
     }
 }

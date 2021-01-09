@@ -35,7 +35,7 @@ public class OverExert extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 3;
+    private static final int COST = 0;
 
     private static final int DAMAGE = 15;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 5;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
@@ -57,23 +57,23 @@ public class OverExert extends AbstractDynamicCard {
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 //        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new DrawReduce(p,magicNumber)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new DrawLessNextTurnPower(p,p,magicNumber)));
-//        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new EnergizedPower(p,-1*magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new EnergizedPower(p,-1*magicNumber)));
     }
-    public void triggerOnOtherCardPlayed(AbstractCard c) {
-        if(c.type==CardType.ATTACK){
-            int temp;
-            if(c.costForTurn== -1){
-                temp = costForTurn - AbstractDungeon.player.energy.energyMaster;
-            }
-            else {
-                temp = costForTurn - c.costForTurn;
-            }
-            if(temp<0){
-                temp = 0;
-            }
-            setCostForTurn(temp);
-        }
-    }
+//    public void triggerOnOtherCardPlayed(AbstractCard c) {
+//        if(c.type==CardType.ATTACK){
+//            int temp;
+//            if(c.costForTurn== -1){
+//                temp = costForTurn - AbstractDungeon.player.energy.energyMaster;
+//            }
+//            else {
+//                temp = costForTurn - c.costForTurn;
+//            }
+//            if(temp<0){
+//                temp = 0;
+//            }
+//            setCostForTurn(temp);
+//        }
+//    }
 
     // Upgraded stats.
     @Override

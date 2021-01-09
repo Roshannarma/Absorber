@@ -26,7 +26,7 @@ public class DrainVariable extends DynamicVariable
     @Override
     public boolean isModified(AbstractCard card)
     {
-        return value(card)>card.magicNumber||card.upgradedDamage;
+        return value(card)>card.magicNumber;
     }
 
     // The value the variable should display.

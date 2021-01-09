@@ -1,38 +1,36 @@
-package Absorber.cards.ConsumeCards;
+package Absorber.cards.Normal;
 
+import Absorber.actions.DrainAction;
+import Absorber.powers.EntangleThemPower;
+import Absorber.powers.GremlinStabsPower;
 import Absorber.powers.LousePower;
 import Absorber.cards.AbstractDynamicCard;
 import Absorber.powers.RarePower;
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.EndTurnAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DoubleDamagePower;
-import com.megacrit.cardcrawl.powers.PhantasmalPower;
-import com.megacrit.cardcrawl.ui.buttons.EndTurnButton;
+import com.megacrit.cardcrawl.powers.EnergizedPower;
+import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import Absorber.DefaultMod;
 import Absorber.actions.UncommonPowerAction;
 import Absorber.characters.TheDefault;
 
 import static Absorber.DefaultMod.makeCardPath;
-import static Absorber.DefaultMod.makeFinalCardPath;
 
-//@AutoAdd.Ignore
-public class Crystallize extends AbstractDynamicCard {
+public class ChargeUp extends AbstractDynamicCard {
 
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID("Crystallize");
-    public static final String IMG = makeFinalCardPath("Louse");
+    public static final String ID = DefaultMod.makeID("ChargeUp");
+    public static final String IMG = makeCardPath("Skill.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
@@ -40,33 +38,32 @@ public class Crystallize extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 2;
-//    private static final int UPGRADE_FINAL_COST = 1;
-    private static final int SHIELD = 7;
+    private static final int COST = 1;
 
-    private static final int UPGRADE_PLUS_SHIELD = 5;
+    private static final int BLOCK = 7;
+    private static final int UPGRADE_PLUS_BLOCK = 4;
+
+    private static final int ENERGY = 1;
+//    private static final int UPGRADE_PLUS_ENERGY = 1;
 
     // /STAT DECLARATION/
 
-    public Crystallize() {
-
+    public ChargeUp() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = block = SHIELD;
-        this.exhaust = true;
-
+        baseBlock = block = BLOCK;
+        baseMagicNumber = magicNumber = ENERGY;
     }
 
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,block));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new PhantasmalPower(p, 1)));
-        AbstractDungeon.actionManager.addToBottom(new PressEndTurnButtonAction());
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new EnergizedPower(p,magicNumber)));
     }
 
     //Upgraded stats.
@@ -74,8 +71,7 @@ public class Crystallize extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-//            upgradeBaseCost(UPGRADE_FINAL_COST);
-            upgradeBlock(UPGRADE_PLUS_SHIELD);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();
         }
     }

@@ -112,7 +112,7 @@
   },
   "Absorber:BigDrain": {
     "NAME" : "Big Drain",
-    "DESCRIPTION": "absorber:Drain !Absorber:DrainVariable! HP Exhaust."
+    "DESCRIPTION": "absorber:Drain !Absorber:DrainVariable! HP. NL Exhaust."
   },
   "Absorber:DrainLash": {
     "NAME" : "Drain Lash",
@@ -171,9 +171,9 @@
     "NAME" : "Psychotic Wrath",
     "DESCRIPTION": "Deal !D! damage (Equal to missing HP.)"
   },
-  "Absorber:PrepareOperation": {
-    "NAME" : "Prepare Operation",
-    "DESCRIPTION": "Gain !B! Block. Nl Next turn, gain !M! Energy"
+  "Absorber:ChargeUp": {
+    "NAME" : "Charge Up",
+    "DESCRIPTION": "Gain !B! Block. NL Next turn, gain !M! Energy"
   },
   "Absorber:GiantHeadSlam": {
     "NAME" : "Giant Head Slam",
@@ -271,7 +271,7 @@
   },
   "Absorber:OverExert": {
     "NAME": "Over Exert",
-    "DESCRIPTION": "Deals !D! damage. NL Next turn, Draw !M! less card next turn. NL Costs decreases by Energy spend on attacks this turn."
+    "DESCRIPTION": "Deals !D! damage. NL Next turn, Draw !M! less card and Gain !M! less Energy."
   },
   "Absorber:Adrenaline": {
     "NAME": "Adrenaline",
@@ -286,12 +286,12 @@
     "DESCRIPTION": "Gain !M! HP. NL !Absorber:SecondMagic! absorber:protected Exhaust."
   },
   "Absorber:ExperimentVaccine": {
-    "NAME": "Experimental Vaccine",
+    "NAME": "Experiment Vaccine",
     "DESCRIPTION": "Gain !Absorber:SecondMagic! Max-HP. NL Lose !M! HP NL Exhaust."
   },
 "Absorber:Draw_Attack": {
   "NAME": "Draw Attack",
-  "DESCRIPTION": "Deal !D! damage, draw !M! cards NL absorber:Stimulated:Draw !Absorber:SecondMagic! cards instead"
+  "DESCRIPTION": "Deal !D! damage, draw !M! cards NL absorber:Stimulated Draw !Absorber:SecondMagic! cards instead"
   },
   "Absorber:SurgicalPrecision":{
   "NAME": "Surgical Precision",
@@ -326,7 +326,42 @@
     "DESCRIPTION": "Deal !D! damage. NL Draw !M! cards. NL Gain !B! Block. NL Add !M! *Miracle+ to your hand."
   },
   "Absorber:ReptoDag": {
-    "NAME": "Reptomancer Daggers",
+    "NAME": "Repto Daggers",
     "DESCRIPTION": "Choose A Dagger NL absorber:Stimulated Combine the Daggers."
+  },
+  "Absorber:Paralyze": {
+    "NAME": "Paralyze",
+    "DESCRIPTION": "Gain 1 protected per enemy in combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1 protected per enemy in combat."
+  },
+  "Absorber:BunkerDown": {
+    "NAME": "Bunker Down",
+    "DESCRIPTION": "Gain !B! Block per enemy in combat."
+  },
+  "Absorber:Harden": {
+    "NAME": "Harden",
+    "DESCRIPTION": "Gain !M! Dexterity."
+  },
+  "Absorber:Cycle": {
+    "NAME": "Cycle",
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card on odd turns."
+  },
+  "Absorber:PrepareOperation": {
+    "NAME": "Prepare Operation",
+    "DESCRIPTION": "Add an Operation into your deck. NL Exhaust.",
+    "UPGRADE_DESCRIPTION" : "Add an Upgraded Operation in your deck. NL Exhaust."
+  },
+  "Absorber:Research": {
+    "NAME": "Research",
+    "DESCRIPTION": "Drain !M! HP. NL Add a WeakPoint into your deck. NL Exhaust.",
+    "UPGRADE_DESCRIPTION" : "Drain !M! HP. NL Add an Upgraded WeakPoint into your deck. NL Exhaust."
+  },
+  "Absorber:WeakPoint": {
+    "NAME": "Weak Point",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "Absorber:Operation": {
+    "NAME": "Operation",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Draw !M! card."
   }
 }

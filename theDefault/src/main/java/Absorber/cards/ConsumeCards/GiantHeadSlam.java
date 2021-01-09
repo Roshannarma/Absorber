@@ -24,8 +24,8 @@ import static Absorber.DefaultMod.makeFinalCardPath;
 public class GiantHeadSlam extends AbstractDynamicCard {
 
 
-    public static final String ID = DefaultMod.makeID("BloodyFeather");
-    public static final String IMG = makeFinalCardPath("Cultist"); // CorrosiveDagger_S.png
+    public static final String ID = DefaultMod.makeID("GiantHeadSlam");
+    public static final String IMG = makeCardPath("Attack.png");
 
 
     private static final CardRarity RARITY = CardRarity.SPECIAL;

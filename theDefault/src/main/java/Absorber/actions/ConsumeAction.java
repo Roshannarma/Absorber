@@ -15,6 +15,11 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import Absorber.DefaultMod;
+
+import static Absorber.DefaultMod.refresh;
+import Absorber.TopPanel.FreshSamplesPanel;
+
 
 public class ConsumeAction extends AbstractGameAction {
     private int increaseHpAmount;
@@ -39,6 +44,8 @@ public class ConsumeAction extends AbstractGameAction {
                 AddCardFromConsume temp = new AddCardFromConsume(target);
                 Absorber.DefaultMod.DidConsume = true;
                 logger.info("consumed");
+                ((FreshSamplesPanel) refresh).charged = true;
+                ((FreshSamplesPanel) refresh).ChangeImage();
                 for(AbstractRelic a: AbstractDungeon.player.relics){
                     if(a instanceof FreshSamplesRelic){
                          ((FreshSamplesRelic) a).refresh();

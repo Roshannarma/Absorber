@@ -53,7 +53,6 @@ public class DrainDamage extends AbstractDynamicCard {
         calculateCardDamage(m);
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        this.exhaust = true;
     }
     @Override
     public void applyPowers(){

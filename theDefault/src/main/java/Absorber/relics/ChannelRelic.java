@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.CollectorCurseEffect;
 import Absorber.DefaultMod;
 import Absorber.util.TextureLoader;
@@ -49,8 +50,8 @@ public class ChannelRelic extends CustomRelic { // You must implement things you
     @Override
     public void onPlayerEndTurn() {
         AbstractPlayer p  = AbstractDungeon.player;
-        if(p.energy.energyMaster>0){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new DrawCardNextTurnPower(p,p.energy.energyMaster)));
+        if(EnergyPanel.getCurrentEnergy()>0 && !AbstractDungeon.player.hasRelic("Ice Cream")){
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new DrawCardNextTurnPower(p,EnergyPanel.getCurrentEnergy())));
         }
     }
 

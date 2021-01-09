@@ -25,7 +25,7 @@ import Absorber.characters.TheDefault;
 
 import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;
-//@AutoAdd.Ignore
+@AutoAdd.Ignore
 public class GiantSlow extends AbstractDynamicCard {
 
 

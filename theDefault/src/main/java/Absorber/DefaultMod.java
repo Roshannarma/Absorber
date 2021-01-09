@@ -11,6 +11,7 @@ import basemod.*;
 import basemod.eventUtil.AddEventParams;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
+import basemod.patches.com.megacrit.cardcrawl.core.CardCrawlGame.PreStartGameHook;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
@@ -21,6 +22,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheCity;
@@ -42,6 +44,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 import java.util.Properties;
+import Absorber.TopPanel.FreshSamplesPanel;
 
 //TODO: DON'T MASS RENAME/REFACTOR
 //TODO: DON'T MASS RENAME/REFACTOR
@@ -97,6 +100,7 @@ public class DefaultMod implements
     public static boolean DidConsume = false;
     public static AbstractCard consumed = null;
     public static AbstractCard temporary;
+    public static TopPanelItem refresh;
     
     // =============== INPUT TEXTURE LOCATION =================
     
@@ -191,6 +195,12 @@ public class DefaultMod implements
                 if(c instanceof StimulatedCards){
                     ((StimulatedCards) c).update_glow();
                 }
+            }
+        });
+        BaseMod.subscribe((StartActSubscriber) () -> {
+            logger.info(AbstractDungeon.floorNum);
+            if(AbstractDungeon.floorNum == 0){
+                ( (FreshSamplesPanel) refresh).reset();
             }
         });
         BaseMod.subscribe(this);
@@ -353,6 +363,8 @@ public class DefaultMod implements
         });
         
         settingsPanel.addUIElement(enableNormalsButton); // Add the button to the settings panel. Button is a go.
+        refresh = new FreshSamplesPanel();
+        BaseMod.addTopPanelItem(refresh);
         
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
@@ -429,7 +441,7 @@ public class DefaultMod implements
 //        BaseMod.addRelicToCustomPool(new DoubleDoseRelic(),TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new ChannelRelic(),TheDefault.Enums.COLOR_GRAY);
         // This adds a relic to the Shared pool. Every character can find this relic.
-        BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
+//        BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game

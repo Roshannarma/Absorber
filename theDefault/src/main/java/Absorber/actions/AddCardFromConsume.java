@@ -48,7 +48,6 @@ public class AddCardFromConsume {
         CardMonsterList.put(SphericGuardian.class.getName(), new SphericShield());
         CardMonsterList.put(BookOfStabbing.class.getName(), new StabbingBook());
         CardMonsterList.put(OrbWalker.class.getName(), new OrbSpray());
-        CardMonsterList.put(GiantHead.class.getName(), new GiantSlow());
         CardMonsterList.put(Lagavulin.class.getName(), new LagavulinDrain());
         CardMonsterList.put(Sentry.class.getName(), new SentrySlam());
         CardMonsterList.put(Darkling.class.getName(), new DarklingDrain());

@@ -5,6 +5,7 @@ import Absorber.powers.LifeSupportPower;
 import Absorber.powers.LousePower;
 import Absorber.cards.AbstractDynamicCard;
 import Absorber.powers.RarePower;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -20,7 +21,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import static Absorber.DefaultMod.makeCardPath;
-
+@AutoAdd.Ignore
 public class LifeSupport extends AbstractDynamicCard {
 
 

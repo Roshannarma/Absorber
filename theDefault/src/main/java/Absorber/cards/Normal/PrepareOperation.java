@@ -6,10 +6,10 @@ import Absorber.powers.GremlinStabsPower;
 import Absorber.powers.LousePower;
 import Absorber.cards.AbstractDynamicCard;
 import Absorber.powers.RarePower;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
+import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -38,32 +38,30 @@ public class PrepareOperation extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
 
-    private static final int BLOCK = 7;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
-
-    private static final int ENERGY = 1;
-//    private static final int UPGRADE_PLUS_ENERGY = 1;
 
     // /STAT DECLARATION/
 
     public PrepareOperation() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = block = BLOCK;
-        baseMagicNumber = magicNumber = ENERGY;
+        this.cardsToPreview = new Operation();
     }
 
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,block));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new EnergizedPower(p,magicNumber)));
+        AbstractCard temp = new Operation();
+        if(upgraded){
+            temp.upgrade();
+        }
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(temp,1,true,true));
+        this.exhaust = true;
     }
 
     //Upgraded stats.
@@ -71,7 +69,7 @@ public class PrepareOperation extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

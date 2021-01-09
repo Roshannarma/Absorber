@@ -1,18 +1,40 @@
 Patch 0.0.10:
 New/Removed Cards:
+Removed Life Support
+Removed OverDose
+Added Paralyze
+Added Bunker Down
+Added Cycle
+Added Harden
+Added PrepareOperation
+Added Operation(card attached to PrepareOperation)
+Added Research
+Added Weakpoint(card attached to Research)
 
-
+New/Removed Extras:
+Added FreshSamplesPanel, refillable potion next to deck for the dagger
+Changed current relic to increasing max hp and damage on dagger by 1
+Changed art for Freshsamples
 
 Bug Fixes:
 Fixes Card Texts for Most Cards
+Lagavulin drain does not lose strength when enemy gains strength
+Fixes Bloody Feather
+
 
 
 Balance Patches:
 Nerfed SetupSkill+: Protected 2 -> 1, Retain 2 -> 1
 Buffed PrepareOperation: Block 6 -> 7
-Changed PrepareOperation+: Block 8 -> 9, Energy Gain 2 -> 1
-
-
+Changed PrepareOperation+: Block 8 -> 11, Energy Gain 2 -> 1
+Buffed OverExert:  Cost 3 -> 0, removed lower cost on attacks
+Buffed OverExert+: Cost 3 -> 0, removed lower cost on attacks
+Changed SurgicalPrecision+: Cost 0 -> 1, damage 8 -> 13
+Changed StimNeedle+: Energy 2 -> 1, Draw 1 -> 2
+Changed Crystallize: Cost 1 -> 2, Block 5 -> 7
+Changed Crystallize+: Cost 1 -> 2, Block 10 - 12
+Buffed BloodyFeather: does not exhaust
+Buffed BloodyFeather+: does not exhaust
 
 
 

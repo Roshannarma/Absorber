@@ -1,35 +1,37 @@
 package Absorber.cards.Normal;
 
 import Absorber.actions.DrainAction;
-import Absorber.cards.SyringeCard;
+import Absorber.actions.SharpenAction;
+import Absorber.patches.DrainPatch;
 import Absorber.powers.*;
 import Absorber.cards.AbstractDynamicCard;
 import basemod.AutoAdd;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.unique.RegenAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.RegenPower;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import Absorber.DefaultMod;
 import Absorber.actions.UncommonPowerAction;
 import Absorber.characters.TheDefault;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import static Absorber.DefaultMod.makeCardPath;
-@AutoAdd.Ignore
-public class Overdose extends SyringeCard {
+import static Absorber.DefaultMod.makeFinalCardPath;
+public class BunkerDown extends AbstractDynamicCard {
 
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID("Overdose");
+    public static final String ID = DefaultMod.makeID("BunkerDown");
     public static final String IMG = makeCardPath("Skill.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -43,41 +45,35 @@ public class Overdose extends SyringeCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
-    private static final int HP_LOSS = 4;
-//    private static final int UPGRADE_PLUS_HP_LOSS = 1;
+    private static final int BLOCK = 5;
 
-    private static final int MANA_GAIN = 1;
-    private static final int UPGRADE_PLUS_MANA_GAIN = 1;
+    private static final int UPGRADE_PLUS_BLOCK = 2;
+    private static final Logger logger = LogManager.getLogger(Sharpen.class.getName());
 
     // /STAT DECLARATION/
 
-    public Overdose() {
+    public BunkerDown() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = HP_LOSS;
-        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = MANA_GAIN;
+        baseBlock = block = BLOCK;
     }
 
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new GainEnergyAction(defaultSecondMagicNumber)
-        );
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p,p,new DamageNextTurnPower(p,p,magicNumber))
-        );
-    }
+//        AbstractDungeon.actionManager.addToBottom(new SharpenAction(p,p,magicNumber));
+        int temp = AbstractDungeon.getCurrRoom().monsters.monsters.size();
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,temp*block));
+//        this.exhaust = true;
 
+    }
     //Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-//            upgradeMagicNumber(UPGRADE_PLUS_HP_LOSS);
-            upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_MANA_GAIN);
-//            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();
         }
     }
