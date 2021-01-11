@@ -107,6 +107,7 @@ public class DefaultMod implements
     // Colors (RGB)
     // Character Color
     public static final Color DEFAULT_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
+    public static final Color Absorber_RED = CardHelper.getColor(255f,0f,0f);
     
     // Potion Colors in RGB
     public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
@@ -121,17 +122,20 @@ public class DefaultMod implements
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
   
     // Card backgrounds - The actual rectangular card.
-    private static final String ATTACK_DEFAULT_GRAY = "AbsorberResources/images/512/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY = "AbsorberResources/images/512/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY = "AbsorberResources/images/512/bg_power_default_gray.png";
+    private static final String ATTACK_WHITE= "AbsorberResources/images/512/bg_attack_white.png";
+    private static final String SKILL_WHITE = "AbsorberResources/images/512/bg_skill_white.png";
+    private static final String POWER_WHITE = "AbsorberResources/images/512/bg_power_white.png";
     
     private static final String ENERGY_ORB_DEFAULT_GRAY = "AbsorberResources/images/512/card_default_gray_orb.png";
     private static final String CARD_ENERGY_ORB = "AbsorberResources/images/512/card_small_orb.png";
     
-    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "AbsorberResources/images/1024/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "AbsorberResources/images/1024/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "AbsorberResources/images/1024/bg_power_default_gray.png";
+    private static final String ATTACK_WHITE_PORTRAIT = "AbsorberResources/images/1024/bg_attack_white.png";
+    private static final String SKILL_WHITE_PORTRAIT = "AbsorberResources/images/1024/bg_skill_white.png";
+    private static final String POWER_WHITE_PORTRAIT = "AbsorberResources/images/1024/bg_power_white.png";
     private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "AbsorberResources/images/1024/card_default_gray_orb.png";
+
+    //Card Backgrounds
+
     
     // Character assets
     private static final String THE_DEFAULT_BUTTON = "AbsorberResources/images/charSelect/CharacterButton.png";
@@ -237,10 +241,10 @@ public class DefaultMod implements
         
         logger.info("Creating the color " + TheDefault.Enums.COLOR_GRAY.toString());
         
-        BaseMod.addColor(TheDefault.Enums.COLOR_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
+        BaseMod.addColor(TheDefault.Enums.COLOR_GRAY, Absorber_RED, DEFAULT_GRAY, DEFAULT_GRAY,
                 DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
-                ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
-                ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
+                ATTACK_WHITE, SKILL_WHITE, POWER_WHITE, ENERGY_ORB_DEFAULT_GRAY,
+                ATTACK_WHITE_PORTRAIT, SKILL_WHITE_PORTRAIT, POWER_WHITE_PORTRAIT,
                 ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
         
         logger.info("Done creating the color");

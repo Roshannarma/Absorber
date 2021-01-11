@@ -76,7 +76,7 @@
   },
   "Absorber:StimNeedle": {
     "NAME" : "Stim Needle",
-    "DESCRIPTION": "Deal !D! damage. NL Next turn, gain !M! mana and draw !M! extra card."
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, gain !M! mana and draw !Absorber:SecondMagic! extra card."
   },
   "Absorber:DarklingDrain": {
     "NAME" : "Darkling Drain",
@@ -334,8 +334,8 @@
     "DESCRIPTION": "Gain 1 protected per enemy in combat. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain 1 protected per enemy in combat."
   },
-  "Absorber:BunkerDown": {
-    "NAME": "Bunker Down",
+  "Absorber:HunkerDown": {
+    "NAME": "Hunker Down",
     "DESCRIPTION": "Gain !B! Block per enemy in combat."
   },
   "Absorber:Harden": {
@@ -363,5 +363,9 @@
   "Absorber:Operation": {
     "NAME": "Operation",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Draw !M! card."
+  },
+  "Absorber:Steroid": {
+    "NAME": "Steroid",
+    "DESCRIPTION": "Gain !M! Strength. NL Gain !Absorber:SecondMagic! protected."
   }
 }

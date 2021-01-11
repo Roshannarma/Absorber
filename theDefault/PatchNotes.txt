@@ -11,6 +11,7 @@ Added Operation(card attached to PrepareOperation)
 Added Research
 Added Weakpoint(card attached to Research)
 
+
 New/Removed Extras:
 Added FreshSamplesPanel, refillable potion next to deck for the dagger
 Changed current relic to increasing max hp and damage on dagger by 1
@@ -35,6 +36,8 @@ Changed Crystallize: Cost 1 -> 2, Block 5 -> 7
 Changed Crystallize+: Cost 1 -> 2, Block 10 - 12
 Buffed BloodyFeather: does not exhaust
 Buffed BloodyFeather+: does not exhaust
+Changed Sharpen: Cost 1 -> 0, Buff 3 -> 2
+Changed Sharpen+: Cost 1 -> 0, Buff 4 -> 3
 
 
 

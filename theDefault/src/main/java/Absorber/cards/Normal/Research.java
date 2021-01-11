@@ -43,7 +43,7 @@ public class Research extends AbstractDynamicCard {
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 2;
@@ -57,7 +57,6 @@ public class Research extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = DRAIN_AMOUNT;
         this.cardsToPreview = new WeakPoint();
-
     }
 
     // Actions the card should do.
@@ -80,6 +79,9 @@ public class Research extends AbstractDynamicCard {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_DRAIN_AMOUNT);
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            AbstractCard temp = new WeakPoint();
+            temp.upgrade();
+            this.cardsToPreview = temp;
             initializeDescription();
         }
     }

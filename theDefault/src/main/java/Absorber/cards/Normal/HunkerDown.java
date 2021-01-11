@@ -1,35 +1,37 @@
 package Absorber.cards.Normal;
 
 import Absorber.actions.DrainAction;
-import Absorber.powers.EntangleThemPower;
-import Absorber.powers.GremlinStabsPower;
-import Absorber.powers.LousePower;
+import Absorber.actions.SharpenAction;
+import Absorber.patches.DrainPatch;
+import Absorber.powers.*;
 import Absorber.cards.AbstractDynamicCard;
-import Absorber.powers.RarePower;
-import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
-import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
+import basemod.AutoAdd;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.EnergizedPower;
-import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import Absorber.DefaultMod;
 import Absorber.actions.UncommonPowerAction;
 import Absorber.characters.TheDefault;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import static Absorber.DefaultMod.makeCardPath;
-
-public class PrepareOperation extends AbstractDynamicCard {
+import static Absorber.DefaultMod.makeFinalCardPath;
+public class HunkerDown extends AbstractDynamicCard {
 
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID("PrepareOperation");
+    public static final String ID = DefaultMod.makeID("HunkerDown");
     public static final String IMG = makeCardPath("Skill.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -45,34 +47,38 @@ public class PrepareOperation extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
+    private static final int BLOCK = 5;
+
+    private static final int UPGRADE_PLUS_BLOCK = 2;
+    private static final Logger logger = LogManager.getLogger(Sharpen.class.getName());
 
     // /STAT DECLARATION/
 
-    public PrepareOperation() {
+    public HunkerDown() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.cardsToPreview = new Operation();
+        baseBlock = block = BLOCK;
     }
 
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractCard temp = new Operation();
-        if(upgraded){
-            temp.upgrade();
+//        AbstractDungeon.actionManager.addToBottom(new SharpenAction(p,p,magicNumber));
+        int temp = 0;
+        for(AbstractMonster mon: AbstractDungeon.getCurrRoom().monsters.monsters){
+            if (!mon.isDeadOrEscaped()){
+                temp++;
+            }
         }
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(temp,1,true,true));
-        this.exhaust = true;
-    }
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,temp*block));
+//        this.exhaust = true;
 
+    }
     //Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            AbstractCard temp = new Operation();
-            temp.upgrade();
-            this.cardsToPreview = temp;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();
         }
     }

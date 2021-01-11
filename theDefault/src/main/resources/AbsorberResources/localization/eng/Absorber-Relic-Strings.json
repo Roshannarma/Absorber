@@ -58,7 +58,7 @@
     "NAME": "Surgical Gloves",
     "FLAVOR": "A Doctor must cause no harm",
     "DESCRIPTIONS": [
-      "Start Each Combat with 1 protected"
+      "Start Each Combat with 2 protected"
     ]
   },
   "Absorber:DoctorScrubsRelic": {
