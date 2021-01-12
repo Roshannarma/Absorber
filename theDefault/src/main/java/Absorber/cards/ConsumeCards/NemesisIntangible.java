@@ -50,13 +50,13 @@ public class NemesisIntangible extends AbstractDynamicCard {
 
 
     private static final int INTANGIBLE = 1;
-//    private static final int UPGRADE_PLUS_INTANGIBLE = 1;
 
     // /STAT DECLARATION/
 
     public NemesisIntangible() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = INTANGIBLE;
+        this.isEthereal = true;
 
     }
 

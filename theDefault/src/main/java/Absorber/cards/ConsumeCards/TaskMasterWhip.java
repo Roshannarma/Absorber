@@ -35,10 +35,10 @@ public class TaskMasterWhip extends AbstractDynamicCard {
     private static final int COST = 1;
 
     private static final int DAMAGE = 7;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int UPGRADE_PLUS_DMG = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     private static final int STRENGTH = 1;
-    private static final int UPGRADE_PLUS_STRENGTH = 1;
+//    private static final int UPGRADE_PLUS_STRENGTH = 1;
 
     public TaskMasterWhip() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -63,7 +63,7 @@ public class TaskMasterWhip extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(UPGRADE_PLUS_STRENGTH);
+//            upgradeMagicNumber(UPGRADE_PLUS_STRENGTH);
             initializeDescription();
         }
     }

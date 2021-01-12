@@ -52,7 +52,14 @@ public class DrainAction extends AbstractGameAction {
         if (amount>target.currentHealth){
             amount = target.currentHealth;
         }
-        AbstractDungeon.actionManager.addToBottom( new LoseHPAction(target,temp,amount));
+        AbstractPlayer p = AbstractDungeon.player;
+        if(p.hasRelic("Absorber:EKGRelic") && p.currentHealth < p.maxHealth*.5){
+            info = new DamageInfo(info.owner,info.base*2);
+            AbstractDungeon.actionManager.addToBottom( new LoseHPAction(target,temp,amount*2));
+        }
+        else{
+            AbstractDungeon.actionManager.addToBottom( new LoseHPAction(target,temp,amount));
+        }
         AbstractDungeon.actionManager.addToBottom( new HealAction(temp,temp,amount));
         DrainAction.add(new DamageInfo(info.owner,amount));
         after_drain(info);
@@ -63,19 +70,20 @@ public class DrainAction extends AbstractGameAction {
         isDone = true;
     }
     public DamageInfo on_drain(DamageInfo info){
-        for( AbstractPower o:AbstractDungeon.player.powers){
+        AbstractPlayer p = AbstractDungeon.player;
+        for( AbstractPower o:p.powers){
             if(o instanceof DrainPower) {
                 info = ((DrainPower) o).PreDrain(info);
             }
         }
-        for(AbstractRelic o: AbstractDungeon.player.relics){
+        for(AbstractRelic o: p.relics){
             if(o instanceof DrainRelic) {
                 info = ((DrainRelic) o).PreDrain(info);
             }
         }
-        if(AbstractDungeon.player.hasRelic("EKGRelic")){
-            info = new DamageInfo(info.owner,info.base*2);
-        }
+//        if(p.hasRelic("Absorber:EKGRelic") && p.currentHealth < p.maxHealth*.5){
+//            info = new DamageInfo(info.owner,info.base*2);
+//        }
         return info;
     }
     public static int on_drain(int amount){

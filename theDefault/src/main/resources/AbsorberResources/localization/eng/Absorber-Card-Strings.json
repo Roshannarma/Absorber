@@ -153,11 +153,11 @@
   },
   "Absorber:LagavulinDrain": {
     "NAME" : "Lagavulin Drain",
-    "DESCRIPTION": "absorber:Drain !M! HP. NL absorber:Drain !M! strength from target Exhaust."
+    "DESCRIPTION": "absorber:Drain !M! strength from target Exhaust."
   },
   "Absorber:LooterDagger": {
     "NAME" : "Looter Dagger",
-    "DESCRIPTION": "Deal !D! damage. NL Gain gold equal to unblocked damage."
+    "DESCRIPTION": "Deal !D! damage. NL Gain gold equal to unblocked damage. NL Exhaust."
   },
   "Absorber:ShelledShield": {
     "NAME" : "Shelled Shield",
@@ -193,7 +193,8 @@
   },
   "Absorber:Prepare": {
     "NAME": "Prepare",
-    "DESCRIPTION": "Gain !B! Block. NL Retain !M! card this turn"
+    "DESCRIPTION": "Draw !M! card. NL Retain !Absorber:SecondMagic: card.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Retain !Absorber:SecondMagic! card."
   },
   "Absorber:VolatileSteroid": {
     "NAME": "Volatile Steroid",
@@ -246,7 +247,7 @@
   },
   "Absorber:NemesisIntangible": {
     "NAME": "Nemesis Protection",
-    "DESCRIPTION": "Gain !M! Intangible. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Intangible. NL Exhaust. NL Ethereal."
   },
   "Absorber:SetupSkill": {
     "NAME": "Steady Hands",
@@ -299,7 +300,7 @@
   },
   "Absorber:EnergyWall":{
     "NAME": "Energy Wall",
-    "DESCRIPTION": "Gain !B! block NL absorber:Stimulated: Gain !M! extra Block."
+    "DESCRIPTION": "Gain !B! block NL absorber:Stimulated: Gain !Absorber:SecondaryBlock! extra Block."
   },
   "Absorber:GremlinSmashCard": {
     "NAME": "Gremlin Smash",
@@ -331,8 +332,8 @@
   },
   "Absorber:Paralyze": {
     "NAME": "Paralyze",
-    "DESCRIPTION": "Gain 1 protected per enemy in combat. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain 1 protected per enemy in combat."
+    "DESCRIPTION": "Apply 1 Weak and 1 Vulnerable. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply 1 Weak and 1 Vulnerable."
   },
   "Absorber:HunkerDown": {
     "NAME": "Hunker Down",
@@ -367,5 +368,9 @@
   "Absorber:Steroid": {
     "NAME": "Steroid",
     "DESCRIPTION": "Gain !M! Strength. NL Gain !Absorber:SecondMagic! protected."
+  },
+  "Absorber:StimAOE": {
+    "NAME": "Stim AOE",
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL absorber:Stimulated: Deal !Absorber:SecondaryScaling! damage extra"
   }
 }

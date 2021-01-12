@@ -19,29 +19,23 @@ public abstract class StimulatedCards extends AbstractDynamicCard {
     }
     @Override
     public void triggerOnCardPlayed(AbstractCard cardPlayed) {
-//        logger.info("other card played");
         is_stimulated = EnergyPanel.totalCount-cardPlayed.costForTurn> AbstractDungeon.player.energy.energy;
-        if(is_stimulated){
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        }
-        else{
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
+        update_glow();
     }
     @Override
     public void triggerWhenDrawn() {
+        is_stimulated = Stimulated.update();
         update_glow();
     }
 
 
     @Override
     public void triggerOnGainEnergy(int e, boolean dueToCard) {
+        is_stimulated = Stimulated.update();
         update_glow();
     }
 
     public void update_glow(){
-//        logger.info("update");
-        is_stimulated = Stimulated.update();
         if(is_stimulated){
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }

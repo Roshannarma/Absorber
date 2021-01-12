@@ -47,7 +47,7 @@ public class SurgicalPrecision extends StimulatedCards {
 //    private static final int UPGRADE_PLUS_COST = 0;
 
     private static final int DAMAGE = 8;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DAMAGE = 5;
+    private static final int UPGRADE_PLUS_DAMAGE = 3;
 
     private static final int STIM_REFRESH = 1;
 

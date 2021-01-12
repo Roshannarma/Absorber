@@ -39,7 +39,7 @@ public class GremlinArmy extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int AMOUNT = 2;
+    private static final int AMOUNT = 3;
     private static final int UPGRADE_PLUS_AMOUNT = 1;
 
     // /STAT DECLARATION/

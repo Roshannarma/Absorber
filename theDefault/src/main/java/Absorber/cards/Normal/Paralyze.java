@@ -15,6 +15,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import Absorber.DefaultMod;
@@ -40,25 +42,27 @@ public class Paralyze extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
+
+    private static final int WEAK_VULNERABLE = 1;
 
 
     // /STAT DECLARATION/
 
     public Paralyze() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        baseMagicNumber = magicNumber = WEAK_VULNERABLE;
     }
 
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-//        AbstractDungeon.actionManager.addToBottom(new SharpenAction(p,p,magicNumber));
-        int temp = AbstractDungeon.getCurrRoom().monsters.monsters.size();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new ProtectedPower(p,temp,false),temp));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p,new WeakPower(m,magicNumber,false),magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p,new VulnerablePower(m,magicNumber,false),magicNumber));
         this.exhaust = !upgraded;
     }
     //Upgraded stats.

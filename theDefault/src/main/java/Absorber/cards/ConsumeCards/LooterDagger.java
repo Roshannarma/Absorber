@@ -35,7 +35,7 @@ public class LooterDagger extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 12;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 11;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     public LooterDagger() {
@@ -47,8 +47,15 @@ public class LooterDagger extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int temp = damage;
+        if(damage>m.currentHealth){
+            temp = m.currentHealth;
+        }
         if(m.currentBlock==-1){
-            p.gainGold(damage);
+            p.gainGold(temp);
+        }
+        else if(damage > m.currentHealth + m.currentBlock){
+            p.gainGold(temp);
         }
         else if(damage > m.currentBlock){
             AbstractDungeon.actionManager.addToBottom(new GainGoldAction(damage-m.currentBlock));

@@ -476,6 +476,8 @@ public class DefaultMod implements
         BaseMod.addDynamicVariable(new LowHealthDouble());
         BaseMod.addDynamicVariable(new MaxEnergy());
         BaseMod.addDynamicVariable(new EnergyScalingFullVariable());
+        BaseMod.addDynamicVariable(new SecondaryScalingVariable());
+        BaseMod.addDynamicVariable(new SecondaryBlockVariable());
 
         
         logger.info("Adding cards");

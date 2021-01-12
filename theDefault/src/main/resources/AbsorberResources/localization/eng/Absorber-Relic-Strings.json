@@ -48,10 +48,10 @@
     ]
   },
   "Absorber:EKGRelic": {
-    "NAME": "Blood Surge Relic",
+    "NAME": "EKG",
     "FLAVOR": "Always helpful in a pinch",
     "DESCRIPTIONS": [
-      "If you are below 25% hp, Drain deals and heals for double"
+      "If you are below 50% hp, drain deals double damage"
     ]
   },
   "Absorber:SurgicalGlovesRelic": {

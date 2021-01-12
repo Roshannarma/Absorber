@@ -1,3 +1,53 @@
+Patch 0.0.11:
+New/Removed Cards:
+Removed Wide Swing in place of StimAOE
+Removed Reckless Injection
+Fixed EnergyWall to scale properly with the stimulated effect
+Added StimAOE(temp aoe card for stimulated)
+
+New/Removed Extras:
+
+
+Bug Fixes:
+EKG was not activating
+Gold Generation from LooterDagger Overkilling
+Balance Changes:
+Buffed UnbreakableWill: Block 5 -> 6
+Buffed EnergyWall+: Block 8 -> 10, Stimulated Block 9 -> 10
+Buffed Sharpen: Buff 2 -> 3
+Buffed Sharpen+: Buff 3 -> 4
+Buffed EnergySurge: Damage 5 -> 6
+Buffed OverExert: Damage 15 -> 17
+Buffed GremlinArmy: Amount 2 -> 3
+Buffed GremlinArmy+: Amount 3 -> 4
+
+
+Nerfed VesselBurst: Self-Damage 2 -> 3
+Nerfed VesselBurst+: Draw 4 -> 3
+Nerfed SurgicalPrecision+: Damage 13 -> 11
+Nerfed LagavulinDrain: Drain 2 -> 0
+Nerfed LagavulinDrain+: Drain 3 -> 0
+Nerfed StabbingBook: Damage 6 -> 5
+Nerfed StabbingBook+: Damage 8 -> 6
+Nerfed LooterDagger: Damage 12 -> 11
+Nerfed NemesisIntangible: Ethereal
+
+Changed EnergyWall: Block 8 -> 7, Stimulated Block 5 -> 7
+Changed Draw_Attack+: Damage 11 -> 10, Stimulated Draw 2 -> 3
+Changed TaskMasterWhip+: Damage 9 -> 10, Strength 2 -> 1
+
+Rework Prepare: Cost 0, Draw 1, Retain 2
+Rework Prepare+: Cost 0, Draw 1, Retain 2
+Rework Paralyze: Cost 0, Apply 1 weak and 1 vulnerable exhaust
+Rework Paralye+: Cost 0, Apply 1 weak and 1 vulnerable
+
+Relics:
+Changed EKG: Activates 25% -> 50% HP, Deal/Heal double HP -> Deal double HP
+
+
+
+
+
 Patch 0.0.10:
 New/Removed Cards:
 Removed Life Support

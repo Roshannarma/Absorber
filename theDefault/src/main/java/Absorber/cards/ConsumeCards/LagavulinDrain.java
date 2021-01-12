@@ -60,7 +60,7 @@ public class LagavulinDrain extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DrainAction(m, magicNumber));
+//        AbstractDungeon.actionManager.addToBottom(new DrainAction(m, magicNumber));
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p,p,new StrengthPower(p,magicNumber),magicNumber));
         AbstractDungeon.actionManager.addToBottom(

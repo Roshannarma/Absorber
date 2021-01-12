@@ -43,11 +43,10 @@ public class VesselBurst extends AbstractDynamicCard {
 
     private static final int COST = 0;
 
-    private static final int HP_LOSS = 2;
-    private static final int UPGRADE_PLUS_HP_LOSS = 1;
+    private static final int HP_LOSS = 3;
 
     private static final int DRAW_CARDS = 2;
-    private static final int UPGRADE_PLUS_DRAW_CARDS = 2;
+    private static final int UPGRADE_PLUS_DRAW_CARDS = 1;
 
     // /STAT DECLARATION/
 
@@ -70,7 +69,6 @@ public class VesselBurst extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_HP_LOSS);
             upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_DRAW_CARDS);
 //            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();

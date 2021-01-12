@@ -37,7 +37,7 @@ public class OverExert extends AbstractDynamicCard {
 
     private static final int COST = 0;
 
-    private static final int DAMAGE = 15;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 17;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 5;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     private static final int MINUS_DRAW_ENERGY  = 1;

@@ -49,7 +49,7 @@ public class Sharpen extends AbstractDynamicCard {
 
     private static final int COST = 0;
 
-    private static final int INCREASE_DAMAGE = 2;
+    private static final int INCREASE_DAMAGE = 3;
 
     private static final int UPGRADE_PLUS_INCREASE_DAMAGE = 1;
     private static final Logger logger = LogManager.getLogger(Sharpen.class.getName());

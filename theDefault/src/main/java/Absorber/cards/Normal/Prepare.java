@@ -44,26 +44,26 @@ public class Prepare extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
-
-    private static final int BLOCK = 8;
-    private static final int UPGRADE_PLUS_BLOCK = 4;
+    private static final int COST = 0;
 
     private static final int RETAIN = 1;
+    private static final int UPGRADE_PLUS_RETAIN = 1;
+
+    private static final int CARD = 1;
 
     // /STAT DECLARATION/
 
     public Prepare() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = block = BLOCK;
         baseMagicNumber = magicNumber = RETAIN;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = CARD;
     }
 
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom( new GainBlockAction(p,block));
-        if (p.isPlayer && !AbstractDungeon.player.hand.isEmpty() && !AbstractDungeon.player.hasRelic("Runic Pyramid") && !AbstractDungeon.player.hasPower("Equilibrium")) {
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p,1));
+    if (p.isPlayer && !AbstractDungeon.player.hand.isEmpty() && !AbstractDungeon.player.hasRelic("Runic Pyramid") && !AbstractDungeon.player.hasPower("Equilibrium")) {
             AbstractDungeon.actionManager.addToBottom(new RetainCardsAction(p, magicNumber));
         }
     }
@@ -73,7 +73,7 @@ public class Prepare extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeMagicNumber(UPGRADE_PLUS_RETAIN);
             initializeDescription();
         }
     }
