@@ -193,12 +193,12 @@ public class DefaultMod implements
     public DefaultMod() {
         logger.info("Subscribe to BaseMod hooks");
         BaseMod.subscribe((OnPowersModifiedSubscriber) () -> {
-            logger.info("we made it this far");
-            logger.info(AbstractDungeon.player.hand.group);
-            logger.info(AbstractDungeon.player.hand.group.size());
+//            logger.info("we made it this far");
+//            logger.info(AbstractDungeon.player.hand.group);
+//            logger.info(AbstractDungeon.player.hand.group.size());
 
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                logger.info(c);
+//                logger.info(c);
                 if(c instanceof StimulatedCards){
                     ((StimulatedCards) c).update_glow();
                 }

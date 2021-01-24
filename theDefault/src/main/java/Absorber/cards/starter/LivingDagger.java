@@ -50,7 +50,9 @@ public class LivingDagger extends AbstractDynamicCard {
 
     public LivingDagger() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+//        logger.info(misc);
+        baseDamage = DAMAGE + ConsumeAction.buff_total;
+//        logger.info(DAMAGE + ConsumeAction.buff_total);
         baseMagicNumber = magicNumber = BUFF;
     }
 
@@ -82,6 +84,9 @@ public class LivingDagger extends AbstractDynamicCard {
         }
     }
     public void buff(int amount){
+//        this.misc +=1;
+//        logger.info(ConsumeAction.buff_total);
+//        logger.info(misc);
         upgradeDamage(amount);
     }
 }

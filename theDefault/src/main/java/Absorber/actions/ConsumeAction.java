@@ -28,6 +28,7 @@ public class ConsumeAction extends AbstractGameAction {
     private int increaseHpAmount;
 //    private DamageInfo info;
     private static final float DURATION = 0.1F;
+    public static int buff_total = 0;
     private AbstractRelic FreshSamplesRelic;
     private static final Logger logger = LogManager.getLogger(ConsumeAction.class.getName());
 
@@ -43,12 +44,11 @@ public class ConsumeAction extends AbstractGameAction {
         if (this.duration == 0.1F && this.target != null) {
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AttackEffect.NONE));
 //            this.target.damage(this.info);
-            if ((((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0) && !this.target.halfDead && !this.target.hasPower("Minion")) {
+            if (((this.target).isDying || this.target.currentHealth <= 0) && !this.target.halfDead && !this.target.hasPower("Minion")) {
                 AddCardFromConsume temp = new AddCardFromConsume(target);
                 Absorber.DefaultMod.DidConsume = true;
                 logger.info("consumed");
-//                ((FreshSamplesPanel) refresh).charged = true;
-//                ((FreshSamplesPanel) refresh).ChangeImage();
+                buff_total +=1;
                 for(AbstractRelic a: AbstractDungeon.player.relics){
                     if(a instanceof LinkedSoulsRelic) {
                         ((LinkedSoulsRelic) a).refresh();

@@ -206,8 +206,8 @@ public class TheDefault extends CustomPlayer {
 //        retVal.add(PlaceholderRelic.ID);
 //        retVal.add(PlaceholderRelic2.ID);
 //        retVal.add(DefaultClickableRelic.ID);
-        retVal.add(LinkedSoulsRelic.ID);
-//        retVal.add(FreshSamplesRelic.ID);
+//        retVal.add(LinkedSoulsRelic.ID);
+        retVal.add(FreshSamplesRelic.ID);
 //        retVal.add(BloodSurgeRelic.ID);
 
         // Mark relics as seen - makes it visible in the compendium immediately

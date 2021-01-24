@@ -4,6 +4,7 @@ import Absorber.actions.SpecialDiscoveryAction;
 import Absorber.actions.Stimulated;
 import Absorber.cards.ConsumeCards.Daggers.*;
 import Absorber.cards.StimulatedCards;
+import Absorber.patches.MonsterRarityEnum;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -25,7 +26,7 @@ public class ReptoDag extends StimulatedCards {
     public static final String IMG = makeFinalCardPath("ReptoDaggers");
 
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = MonsterRarityEnum.MONSTER;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;

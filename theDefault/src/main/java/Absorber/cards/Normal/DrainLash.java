@@ -43,7 +43,7 @@ public class DrainLash extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 3;
+    private static final int DAMAGE = 5;
     private static final int UPGRADE_PLUS_DAMAGE = 2;
 
     // /STAT DECLARATION/

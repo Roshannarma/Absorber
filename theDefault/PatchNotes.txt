@@ -1,3 +1,37 @@
+Patch 0.0.13:
+
+
+Game Aspect Changes:
+Starting relic switched to FreshSamplesRelic again
+
+New Aspects:
+Starting Choice replacing changing starter relic for linking with dagger
+
+Removed Aspects:
+Pacifism, replica of ingame relic, art of war
+
+
+Bug Fixes:
+Dagger saves damage buff
+
+
+Balance Changes:
+DrainLash: Damage 3 -> 5
+DrainLash+: Damage 5 -> 7
+Double Trouble: Rarity Uncommon -> Rare
+
+
+
+
+
+
+
+
+
+
+
+
+
 Patch 0.0.12:
 New Aspects:
 Pacifism: (Power)  2 cost, At the End of your Turn, if you have not played any attacks, Gain 1(2) Energized
