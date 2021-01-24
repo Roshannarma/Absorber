@@ -4,6 +4,7 @@ import Absorber.actions.ConsumeAction;
 import Absorber.actions.Stimulated;
 import Absorber.cards.AbstractDynamicCard;
 import Absorber.cards.StimulatedCards;
+import Absorber.patches.MonsterRarityEnum;
 import basemod.AutoAdd;
 import basemod.interfaces.PostEnergyRechargeSubscriber;
 import com.badlogic.gdx.Gdx;
@@ -30,16 +31,17 @@ import org.apache.logging.log4j.Logger;
 import java.util.Iterator;
 
 import static Absorber.DefaultMod.makeCardPath;
+import static Absorber.DefaultMod.makeFinalCardPath;
 
 //@AutoAdd.Ignore
 public class GremlinSmashCard extends StimulatedCards {
 
 
     public static final String ID = DefaultMod.makeID("GremlinSmashCard");
-    public static final String IMG = makeCardPath("Attack.png"); // ConsumeDagger.png
+    public static final String IMG = makeFinalCardPath("GremlinSmash");
 
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = MonsterRarityEnum.MONSTER;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;

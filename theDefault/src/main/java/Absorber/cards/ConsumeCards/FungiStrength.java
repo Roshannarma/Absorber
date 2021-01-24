@@ -1,5 +1,6 @@
 package Absorber.cards.ConsumeCards;
 
+import Absorber.patches.MonsterRarityEnum;
 import Absorber.powers.LousePower;
 import Absorber.cards.AbstractDynamicCard;
 import Absorber.powers.RarePower;
@@ -34,7 +35,7 @@ public class FungiStrength extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = MonsterRarityEnum.MONSTER;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;

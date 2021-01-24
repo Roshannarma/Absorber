@@ -2,6 +2,7 @@ package Absorber;
 
 import Absorber.actions.AddCardFromConsume;
 import Absorber.cards.Normal.Draw_Attack;
+import Absorber.cards.starter.LivingDagger;
 import Absorber.cards.starter.StimNeedle;
 import Absorber.relics.*;
 import Absorber.relics.Garbage.BottledPlaceholderRelic;
@@ -21,6 +22,7 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -101,6 +103,7 @@ public class DefaultMod implements
     public static AbstractCard consumed = null;
     public static AbstractCard temporary;
     public static TopPanelItem refresh;
+    public static AbstractCard temporaryCard;
     
     // =============== INPUT TEXTURE LOCATION =================
     
@@ -201,12 +204,18 @@ public class DefaultMod implements
                 }
             }
         });
-        BaseMod.subscribe((StartActSubscriber) () -> {
-            logger.info(AbstractDungeon.floorNum);
-            if(AbstractDungeon.floorNum == 0){
-                ( (FreshSamplesPanel) refresh).reset();
-            }
-        });
+//        BaseMod.subscribe((StartActSubscriber) () -> {
+//            logger.info(AbstractDungeon.floorNum);
+//            if(AbstractDungeon.floorNum == 0){
+//                ( (FreshSamplesPanel) refresh).reset();
+//            }
+//        });
+//        BaseMod.subscribe((PostDungeonInitializeSubscriber) () -> {
+//            if(AbstractDungeon.player.masterDeck.findCardById("LivingDagger")==null){
+//                AbstractDungeon.player.masterDeck.addToBottom(new LivingDagger());
+////                AbstractDungeon.actionManager.addToBottom(new AddCardToDeckAction(new ConsumeDagger()));
+//            }
+//        });
         BaseMod.subscribe(this);
 
         
@@ -367,8 +376,8 @@ public class DefaultMod implements
         });
         
         settingsPanel.addUIElement(enableNormalsButton); // Add the button to the settings panel. Button is a go.
-        refresh = new FreshSamplesPanel();
-        BaseMod.addTopPanelItem(refresh);
+//        refresh = new FreshSamplesPanel();
+//        BaseMod.addTopPanelItem(refresh);
         
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
@@ -436,21 +445,24 @@ public class DefaultMod implements
 //        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
 //        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
 //        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new LinkedSoulsRelic(), TheDefault.Enums.COLOR_GRAY);
+
         BaseMod.addRelicToCustomPool(new FreshSamplesRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new BloodSurgeRelic(),TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new SurgicalGlovesRelic(),TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new EKGRelic(),TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new DoctorScrubsRelic(),TheDefault.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new SyringeHolder(),TheDefault.Enums.COLOR_GRAY);
+//        BaseMod.addRelicToCustomPool(new SyringeHolder(),TheDefault.Enums.COLOR_GRAY);
 //        BaseMod.addRelicToCustomPool(new DoubleDoseRelic(),TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new ChannelRelic(),TheDefault.Enums.COLOR_GRAY);
+
         // This adds a relic to the Shared pool. Every character can find this relic.
 //        BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
         // (the others are all starters so they're marked as seen in the character file)
-        UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
+//        UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
         logger.info("Done adding relics!");
     }
     

@@ -26,7 +26,7 @@ public class Cycle extends AbstractDynamicCard {
 
 
     public static final String ID = DefaultMod.makeID("Cycle");
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeFinalCardPath("Cycle");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

@@ -3,6 +3,7 @@ package Absorber.cards.Normal;
 import Absorber.actions.ConsumeAction;
 import Absorber.actions.DrainAction;
 import Absorber.cards.AbstractDynamicCard;
+import Absorber.cards.SpecialScalingCards;
 import basemod.AutoAdd;
 import basemod.helpers.dynamicvariables.MagicNumberVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -23,7 +24,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import static Absorber.DefaultMod.makeCardPath;
 
 //@AutoAdd.Ignore
-public class ManicAttack extends AbstractDynamicCard {
+public class ManicAttack extends SpecialScalingCards {
 
 
     public static final String ID = DefaultMod.makeID("ManicAttack");
@@ -47,7 +48,7 @@ public class ManicAttack extends AbstractDynamicCard {
     public ManicAttack() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = DAMAGE;
-        baseDamage = damage = 4;
+        baseDamage = damage = 3;
     }
 
 
@@ -60,6 +61,7 @@ public class ManicAttack extends AbstractDynamicCard {
         else{
             this.baseDamage = magicNumber;
         }
+        this.baseDamage += extra_damage;
         calculateCardDamage(m);
         for(int i=0; i<loops;i++){
             AbstractDungeon.actionManager.addToBottom(
@@ -71,12 +73,14 @@ public class ManicAttack extends AbstractDynamicCard {
         AbstractPlayer p = AbstractDungeon.player;
         if(p.currentHealth<p.maxHealth*.5) {
             this.baseDamage = magicNumber * 2;
+            this.baseDamage += extra_damage;
             super.applyPowers();
             this.rawDescription = cardStrings.DESCRIPTION;
             initializeDescription();
         }
         else {
             this.baseDamage = magicNumber;
+            this.baseDamage += extra_damage;
             super.applyPowers();
             this.rawDescription = cardStrings.DESCRIPTION;
             initializeDescription();
@@ -91,6 +95,18 @@ public class ManicAttack extends AbstractDynamicCard {
         super.calculateCardDamage(mo);
         this.rawDescription = cardStrings.DESCRIPTION;
         initializeDescription();
+    }
+    @Override
+    public void tookDamage(){
+        AbstractPlayer p = AbstractDungeon.player;
+        if(p.currentHealth<p.maxHealth*.5) {
+            this.baseDamage = magicNumber * 2;
+            this.baseDamage += extra_damage;
+        }
+        else{
+            this.baseDamage = magicNumber;
+            this.baseDamage += extra_damage;
+        }
     }
 
     // Upgraded stats.

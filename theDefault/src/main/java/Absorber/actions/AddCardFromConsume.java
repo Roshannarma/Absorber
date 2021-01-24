@@ -6,6 +6,7 @@ import Absorber.cards.ConsumeCards.ReptoDag;
 import Absorber.cards.starter.StimNeedle;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.*;
 import com.megacrit.cardcrawl.monsters.city.*;
@@ -61,10 +62,29 @@ public class AddCardFromConsume {
 //        CardMonsterList.put(Centurion.class.getName(),new KneeStrike());
     }
 
+    public static AbstractCard getMonsterCard(String m){
+        AbstractCard c = CardMonsterList.get(m);
+        if(c == null){
+            return null;
+        }
+        else{
+            if (c.type == AbstractCard.CardType.ATTACK && c.canUpgrade() && !c.upgraded && AbstractDungeon.player.hasRelic("Molten_Egg_2")){
+                c.upgrade();
+            }
+            else if (c.type == AbstractCard.CardType.POWER && c.canUpgrade() && !c.upgraded && AbstractDungeon.player.hasRelic("Frozen_Egg_2")) {
+                c.upgrade();
+            }
+            else if (c.type == AbstractCard.CardType.SKILL && c.canUpgrade() && !c.upgraded && AbstractDungeon.player.hasRelic("Toxic_Egg_2")) {
+                c.upgrade();
+            }
+            return c;
+        }
+    }
+
 
     public AddCardFromConsume(AbstractCreature target) {
         String m = target.getClass().getName();
-        AbstractCard temp = CardMonsterList.get(m);
+        AbstractCard temp = getMonsterCard(m);
         if(temp != null){
             DefaultMod.consumed = temp.makeCopy();
         }
@@ -74,12 +94,12 @@ public class AddCardFromConsume {
     }
     public static AbstractCard displaycard(AbstractMonster target) {
         String m = target.getClass().getName();
-        AbstractCard temp = CardMonsterList.get(m);
+        AbstractCard temp = getMonsterCard(m);
         if(temp != null){
             return temp.makeCopy();
         }
         else{
-            return null;
+            return new StimNeedle();
         }
     }
 }

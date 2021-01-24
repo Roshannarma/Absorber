@@ -25,10 +25,10 @@ import org.apache.logging.log4j.Logger;
 import static Absorber.DefaultMod.makeCardPath;
 
 //@AutoAdd.Ignore
-public class ConsumeDagger extends AbstractDynamicCard {
+public class LivingDagger extends AbstractDynamicCard {
 
 
-    public static final String ID = DefaultMod.makeID("ConsumeDagger");
+    public static final String ID = DefaultMod.makeID("LivingDagger");
     public static final String IMG = makeCardPath("ConsumeDagger.png"); // ConsumeDagger.png
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
@@ -37,7 +37,7 @@ public class ConsumeDagger extends AbstractDynamicCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
-    private static final Logger logger = LogManager.getLogger(ConsumeDagger.class.getName());
+    private static final Logger logger = LogManager.getLogger(LivingDagger.class.getName());
 
     private static final int COST = 1;
 
@@ -45,10 +45,13 @@ public class ConsumeDagger extends AbstractDynamicCard {
     private static final int UPGRADE_PLUS_DMG = 4;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     public static boolean first_turn;
+    private static final int BUFF = 1;
+    private static final int BUFF_UPGRADE_FROM_RELIC = 2;
 
-    public ConsumeDagger() {
+    public LivingDagger() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        baseMagicNumber = magicNumber = BUFF;
     }
 
 
@@ -59,6 +62,7 @@ public class ConsumeDagger extends AbstractDynamicCard {
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         AbstractDungeon.actionManager.addToBottom(
                 new ConsumeAction(m,new DamageInfo(p, damage, damageTypeForTurn)));
+//        this.buff(magicNumber);
         this.exhaust = true;
     }
     public void previewupdate(){

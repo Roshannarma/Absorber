@@ -50,7 +50,7 @@ public class Draw_Attack extends StimulatedCards {
     private static final int DRAW  = 1;
 
     private static final int STIM_DRAW = 2;
-//    private static final int UPGRADE_PLUS_STIM_DRAW = 1;
+    private static final int UPGRADE_PLUS_STIM_DRAW = 1;
 
     public Draw_Attack() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -79,7 +79,7 @@ public class Draw_Attack extends StimulatedCards {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-//            upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_STIM_DRAW);
+            upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_STIM_DRAW);
             initializeDescription();
         }
     }

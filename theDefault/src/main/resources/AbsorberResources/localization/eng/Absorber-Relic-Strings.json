@@ -35,8 +35,7 @@
     "NAME": "Fresh Samples",
     "FLAVOR": "I like flesh",
     "DESCRIPTIONS": [
-      "Gain 1 Max HP and 1 extra damage on Consume Dagger when Fatal",
-      "YOU ARE MINE!"
+      "Every 3 monster cards played, Draw 1 card and 1 Gain one Energy"
     ]
   },
   "Absorber:BloodSurgeRelic": {
@@ -51,7 +50,7 @@
     "NAME": "EKG",
     "FLAVOR": "Always helpful in a pinch",
     "DESCRIPTIONS": [
-      "If you are below 50% hp, drain deals double damage"
+      "If you are below 50% hp, drain deals triple damage"
     ]
   },
   "Absorber:SurgicalGlovesRelic": {
@@ -87,6 +86,13 @@
     "FLAVOR": "Syringes have always been helpful to you",
     "DESCRIPTIONS": [
       "Your First Syringe card each turn is played twice"
+    ]
+  },
+  "Absorber:LinkedSoulsRelic": {
+    "NAME": "Linked Souls",
+    "FLAVOR": "You feel oddly connected to this Dagger, slowly becoming more and more attached",
+    "DESCRIPTIONS": [
+      "Gain 1 Max HP when Fatal with the Living Dagger"
     ]
   }
 }

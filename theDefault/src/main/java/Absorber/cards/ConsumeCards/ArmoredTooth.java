@@ -1,12 +1,17 @@
 package Absorber.cards.ConsumeCards;
 
 import Absorber.actions.ConsumeAction;
+import Absorber.cards.AbstractDefaultCard;
 import Absorber.cards.AbstractDynamicCard;
+import Absorber.cards.MonsterCard;
+import Absorber.cards.MonsterCardExtended;
+import Absorber.patches.MonsterRarityEnum;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -20,14 +25,14 @@ import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;
 
 //@AutoAdd.Ignore
-public class ArmoredTooth extends AbstractDynamicCard {
+public class ArmoredTooth extends MonsterCardExtended {
 
 
     public static final String ID = DefaultMod.makeID("ArmoredTooth");
     public static final String IMG = makeFinalCardPath("JawWorm");
 
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = MonsterRarityEnum.MONSTER;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;

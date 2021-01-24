@@ -1,5 +1,6 @@
 package Absorber.cards.ConsumeCards;
 
+import Absorber.patches.MonsterRarityEnum;
 import Absorber.powers.EntangleThemPower;
 import Absorber.powers.GremlinStabsPower;
 import Absorber.powers.LousePower;
@@ -33,8 +34,8 @@ public class EntangleThem extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardRarity RARITY = MonsterRarityEnum.MONSTER;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
@@ -46,13 +47,17 @@ public class EntangleThem extends AbstractDynamicCard {
     public EntangleThem() {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        baseMagicNumber = 1;
 
     }
 
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EntangleThemPower(p, p), magicNumber));
+        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new EntangleThemPower(mo)));
+        }
+            this.exhaust = true;
     }
 
     //Upgraded stats.

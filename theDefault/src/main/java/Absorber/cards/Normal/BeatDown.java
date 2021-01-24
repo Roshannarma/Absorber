@@ -19,13 +19,14 @@ import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static Absorber.DefaultMod.makeCardPath;
+import static Absorber.DefaultMod.makeFinalCardPath;
 
 //@AutoAdd.Ignore
 public class BeatDown extends AbstractDynamicCard {
 
 
     public static final String ID = DefaultMod.makeID("BeatDown");
-    public static final String IMG = makeCardPath("Attack.png"); // ConsumeDagger.png
+    public static final String IMG = makeFinalCardPath("BeatDown");
 
 
     private static final CardRarity RARITY = CardRarity.COMMON;

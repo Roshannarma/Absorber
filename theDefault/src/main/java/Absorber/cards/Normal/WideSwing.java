@@ -16,7 +16,7 @@ import Absorber.characters.TheDefault;
 
 import static Absorber.DefaultMod.makeCardPath;
 
-//@AutoAdd.Ignore
+@AutoAdd.Ignore
 public class WideSwing extends AbstractDynamicCard {
 
 

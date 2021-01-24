@@ -1,5 +1,6 @@
 package Absorber.cards.ConsumeCards;
 
+import Absorber.patches.MonsterRarityEnum;
 import Absorber.powers.*;
 import Absorber.cards.AbstractDynamicCard;
 import basemod.AutoAdd;
@@ -16,6 +17,7 @@ import Absorber.actions.UncommonPowerAction;
 import Absorber.characters.TheDefault;
 
 import static Absorber.DefaultMod.makeCardPath;
+import static Absorber.DefaultMod.makeFinalCardPath;
 
 //@AutoAdd.Ignore
 public class GremlinArmy extends AbstractDynamicCard {
@@ -24,7 +26,7 @@ public class GremlinArmy extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID("GremlinArmy");
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeFinalCardPath("GremlinArmy");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
@@ -32,7 +34,7 @@ public class GremlinArmy extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = MonsterRarityEnum.MONSTER;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;

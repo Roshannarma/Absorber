@@ -2,6 +2,7 @@ package Absorber.cards.ConsumeCards;
 
 import Absorber.actions.ConsumeAction;
 import Absorber.cards.AbstractDynamicCard;
+import Absorber.patches.MonsterRarityEnum;
 import basemod.AutoAdd;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -29,7 +30,7 @@ public class SentrySlam extends AbstractDynamicCard {
 //    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 //    public static final String NORMAL_DESCRIPTION = cardStrings.DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = MonsterRarityEnum.MONSTER;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;

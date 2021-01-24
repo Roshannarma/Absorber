@@ -16,13 +16,14 @@ import Absorber.DefaultMod;
 import Absorber.characters.TheDefault;
 
 import static Absorber.DefaultMod.makeCardPath;
+import static Absorber.DefaultMod.makeFinalCardPath;
 
 //@AutoAdd.Ignore
 public class UnbreakableWill extends AbstractDynamicCard {
 
 
     public static final String ID = DefaultMod.makeID("UnbreakableWill");
-    public static final String IMG = makeCardPath("Skill.png"); // ConsumeDagger.png
+    public static final String IMG = makeFinalCardPath("UnbreakableWill");
 
 
     private static final CardRarity RARITY = CardRarity.COMMON;

@@ -1,5 +1,6 @@
 package Absorber.actions;
 
+import Absorber.cards.SpecialScalingCards;
 import Absorber.relics.FreshSamplesRelic;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -31,12 +32,15 @@ public class SharpenAction extends AbstractGameAction {
 
     public void update() {
         for(AbstractCard o: AbstractDungeon.player.hand.group){
-            o.baseDamage += amount;
+            if(o instanceof SpecialScalingCards){
+                ((SpecialScalingCards) o).extra_damage += amount;
+            }
+            else {
+                o.baseDamage += amount;
+            }
             o.upgradedDamage = true;
-            logger.info(o);
             isDone = true;
         }
-
         this.tickDuration();
     }
 }

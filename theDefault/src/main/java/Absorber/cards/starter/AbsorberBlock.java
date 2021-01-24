@@ -2,6 +2,7 @@ package Absorber.cards.starter;
 
 import Absorber.actions.ConsumeAction;
 import Absorber.cards.AbstractDynamicCard;
+//import Absorber.patches.MonsterRarityEnum;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;

@@ -92,7 +92,7 @@ public class DrawLessNextTurnPower extends AbstractPower implements CloneablePow
     }
     @Override
     public AbstractPower makeCopy() {
-        return new EntangleThemPower(owner,source);
+        return new DrawLessNextTurnPower(owner,source,amount);
     }
 }
 

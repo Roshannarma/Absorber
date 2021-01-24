@@ -32,7 +32,7 @@ public class SecondaryScalingVariable extends DynamicVariable
     @Override
     public int value(AbstractCard card)
     {
-        return ( (StimAOE) card).secondary_damage;
+        return ( (StimAOE) card).secondaryDamage;
     }
 
     // The baseValue the variable should display.
@@ -40,7 +40,7 @@ public class SecondaryScalingVariable extends DynamicVariable
     @Override
     public int baseValue(AbstractCard card)
     {
-        return ( (StimAOE) card).base_secondary_damage;
+        return ( (StimAOE) card).baseSecondaryDamage;
     }
 
     // If the card has it's damage upgraded, this variable will glow green on the upgrade selection screen as well.

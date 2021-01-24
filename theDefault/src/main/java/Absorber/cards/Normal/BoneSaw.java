@@ -15,13 +15,14 @@ import Absorber.characters.TheDefault;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Absorber.DefaultMod.makeCardPath;
+import static Absorber.DefaultMod.makeFinalCardPath;
 
 //@AutoAdd.Ignore
 public class BoneSaw extends AbstractDynamicCard {
 
 
     public static final String ID = DefaultMod.makeID("BoneSaw");
-    public static final String IMG = makeCardPath("Attack.png"); // ConsumeDagger.png
+    public static final String IMG = makeFinalCardPath("BoneSaw");
 
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -31,8 +32,8 @@ public class BoneSaw extends AbstractDynamicCard {
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 13;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 4;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int DAMAGE = 12;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_DMG = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     private static final int WEAKEN  = 2;
     private static final int UPGRADE_PLUS_WEAKEN = 1;

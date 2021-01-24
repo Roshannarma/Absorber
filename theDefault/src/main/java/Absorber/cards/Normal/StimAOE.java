@@ -29,6 +29,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import static Absorber.DefaultMod.makeCardPath;
@@ -45,6 +46,7 @@ public class StimAOE extends StimulatedCards {
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    private static final Logger logger = LogManager.getLogger(StimAOE.class.getName());
 
     private static final int COST = 1;
 
@@ -54,8 +56,8 @@ public class StimAOE extends StimulatedCards {
     private static final int STIMULATED_DAMAGE = 5;
     private static final int UPGRADE_PLUS_STIMULATED_DAMAGE = 2;
 
-    public int base_secondary_damage;
-    public int secondary_damage;
+    public int baseSecondaryDamage;
+    public int secondaryDamage;
     public boolean isSecondaryModified;
     public boolean isSecondaryUpgraded;
 
@@ -63,41 +65,96 @@ public class StimAOE extends StimulatedCards {
     public StimAOE() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        base_secondary_damage = secondary_damage = STIMULATED_DAMAGE;
+        baseSecondaryDamage = secondaryDamage = STIMULATED_DAMAGE;
 
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int temp = 0;
+        ArrayList<AbstractMonster> temp = new ArrayList<AbstractMonster>();
         for(AbstractMonster mon: AbstractDungeon.getCurrRoom().monsters.monsters){
             if (!mon.isDeadOrEscaped()){
-                temp++;
+                temp.add(mon);
             }
         }
-        int[] damageList = new int[temp];
+        int[] damageList = new int[temp.size()];
         if(Stimulated.update()){
-            for(int i=0;i<temp;i++){
-                damageList[i] = damage + secondary_damage;
+            for(int i=0;i<temp.size();i++){
+                calculateCardDamage(temp.get(i));
+                calculateSecondaryDamage(temp.get(i));
+//                logger.info(damage);
+//                logger.info(secondaryDamage);
+//                logger.info(damage+secondaryDamage);
+//                logger.info("");
+                damageList[i] = damage + secondaryDamage;
             }
         }
         else{
-            for(int i=0;i<temp;i++){
+            for(int i=0;i<temp.size();i++){
+                calculateCardDamage(temp.get(i));
+//                logger.info(damage);
+//                logger.info("");
                 damageList[i] = damage;
             }
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(m,damageList,damageTypeForTurn,AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p,damageList, DamageInfo.DamageType.NORMAL,AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
+    public void calculateSecondaryDamage(AbstractMonster mo){
+        AbstractPlayer player = AbstractDungeon.player;
+        float tmp = (float)this.baseSecondaryDamage;
+        Iterator var9 = player.relics.iterator();
+
+        while(var9.hasNext()) {
+            AbstractRelic r = (AbstractRelic)var9.next();
+            tmp = r.atDamageModify(tmp, this);
+            if (this.baseSecondaryDamage != (int)tmp) {
+                this.isSecondaryModified = true;
+            }
+        }
+
+        AbstractPower p;
+        for(var9 = player.powers.iterator(); var9.hasNext(); tmp = p.atDamageGive(tmp, this.damageTypeForTurn, this)) {
+            p = (AbstractPower)var9.next();
+        }
+
+        tmp = player.stance.atDamageGive(tmp, this.damageTypeForTurn, this);
+        if (this.baseSecondaryDamage != (int)tmp) {
+            this.isSecondaryModified = true;
+        }
+
+        for(var9 = mo.powers.iterator(); var9.hasNext(); tmp = p.atDamageReceive(tmp, this.damageTypeForTurn, this)) {
+            p = (AbstractPower)var9.next();
+        }
+
+        for(var9 = player.powers.iterator(); var9.hasNext(); tmp = p.atDamageFinalGive(tmp, this.damageTypeForTurn, this)) {
+            p = (AbstractPower)var9.next();
+        }
+
+        for(var9 = mo.powers.iterator(); var9.hasNext(); tmp = p.atDamageFinalReceive(tmp, this.damageTypeForTurn, this)) {
+            p = (AbstractPower)var9.next();
+        }
+
+        if (tmp < 0.0F) {
+            tmp = 0.0F;
+        }
+
+        if (this.baseSecondaryDamage != MathUtils.floor(tmp)) {
+            this.isSecondaryModified = true;
+        }
+
+        this.secondaryDamage = MathUtils.floor(tmp);
+    }
+
     public void secondaryApplyPowers(){
         AbstractPlayer pla  = AbstractDungeon.player;
-        float tmp = (float)this.base_secondary_damage;
+        float tmp = (float)this.baseSecondaryDamage;
         Iterator var3 = pla.relics.iterator();
 
         while(var3.hasNext()) {
             AbstractRelic r = (AbstractRelic)var3.next();
             tmp = r.atDamageModify(tmp, this);
-            if (this.base_secondary_damage != (int)tmp) {
+            if (this.baseSecondaryDamage != (int)tmp) {
                 this.isSecondaryModified = true;
             }
         }
@@ -108,7 +165,7 @@ public class StimAOE extends StimulatedCards {
         }
 
         tmp = pla.stance.atDamageGive(tmp, this.damageTypeForTurn, this);
-        if (this.base_secondary_damage != (int)tmp) {
+        if (this.baseSecondaryDamage != (int)tmp) {
             this.isSecondaryModified = true;
         }
 
@@ -120,10 +177,10 @@ public class StimAOE extends StimulatedCards {
             tmp = 0.0F;
         }
 
-        if (this.base_secondary_damage != MathUtils.floor(tmp)) {
+        if (this.baseSecondaryDamage != MathUtils.floor(tmp)) {
             this.isSecondaryModified = true;
         }
-        this.secondary_damage = MathUtils.floor(tmp);
+        this.baseSecondaryDamage = MathUtils.floor(tmp);
     }
     @Override
     public void applyPowers(){
@@ -137,7 +194,7 @@ public class StimAOE extends StimulatedCards {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            base_secondary_damage += UPGRADE_PLUS_STIMULATED_DAMAGE;
+            baseSecondaryDamage += UPGRADE_PLUS_STIMULATED_DAMAGE;
             isSecondaryUpgraded = true;
             upgradeDamage(UPGRADE_PLUS_DMG);
             initializeDescription();

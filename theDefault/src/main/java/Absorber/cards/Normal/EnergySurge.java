@@ -1,6 +1,7 @@
 package Absorber.cards.Normal;
 
 import Absorber.actions.DrainAction;
+import Absorber.cards.SpecialScalingCards;
 import Absorber.powers.EntangleThemPower;
 import Absorber.powers.GremlinStabsPower;
 import Absorber.powers.LousePower;
@@ -29,7 +30,7 @@ import org.apache.logging.log4j.Logger;
 import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;
 //@AutoAdd.Ignore
-public class EnergySurge extends AbstractDynamicCard {
+public class EnergySurge extends SpecialScalingCards {
 
 
     // TEXT DECLARATION
@@ -79,8 +80,6 @@ public class EnergySurge extends AbstractDynamicCard {
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         int temp = get_cost();
-        logger.info(2);
-        logger.info(temp);
         if (temp > 0) {
             if(EnergyPanel.totalCount>AbstractDungeon.player.energy.energy){
                 this.baseDamage = temp * magicNumber *2;
@@ -88,18 +87,17 @@ public class EnergySurge extends AbstractDynamicCard {
             else{
                 this.baseDamage = temp * magicNumber;
             }
+            this.baseDamage += extra_damage;
             calculateCardDamage(m);
             EnergyPanel.setEnergy(0);
             addToBot(new DamageAction(m, new DamageInfo(m, damage)));
-//            this.exhaust = true;
-//            EnergyPanel.setEnergy(0);
         }
         else{
             this.baseDamage = 0;
+            this.baseDamage += extra_damage;
             calculateCardDamage(m);
             EnergyPanel.setEnergy(0);
             addToBot(new DamageAction(m, new DamageInfo(m, damage)));
-//            this.exhaust = true;
         }
     }
     //Upgraded stats.
@@ -115,7 +113,6 @@ public class EnergySurge extends AbstractDynamicCard {
                 this.baseDamage = temp * magicNumber;
             }
             super.applyPowers();
-//            calculateCardDamage((AbstractMonster)null);
             this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
             initializeDescription();
         }
@@ -143,7 +140,6 @@ public class EnergySurge extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_DAMAGE);
-//            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

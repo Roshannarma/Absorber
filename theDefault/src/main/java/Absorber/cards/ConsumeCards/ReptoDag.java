@@ -15,13 +15,14 @@ import Absorber.characters.TheDefault;
 import java.util.ArrayList;
 
 import static Absorber.DefaultMod.makeCardPath;
+import static Absorber.DefaultMod.makeFinalCardPath;
 
 //@AutoAdd.Ignore
 public class ReptoDag extends StimulatedCards {
 
 
     public static final String ID = DefaultMod.makeID("ReptoDag");
-    public static final String IMG = makeCardPath("Attack.png"); // ConsumeDagger.png
+    public static final String IMG = makeFinalCardPath("ReptoDaggers");
 
 
     private static final CardRarity RARITY = CardRarity.SPECIAL;

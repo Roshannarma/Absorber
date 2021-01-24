@@ -2,6 +2,7 @@ package Absorber.cards.ConsumeCards;
 
 import Absorber.actions.ConsumeAction;
 import Absorber.cards.AbstractDynamicCard;
+import Absorber.patches.MonsterRarityEnum;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -27,7 +28,7 @@ public class TaskMasterWhip extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("Slavers/TaskMaster.png"); // CorrosiveDagger_S.png
 
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = MonsterRarityEnum.MONSTER;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;

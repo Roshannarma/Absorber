@@ -6,9 +6,10 @@ import Absorber.cards.Normal.Sharpen;
 import Absorber.cards.Normal.UnbreakableWill;
 import Absorber.cards.starter.AbsorberBlock;
 import Absorber.cards.starter.AbsorberStrike;
-import Absorber.cards.starter.ConsumeDagger;
+import Absorber.cards.starter.LivingDagger;
 import Absorber.cards.starter.StimNeedle;
 import Absorber.relics.FreshSamplesRelic;
+import Absorber.relics.LinkedSoulsRelic;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
 import com.badlogic.gdx.graphics.Color;
@@ -67,7 +68,7 @@ public class TheDefault extends CustomPlayer {
     // =============== BASE STATS =================
 
     public static final int ENERGY_PER_TURN = 3;
-    public static final int STARTING_HP = 70;
+    public static final int STARTING_HP = 60;
     public static final int MAX_HP = 60;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
@@ -169,16 +170,16 @@ public class TheDefault extends CustomPlayer {
 //        retVal.add(DefaultCommonSkill.ID);
 //        retVal.add(DefaultUncommonSkill.ID);
 //        retVal.add(DefaultRareSkill.ID);
+        retVal.add(LivingDagger.ID);
+        retVal.add(AbsorberStrike.ID);
+        retVal.add(AbsorberStrike.ID);
+        retVal.add(AbsorberStrike.ID);
+        retVal.add(AbsorberStrike.ID);
+        retVal.add(AbsorberBlock.ID);
+        retVal.add(AbsorberBlock.ID);
+        retVal.add(AbsorberBlock.ID);
+        retVal.add(AbsorberBlock.ID);
         retVal.add(StimNeedle.ID);
-        retVal.add(ConsumeDagger.ID);
-        retVal.add(AbsorberBlock.ID);
-        retVal.add(AbsorberBlock.ID);
-        retVal.add(AbsorberBlock.ID);
-        retVal.add(AbsorberBlock.ID);
-        retVal.add(AbsorberStrike.ID);
-        retVal.add(AbsorberStrike.ID);
-        retVal.add(AbsorberStrike.ID);
-        retVal.add(AbsorberStrike.ID);
 //        retVal.add(UnbreakableWill.ID);
 //        retVal.add(Sharpen.ID);
 //        retVal.add(Leeches.ID);
@@ -205,7 +206,8 @@ public class TheDefault extends CustomPlayer {
 //        retVal.add(PlaceholderRelic.ID);
 //        retVal.add(PlaceholderRelic2.ID);
 //        retVal.add(DefaultClickableRelic.ID);
-        retVal.add(FreshSamplesRelic.ID);
+        retVal.add(LinkedSoulsRelic.ID);
+//        retVal.add(FreshSamplesRelic.ID);
 //        retVal.add(BloodSurgeRelic.ID);
 
         // Mark relics as seen - makes it visible in the compendium immediately

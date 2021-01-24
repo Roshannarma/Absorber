@@ -3,6 +3,7 @@ package Absorber.cards.Normal;
 import Absorber.actions.ConsumeAction;
 import Absorber.actions.DrainAction;
 import Absorber.cards.AbstractDynamicCard;
+import Absorber.cards.SpecialScalingCards;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -20,7 +21,7 @@ import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;
 
 //@AutoAdd.Ignore
-public class DrainDamage extends AbstractDynamicCard {
+public class DrainDamage extends SpecialScalingCards {
 
 
     public static final String ID = DefaultMod.makeID("DrainDamage");
@@ -50,6 +51,7 @@ public class DrainDamage extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.baseDamage = magicNumber * DrainAction.returnTotal();
+        this.baseDamage += extra_damage;
         calculateCardDamage(m);
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
@@ -58,9 +60,11 @@ public class DrainDamage extends AbstractDynamicCard {
     public void applyPowers(){
         if(DrainAction.returnTotal()>0) {
             this.baseDamage = magicNumber * DrainAction.returnTotal();
+            this.baseDamage += extra_damage;
         }
         else {
             this.baseDamage = 0;
+            this.baseDamage += extra_damage;
         }
         super.applyPowers();
         if(upgraded){

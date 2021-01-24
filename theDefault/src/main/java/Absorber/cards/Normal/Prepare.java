@@ -24,6 +24,7 @@ import Absorber.actions.UncommonPowerAction;
 import Absorber.characters.TheDefault;
 
 import static Absorber.DefaultMod.makeCardPath;
+import static Absorber.DefaultMod.makeFinalCardPath;
 
 public class Prepare extends AbstractDynamicCard {
 
@@ -31,7 +32,7 @@ public class Prepare extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID("Prepare");
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeFinalCardPath("Prepare");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
@@ -55,16 +56,16 @@ public class Prepare extends AbstractDynamicCard {
 
     public Prepare() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = RETAIN;
-        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = CARD;
+        baseMagicNumber = magicNumber = CARD;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = RETAIN;
     }
 
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p,1));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p,magicNumber));
     if (p.isPlayer && !AbstractDungeon.player.hand.isEmpty() && !AbstractDungeon.player.hasRelic("Runic Pyramid") && !AbstractDungeon.player.hasPower("Equilibrium")) {
-            AbstractDungeon.actionManager.addToBottom(new RetainCardsAction(p, magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new RetainCardsAction(p, defaultSecondMagicNumber));
         }
     }
 
@@ -73,7 +74,7 @@ public class Prepare extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_RETAIN);
+            upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_RETAIN);
             initializeDescription();
         }
     }

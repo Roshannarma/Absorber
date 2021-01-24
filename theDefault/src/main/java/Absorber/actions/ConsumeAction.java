@@ -1,9 +1,12 @@
 package Absorber.actions;
 
+import Absorber.cards.starter.LivingDagger;
 import Absorber.relics.FreshSamplesRelic;
+import Absorber.relics.LinkedSoulsRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -23,13 +26,13 @@ import Absorber.TopPanel.FreshSamplesPanel;
 
 public class ConsumeAction extends AbstractGameAction {
     private int increaseHpAmount;
-    private DamageInfo info;
+//    private DamageInfo info;
     private static final float DURATION = 0.1F;
     private AbstractRelic FreshSamplesRelic;
     private static final Logger logger = LogManager.getLogger(ConsumeAction.class.getName());
 
     public ConsumeAction(AbstractCreature target, DamageInfo info) {
-        this.info = info;
+//        this.info = info;
         this.setValues(target, info);
 //        this.increaseHpAmount = maxHPAmount;
         this.actionType = ActionType.DAMAGE;
@@ -44,11 +47,16 @@ public class ConsumeAction extends AbstractGameAction {
                 AddCardFromConsume temp = new AddCardFromConsume(target);
                 Absorber.DefaultMod.DidConsume = true;
                 logger.info("consumed");
-                ((FreshSamplesPanel) refresh).charged = true;
-                ((FreshSamplesPanel) refresh).ChangeImage();
+//                ((FreshSamplesPanel) refresh).charged = true;
+//                ((FreshSamplesPanel) refresh).ChangeImage();
                 for(AbstractRelic a: AbstractDungeon.player.relics){
-                    if(a instanceof FreshSamplesRelic){
-                         ((FreshSamplesRelic) a).refresh();
+                    if(a instanceof LinkedSoulsRelic) {
+                        ((LinkedSoulsRelic) a).refresh();
+                    }
+                }
+                for(AbstractCard c: AbstractDungeon.player.masterDeck.group){
+                    if(c instanceof LivingDagger){
+                        ((LivingDagger) c).buff(c.magicNumber);
                     }
                 }
             }

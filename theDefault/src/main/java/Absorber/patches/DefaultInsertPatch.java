@@ -2,7 +2,7 @@ package Absorber.patches;
 
 import Absorber.DefaultMod;
 import Absorber.actions.AddCardFromConsume;
-import Absorber.cards.starter.ConsumeDagger;
+import Absorber.cards.starter.LivingDagger;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.blue.Consume;
@@ -110,11 +110,11 @@ public class DefaultInsertPatch {// Don't worry about the "never used" warning -
         // You can change retVal (using @byRef) to always return the same relic, or return a specific relic if it passes some check.
         // You can execute any other static method you have, you can save retVal to your personal public static variable to always be able to
         // reference the last relic you grabbed - etc. etc. The possibilities are endless. We're gonna do the following:
-        if(__instance instanceof ConsumeDagger){
+        if(__instance instanceof LivingDagger){
 //            logger.info(1);
             DefaultMod.temporary = AddCardFromConsume.displaycard(mo);
 //            logger.info("2");
-            ((ConsumeDagger) __instance).previewupdate();
+            ((LivingDagger) __instance).previewupdate();
 //            logger.info("3");
         }
 //        ConsumeDagger.update();

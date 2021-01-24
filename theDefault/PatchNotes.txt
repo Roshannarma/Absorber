@@ -1,3 +1,61 @@
+Patch 0.0.12:
+New Aspects:
+Pacifism: (Power)  2 cost, At the End of your Turn, if you have not played any attacks, Gain 1(2) Energized
+Double Trouble: (Power) 2(1) cost, your first monster card each turn is doubled
+FreshSamples: Relic, reused name from old Relic, Every 3 monster cards played, draw 1 card and 1 gain one energy
+
+Removed Aspects:
+SyringeHolder: (relic)
+
+Name Changes:
+FreshSamples -> Linked Souls
+ConsumeDagger -> Living Dagger
+
+Bug Fixes:
+Sharpen works on all cards now, including Manic Attack, Pyschotic Wrath, Drain Damage, Energy Surge
+Fixed StimAOE
+Fixed GiantHeadSlam/ Made it work for the first time
+
+Balance Changes:
+Buffed Draw_Attack+: Stimuated Draw: 2 -> 3
+Nerfed StimNeedle: 9 -> 10
+Buffed StimNeedle+: Energy 1 -> 2, Draw 2 -> 1, Damage 11 -> 12
+Nerfed BoneSaw: Damage 13 -> 12
+Nerfed BoneSaw+: Damage 17 -> 15
+Living Dagger: Damage Buff -> 1 (Buff moved from Linked Souls)
+Nerfed CorrosiveDagger: Damage 10 -> 9
+Nerfed CorrosiveDagger+: Damage 15 -> 13
+Linked Souls: Damage Buff 1 -> 0   (Buff moved to Dagger)
+Changed EKG: Double Damage and Heal -> Triple Damage no extra Heal
+
+Fixed Descriptions:
+Prepare
+Manic Attack
+
+New Power Art:
+Double Trouble
+Entangle
+Gremlin Rally
+HealthDrain
+DrainLash
+
+New Card Art:
+BeatDown
+BoneSaw
+Cycle
+Gremlin Army
+Gremlin Smash
+ReptoDagger
+UnbreakableWill
+Monster Cards have a unique Rarity
+
+
+
+
+
+
+
+
 Patch 0.0.11:
 New/Removed Cards:
 Removed Wide Swing in place of StimAOE

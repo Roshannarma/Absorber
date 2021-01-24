@@ -3,6 +3,7 @@ package Absorber.cards.ConsumeCards;
 import Absorber.DefaultMod;
 import Absorber.cards.AbstractDynamicCard;
 import Absorber.characters.TheDefault;
+import Absorber.patches.MonsterRarityEnum;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -24,7 +25,7 @@ public class ChosenAttack extends AbstractDynamicCard {
     public static final String IMG = makeFinalCardPath("Chosen"); // CorrosiveDagger_S.png
 
 
-    private static final AbstractCard.CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = MonsterRarityEnum.MONSTER;
     private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.ENEMY;
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
     public static final AbstractCard.CardColor COLOR = TheDefault.Enums.COLOR_GRAY;

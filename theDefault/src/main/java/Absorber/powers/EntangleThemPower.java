@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.cards.tempCards.Shiv;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -30,17 +31,16 @@ public class EntangleThemPower extends AbstractPower implements CloneablePowerIn
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("Entangled84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("Entangled32.png"));
 
-    public EntangleThemPower(final AbstractCreature owner, final AbstractCreature source) {
+    public EntangleThemPower(final AbstractCreature owner) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
-        this.source = source;
 
-        type = PowerType.BUFF;
+        type = PowerType.DEBUFF;
 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -48,9 +48,15 @@ public class EntangleThemPower extends AbstractPower implements CloneablePowerIn
 
         updateDescription();
     }
-    @Override
-    public float atDamageFinalReceive(float damage, DamageInfo.DamageType type){
-        return 0;
+//    @Override
+//    public float atDamageFinalReceive(float damage, DamageInfo.DamageType type){
+//        return 0;
+//    }
+    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+        if (type == DamageInfo.DamageType.NORMAL) {
+            return 0;
+        }
+        return damage;
     }
     public void atEndOfRound() {
         flash();
@@ -59,6 +65,10 @@ public class EntangleThemPower extends AbstractPower implements CloneablePowerIn
 
     @Override
     public AbstractPower makeCopy() {
-        return new EntangleThemPower(owner,source);
+        return new EntangleThemPower(owner);
+    }
+    @Override
+    public void updateDescription(){
+        description = DESCRIPTIONS[0];
     }
 }

@@ -17,13 +17,14 @@ import Absorber.DefaultMod;
 import Absorber.characters.TheDefault;
 
 import static Absorber.DefaultMod.makeCardPath;
+import static Absorber.DefaultMod.makeFinalCardPath;
 
 //@AutoAdd.Ignore
 public class NeverEndingWall extends AbstractDynamicCard {
 
 
     public static final String ID = DefaultMod.makeID("NeverEndingWall");
-    public static final String IMG = makeCardPath("Skill.png"); // ConsumeDagger.png
+    public static final String IMG = makeFinalCardPath("NeverEndingWall");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
 

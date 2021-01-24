@@ -5,17 +5,24 @@ import Absorber.actions.DrainAction;
 import Absorber.actions.WallDefendAction;
 import Absorber.cards.ConsumeCards.BloodyFeather;
 import Absorber.cards.ConsumeCards.GiantHeadSlam;
-import Absorber.cards.starter.ConsumeDagger;
+import Absorber.cards.ConsumeCards.OrbSpray;
+import Absorber.cards.starter.LivingDagger;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
+import com.megacrit.cardcrawl.monsters.beyond.GiantHead;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import javassist.CtBehavior;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
+
+import static Absorber.DefaultMod.temporaryCard;
 
 
 @SpirePatch(    // "Use the @SpirePatch annotation on the patch class."
@@ -54,9 +61,18 @@ public class DrainPatch {// Don't worry about the "never used" warning - *You* u
         logger.info("We are Clearing Everything now");
         DrainAction.clear();
         WallDefendAction.clear();
+        for(AbstractCard c :AbstractDungeon.player.masterDeck.group){
+            if(c instanceof GiantHeadSlam){
+                ((GiantHeadSlam) c).turn_counter =0;
+            }
+        }
         BloodyFeather.first_turn = true;
-        GiantHeadSlam.turn_counter = 0;
-        ConsumeDagger.first_turn = true;
+        LivingDagger.first_turn = true;
+        OrbSpray.first_turn = true;
+        if(temporaryCard != null){
+            AbstractDungeon.actionManager.addToBottom(new AddCardToDeckAction(temporaryCard));
+            temporaryCard = null;
+        }
 //        DefaultMod.DidConsume = false;
 //        DefaultMod.consumed = null;
         // Incredible.

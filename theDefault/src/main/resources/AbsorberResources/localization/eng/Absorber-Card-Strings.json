@@ -54,12 +54,12 @@
     "NAME" : "Corrosive Dagger",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! weak."
   },
-  "Absorber:ConsumeDagger": {
-    "NAME" : "Consume Dagger",
-    "DESCRIPTION": "Deal !D! damage. NL Fatal: Add a card to your card reward pool Exhaust",
+  "Absorber:LivingDagger": {
+    "NAME" : "Living Dagger",
+    "DESCRIPTION": "Deal !D! damage Fatal: Increase damage by !M!. NL Add a card to your reward pool Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "Deal !D! damage. NL Fatal: Add ",
-      " to your card reward pool Exhaust"
+      "Deal !D! damage Fatal: Increase damage by !M!. NL Add ",
+      " to your reward pool Exhaust."
     ]
   },
   "Absorber:BloodyFeather": {
@@ -132,7 +132,7 @@
   },
   "Absorber:EntangleThem": {
     "NAME" : "Entangle Them",
-    "DESCRIPTION": "Next turn, enemy attacks deal 0."
+    "DESCRIPTION": "This turn, deal 0 damage."
   },
   "Absorber:FungiStrength": {
     "NAME" : "Fungi Strength",
@@ -177,7 +177,11 @@
   },
   "Absorber:GiantHeadSlam": {
     "NAME" : "Giant Head Slam",
-    "DESCRIPTION": "After the 5th turn, this card deals !D! damage"
+    "DESCRIPTION": "After the 5th turn, this card deals !D! damage.",
+    "EXTENDED_DESCRIPTION": [
+      " NL ",
+      " turns remaining"
+    ]
   },
   "Absorber:OrbSpray": {
     "NAME" : "Orb Spray",
@@ -193,7 +197,7 @@
   },
   "Absorber:Prepare": {
     "NAME": "Prepare",
-    "DESCRIPTION": "Draw !M! card. NL Retain !Absorber:SecondMagic: card.",
+    "DESCRIPTION": "Draw !M! card. NL Retain !Absorber:SecondMagic! card.",
     "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Retain !Absorber:SecondMagic! card."
   },
   "Absorber:VolatileSteroid": {
@@ -255,7 +259,7 @@
   },
   "Absorber:EnergySurge": {
     "NAME": "Energy Surge",
-    "DESCRIPTION": "Deal !M! times X damage. NL Deal double when energy is above !Absorber:MaxEnergy!.",
+    "DESCRIPTION": "Deal !M! times X damage. NL absorber:Stimulated: Deal double damage",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       " NL (Deals !D! damage.) ",
@@ -372,5 +376,13 @@
   "Absorber:StimAOE": {
     "NAME": "Stim AOE",
     "DESCRIPTION": "Deal !D! damage to all enemies. NL absorber:Stimulated: Deal !Absorber:SecondaryScaling! damage extra"
+  },
+  "Absorber:Pacifism": {
+    "NAME": "Pacifism",
+    "DESCRIPTION": "At the End of your Turn, if you have not played any attacks, Gain 1 Energized."
+  },
+  "Absorber:DoubleTrouble": {
+    "NAME": "Double Trouble",
+    "DESCRIPTION": "The first Monster card you play each turn is played twice"
   }
 }
