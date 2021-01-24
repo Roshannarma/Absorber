@@ -40,7 +40,7 @@ public class BloodyFeather extends AbstractDynamicCard {
 
     private static int DAMAGE = 0;    // DAMAGE = ${DAMAGE}
 
-    public static boolean first_turn = true;
+//    public static boolean first_turn = true;
 
     private static final int GAIN = 4;
     private static final int UPGRADE_PLUS_GAIN = 1;
@@ -53,15 +53,15 @@ public class BloodyFeather extends AbstractDynamicCard {
     }
     @Override
     public void atTurnStart(){
-        logger.info("at turn start");
-        logger.info(first_turn);
-        logger.info(magicNumber);
-        if(!first_turn){
+//        logger.info("at turn start");
+//        logger.info(first_turn);
+//        logger.info(magicNumber);
+//        if(!first_turn){
             upgradeDamage(this.magicNumber);
-        }
-        logger.info(first_turn);
-        first_turn = false;
-        logger.info(first_turn);
+//        }
+//        logger.info(first_turn);
+//        first_turn = false;
+//        logger.info(first_turn);
     }
 
 

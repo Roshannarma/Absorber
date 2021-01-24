@@ -80,11 +80,11 @@
   },
   "Absorber:DarklingDrain": {
     "NAME" : "Darkling Drain",
-    "DESCRIPTION": "absorber:Drain !Absorber:DrainVariable! HP."
+    "DESCRIPTION": "absorber:Drain !Absorber:DrainVariable! HP. NL Exhaust."
   },
   "Absorber:Leeches": {
     "NAME" : "Leeches",
-    "DESCRIPTION": "Deal !D! damage. NL absorber:Drain !Absorber:DrainVariable! HP."
+    "DESCRIPTION": "absorber:Drain !Absorber:DrainVariable! HP for the next 2 turns. NL Exhaust."
   },
   "Absorber:VesselBurst": {
     "NAME" : "Vessel Burst",
@@ -100,8 +100,8 @@
   },
   "Absorber:DrainDamage": {
     "NAME" : "Drain Damage",
-    "DESCRIPTION": "Deal damage equal to the amount of drain done this combat",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to 2 times the amount of drain done this combat",
+    "DESCRIPTION": "Deal damage equal to 2 times the amount of drain done this combat",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to 3 times the amount of drain done this combat",
     "EXTENDED_DESCRIPTION": [
       " NL (Deals !D! damage.)"
     ]
@@ -379,7 +379,7 @@
   },
   "Absorber:Pacifism": {
     "NAME": "Pacifism",
-    "DESCRIPTION": "At the End of your Turn, if you have not played any attacks, Gain 1 Energized."
+    "DESCRIPTION": "At the End of your Turn, if you have not played any attacks, Gain !M! Block."
   },
   "Absorber:DoubleTrouble": {
     "NAME": "Double Trouble",

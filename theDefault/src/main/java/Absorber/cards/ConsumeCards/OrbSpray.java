@@ -38,7 +38,7 @@ public class OrbSpray extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 2;
-    public static boolean first_turn = true;
+//    public static boolean first_turn = true;
 
     private static final int DAMAGE = 0;    // DAMAGE = ${DAMAGE}
 
@@ -55,10 +55,10 @@ public class OrbSpray extends AbstractDynamicCard {
 
     @Override
     public void atTurnStart(){
-        if(!first_turn){
-            upgradeDamage(this.magicNumber);
-        }
-        first_turn = false;
+//        if(!first_turn){
+        upgradeDamage(this.magicNumber);
+//        }
+//        first_turn = false;
     }
 
     // Actions the card should do.

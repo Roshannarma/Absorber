@@ -8,7 +8,6 @@ New Aspects:
 Starting Choice replacing changing starter relic for linking with dagger
 
 Removed Aspects:
-Pacifism, replica of ingame relic, art of war
 
 
 Bug Fixes:
@@ -16,10 +15,19 @@ Dagger saves damage buff
 
 
 Balance Changes:
-DrainLash: Damage 3 -> 5
-DrainLash+: Damage 5 -> 7
-Double Trouble: Rarity Uncommon -> Rare
-
+Buffed DrainLash: Damage 3 -> 4
+Buffed DrainLash+: Damage 5 -> 5
+Nerfed Double Trouble: Rarity Uncommon -> Rare
+Changed Pacifism: Rarity Rare -> Uncommon, Effect 1 Energized -> 7 Block
+Changed Pacifism+: Rarity Rare -> Uncommon, Effect 2 Energized -> 11 Block
+Nerfed CorrosiveDagger+: Damage 13 - 12
+Buffed Drain Damage: Scaling 1x -> 2x
+Buffed Drain Damage: Scaling 2x -> 3x
+Buffed OrbSpray: Scales Damage on turn 1
+Buffed BloodyFeather: Scales Damage on turn 1
+Nerfed Operation: Damage 7 -> 6
+Nerfed Operation+: Damage 10 ->
+Changed Leeches -> LifeLeeches
 
 
 

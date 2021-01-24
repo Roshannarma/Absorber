@@ -33,7 +33,7 @@ public class Operation extends AbstractDynamicCard {
 
     private static final int COST = 0;
 
-    private static final int DAMAGE = 7;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 6;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     private static final int DRAW_VULNERABLE = 1;

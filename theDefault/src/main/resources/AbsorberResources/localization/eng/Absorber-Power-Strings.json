@@ -47,9 +47,9 @@
         "NAME" : "Draw Reduction",
         "DESCRIPTIONS": ["Draw 1 less card next turn", "Draw ", " less cards next turn"]
 },
-"Absorber:EnergyIfNotAttack": {
+"Absorber:PacifismPower": {
         "NAME" : "Pacifism",
-        "DESCRIPTIONS": ["At the End of your Turn, If you played no attacks this turn, gain ", " energized"]
+        "DESCRIPTIONS": ["At the End of your Turn, If you played no attacks this turn, gain ", " block"]
 },
 "Absorber:MonsterDouble": {
         "NAME" : "Double Trouble",
@@ -58,5 +58,9 @@
                 "The first #b",
                 " Monster cards you play each turn are played twice."
         ]
+},
+"Absorber:LifeLeechPower": {
+        "NAME" : "Life Leech",
+        "DESCRIPTIONS": ["At the Start of the Turn, Drain 2 HP"," for the next ", " turns."]
 }
 }

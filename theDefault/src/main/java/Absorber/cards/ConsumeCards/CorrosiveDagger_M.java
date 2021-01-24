@@ -36,7 +36,7 @@ public class CorrosiveDagger_M extends AbstractDynamicCard {
 //    private static final int UPGRADED_COST = 0;
 
     private static final int DAMAGE = 9;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 4;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int UPGRADE_PLUS_DMG = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     private static final int WEAKEN = 1;
     private static final int UPGRADE_PLUS_WEAKEN = 1;
@@ -65,7 +65,7 @@ public class CorrosiveDagger_M extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
 //            upgradeBaseCost(UPGRADED_COST);
-            upgradeMagicNumber(UPGRADE_PLUS_WEAKEN);
+//            upgradeMagicNumber(UPGRADE_PLUS_WEAKEN);
             initializeDescription();
         }
     }

@@ -37,7 +37,7 @@ public class DarklingDrain extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = MonsterRarityEnum.MONSTER;
-    private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
@@ -58,6 +58,7 @@ public class DarklingDrain extends AbstractDynamicCard {
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DrainAction(m, magicNumber));
+        this.exhaust = true;
     }
 
     //Upgraded stats.
