@@ -44,7 +44,7 @@ public class BigDrain extends AbstractDynamicCard {
 
     private static final int COST = 2;
 
-    private static final int DRAIN_AMOUNT = 6;
+    private static final int DRAIN_AMOUNT = 7;
     private static final int UPGRADE_PLUS_DRAIN_AMOUNT = 3;
 
     // /STAT DECLARATION/

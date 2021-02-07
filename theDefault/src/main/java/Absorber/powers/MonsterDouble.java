@@ -43,12 +43,13 @@ public class MonsterDouble extends AbstractPower implements CloneablePowerInterf
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("DoubleTrouble84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("DoubleTrouble32.png"));
-    private static int double_amount = 0;
+    private int cardsDoubledThisTurn = 0;
+    private int temp = 0;
 //    private boolean EnergyGain = true;
     public MonsterDouble(final AbstractCreature owner, final AbstractCreature source, final int amount){
         this.owner = owner;
         this.amount = amount;
-        double_amount = amount;
+//        double_amount = amount;
         this.source = source;
         type = PowerType.BUFF;
         name = NAME;
@@ -59,11 +60,19 @@ public class MonsterDouble extends AbstractPower implements CloneablePowerInterf
     }
     @Override
     public void atStartOfTurn() {
-        double_amount = amount;
+        this.cardsDoubledThisTurn = 0;
+//        double_amount = amount;
     }
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if(card.rarity == MonsterRarityEnum.MONSTER && double_amount > 0){
+        temp = 0;
+        for(AbstractCard c: AbstractDungeon.actionManager.cardsPlayedThisTurn){
+            if(c.rarity == MonsterRarityEnum.MONSTER){
+                temp++;
+            }
+        }
+        if(!card.purgeOnUse && card.rarity == MonsterRarityEnum.MONSTER && temp - this.cardsDoubledThisTurn <= this.amount){
+            this.cardsDoubledThisTurn++;
             flash();
             AbstractMonster m = null;
             if (action.target != null) {
@@ -80,7 +89,7 @@ public class MonsterDouble extends AbstractPower implements CloneablePowerInterf
             }
             tmp.purgeOnUse = true;
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
-            double_amount--;
+//            double_amount--;
         }
     }
 

@@ -8,6 +8,7 @@ import Absorber.cards.starter.AbsorberBlock;
 import Absorber.cards.starter.AbsorberStrike;
 import Absorber.cards.starter.LivingDagger;
 import Absorber.cards.starter.StimNeedle;
+import Absorber.relics.EvolvingDaggerRelic;
 import Absorber.relics.FreshSamplesRelic;
 import Absorber.relics.LinkedSoulsRelic;
 import basemod.abstracts.CustomPlayer;
@@ -207,8 +208,9 @@ public class TheDefault extends CustomPlayer {
 //        retVal.add(PlaceholderRelic2.ID);
 //        retVal.add(DefaultClickableRelic.ID);
 //        retVal.add(LinkedSoulsRelic.ID);
-        retVal.add(FreshSamplesRelic.ID);
+//        retVal.add(FreshSamplesRelic.ID);
 //        retVal.add(BloodSurgeRelic.ID);
+        retVal.add(EvolvingDaggerRelic.ID);
 
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game

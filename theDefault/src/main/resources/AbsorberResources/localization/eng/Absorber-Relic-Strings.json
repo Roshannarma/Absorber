@@ -55,7 +55,7 @@
   },
   "Absorber:SurgicalGlovesRelic": {
     "NAME": "Surgical Gloves",
-    "FLAVOR": "A Doctor must cause no harm",
+    "FLAVOR": "Always prepared for any situation",
     "DESCRIPTIONS": [
       "Start Each Combat with 2 protected"
     ]
@@ -93,6 +93,20 @@
     "FLAVOR": "You feel oddly connected to this Dagger, slowly becoming more and more attached",
     "DESCRIPTIONS": [
       "Gain 1 Max HP when Fatal with the Living Dagger"
+    ]
+  },
+  "Absorber:DrainAllRelic": {
+    "NAME": "Drain All Relic",
+    "FLAVOR": "Drain's all the enemies",
+    "DESCRIPTIONS": [
+      "Start each combat by draining 1 from all enemies"
+    ]
+  },
+  "Absorber:EvolvingDaggerRelic": {
+    "NAME": "Evolving Dagger",
+    "FLAVOR": "Evolves your dagger",
+    "DESCRIPTIONS": [
+      "When killing a boss with the dagger, evolve your dagger"
     ]
   }
 }

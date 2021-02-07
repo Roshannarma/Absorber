@@ -3,6 +3,7 @@ package Absorber.cards.ConsumeCards;
 import Absorber.patches.MonsterRarityEnum;
 import Absorber.powers.LousePower;
 import Absorber.cards.AbstractDynamicCard;
+import Absorber.powers.ProtectedPower;
 import Absorber.powers.RarePower;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -41,7 +42,8 @@ public class FungiStrength extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int STRENGTH = 3;
+    private static final int STRENGTH = 2;
+    private static final int PROTECTED = 1;
 
     private static final int UPGRADE_PLUS_STRENGTH = 1;
 
@@ -51,6 +53,7 @@ public class FungiStrength extends AbstractDynamicCard {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = STRENGTH;
+        defaultBaseSecondMagicNumber = PROTECTED;
 
     }
 
@@ -58,6 +61,7 @@ public class FungiStrength extends AbstractDynamicCard {
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new ProtectedPower(p,magicNumber,false),magicNumber));
     }
 
     //Upgraded stats.

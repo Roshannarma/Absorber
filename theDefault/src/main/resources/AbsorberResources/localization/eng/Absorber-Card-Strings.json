@@ -56,10 +56,11 @@
   },
   "Absorber:LivingDagger": {
     "NAME" : "Living Dagger",
-    "DESCRIPTION": "Deal !D! damage Fatal: Increase damage by !M!. NL Add a card to your reward pool Exhaust.",
+    "DESCRIPTION": "Deal !D! damage Fatal: Add a card to your reward pool Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "Deal !D! damage Fatal: Increase damage by !M!. NL Add ",
-      " to your reward pool Exhaust."
+      "Deal !D! damage Fatal: Add ",
+      " to your reward pool Exhaust.",
+      "Deal !D! damage Fatal: Add an upgraded card to your reward pool Exhaust."
     ]
   },
   "Absorber:BloodyFeather": {
@@ -384,5 +385,17 @@
   "Absorber:DoubleTrouble": {
     "NAME": "Double Trouble",
     "DESCRIPTION": "The first Monster card you play each turn is played twice"
+  },
+  "Absorber:FalseDagger": {
+    "NAME": "False Dagger",
+    "DESCRIPTION": "Deal !D! damage. NL absorber:False."
+  },
+  "Absorber:FalseSword": {
+    "NAME": "False Sword",
+    "DESCRIPTION": "Deal !D! damage. NL absorber:False."
+  },
+  "Absorber:FalseAOE": {
+    "NAME": "False AOE",
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL absorber:False."
   }
 }

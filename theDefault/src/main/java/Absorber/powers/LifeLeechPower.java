@@ -34,6 +34,7 @@ public class LifeLeechPower extends AbstractPower implements CloneablePowerInter
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private  int turns;
 
     public LifeLeechPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -42,6 +43,7 @@ public class LifeLeechPower extends AbstractPower implements CloneablePowerInter
         this.owner = owner;
         this.amount = amount;
         this.source = source;
+        this.turns = 2;
         type = PowerType.DEBUFF;
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
@@ -50,20 +52,15 @@ public class LifeLeechPower extends AbstractPower implements CloneablePowerInter
 
 
     public void updateDescription() {
-        if(this.amount == 1){
-            this.description = DESCRIPTIONS[0] + ".";
-        }
-        else{
-            this.description = DESCRIPTIONS[0] + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
-        }
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + this.turns + DESCRIPTIONS[2];
     }
     @Override
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new DrainAction(this.owner,2));
-        if (this.amount == 0) {
+        AbstractDungeon.actionManager.addToBottom(new DrainAction(this.owner,amount));
+        if (this.turns == 0) {
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "Absorber:LifeLeechPower"));
         } else {
-            addToBot(new ReducePowerAction(this.owner, this.owner, "Absorber:LifeLeechPower", 1));
+            this.turns -= 1;
         }
     }
 //    public void atEndOfTurn(boolean isPlayer) {

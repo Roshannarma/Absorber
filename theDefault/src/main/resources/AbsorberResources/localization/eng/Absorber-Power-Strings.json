@@ -61,6 +61,6 @@
 },
 "Absorber:LifeLeechPower": {
         "NAME" : "Life Leech",
-        "DESCRIPTIONS": ["At the Start of the Turn, Drain 2 HP"," for the next ", " turns."]
+        "DESCRIPTIONS": ["At the Start of the Turn, Drain ",  " HP, for the next ", " turns."]
 }
 }

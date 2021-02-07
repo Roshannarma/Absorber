@@ -37,7 +37,7 @@ public class EKGRelic extends DrainRelic{ // You must implement things you want 
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("default_clickable_relic.png"));
 
     public EKGRelic() {
-        super(ID, FRESH, OUTLINE, RelicTier.COMMON, LandingSound.CLINK);
+        super(ID, FRESH, OUTLINE, RelicTier.UNCOMMON, LandingSound.CLINK);
 
         tips.clear();
         tips.add(new PowerTip(name, description));

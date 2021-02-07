@@ -7,6 +7,7 @@ import Absorber.powers.*;
 import Absorber.cards.AbstractDynamicCard;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -46,9 +47,12 @@ public class Harden extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int UPGRADE_COST = 0;
+//    private static final int UPGRADE_COST = 0;
 
     private static final int DEX = 1;
+
+    private static final int ARMOR_GAIN = 3;
+    private static final int UPGRADE_PLUS_ARMOR_GAIN = 2;
 
 
     // /STAT DECLARATION/
@@ -56,20 +60,22 @@ public class Harden extends AbstractDynamicCard {
     public Harden() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = DEX;
+        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = ARMOR_GAIN;
     }
 
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new DexterityPower(p,magicNumber),magicNumber));
-
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,defaultSecondMagicNumber));
     }
     //Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_COST);
+            upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_ARMOR_GAIN);
+//            upgradeBaseCost(UPGRADE_COST);
             initializeDescription();
         }
     }

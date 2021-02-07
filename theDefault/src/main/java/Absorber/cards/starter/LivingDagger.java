@@ -41,19 +41,27 @@ public class LivingDagger extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 7;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 4;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int DAMAGE = 4;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_DMG = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     public static boolean first_turn;
-    private static final int BUFF = 1;
-    private static final int BUFF_UPGRADE_FROM_RELIC = 2;
+    public boolean upgrade_cards = false;
+    public boolean healing = false;
+//    private static final int BUFF = 1;
+//    private static final int BUFF_UPGRADE_FROM_RELIC = 2;
 
     public LivingDagger() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-//        logger.info(misc);
-        baseDamage = DAMAGE + ConsumeAction.buff_total;
+        baseDamage = DAMAGE;
+//        baseDamage = DAMAGE + ConsumeAction.buff_total;
 //        logger.info(DAMAGE + ConsumeAction.buff_total);
-        baseMagicNumber = magicNumber = BUFF;
+//        baseMagicNumber = magicNumber = BUFF;
+    }
+    public LivingDagger(int basedamage, boolean upgrade_buff, boolean healing_buff){
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        baseDamage = basedamage;
+        upgrade_cards = upgrade_buff;
+        healing = healing_buff;
     }
 
 
@@ -63,7 +71,7 @@ public class LivingDagger extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         AbstractDungeon.actionManager.addToBottom(
-                new ConsumeAction(m,new DamageInfo(p, damage, damageTypeForTurn)));
+                new ConsumeAction(m,new DamageInfo(p, damage, damageTypeForTurn),this,upgrade_cards,healing));
 //        this.buff(magicNumber);
         this.exhaust = true;
     }
@@ -83,10 +91,21 @@ public class LivingDagger extends AbstractDynamicCard {
             initializeDescription();
         }
     }
-    public void buff(int amount){
-//        this.misc +=1;
-//        logger.info(ConsumeAction.buff_total);
-//        logger.info(misc);
-        upgradeDamage(amount);
+//    @Override
+//    public void updatedescription(){
+//
+//    }
+    public void changecost(int amount){
+        upgradeBaseCost(amount);
     }
+    @Override
+    public AbstractCard makeCopy(){
+        return new LivingDagger(baseDamage,upgrade_cards,healing);
+    }
+//    public void buff(int amount){
+////        this.misc +=1;
+////        logger.info(ConsumeAction.buff_total);
+////        logger.info(misc);
+//        upgradeDamage(amount);
+//    }
 }

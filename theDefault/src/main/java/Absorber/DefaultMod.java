@@ -445,6 +445,7 @@ public class DefaultMod implements
 //        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
 //        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
 //        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new EvolvingDaggerRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new LinkedSoulsRelic(), TheDefault.Enums.COLOR_GRAY);
 
         BaseMod.addRelicToCustomPool(new FreshSamplesRelic(), TheDefault.Enums.COLOR_GRAY);

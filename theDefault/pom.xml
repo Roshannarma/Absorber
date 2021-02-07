@@ -6,7 +6,7 @@
     <groupId>defaultmod</groupId>
     <artifactId>Absorber</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
     <name>Default Mod</name>
-    <version>0.0.13</version>
+    <version>0.0.14</version>
     <description>A default base to start your own mod from.</description>
 
     <properties>

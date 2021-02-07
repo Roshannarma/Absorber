@@ -112,7 +112,7 @@ public class DefaultInsertPatch {// Don't worry about the "never used" warning -
         // reference the last relic you grabbed - etc. etc. The possibilities are endless. We're gonna do the following:
         if(__instance instanceof LivingDagger){
 //            logger.info(1);
-            DefaultMod.temporary = AddCardFromConsume.displaycard(mo);
+            DefaultMod.temporary = AddCardFromConsume.displaycard(mo,((LivingDagger)__instance).upgrade_cards);
 //            logger.info("2");
             ((LivingDagger) __instance).previewupdate();
 //            logger.info("3");

@@ -39,8 +39,8 @@ public class DoubleTrouble extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 //    private static final Logger logger = LogManager.getLogger(DrainLash.class.getName());
 
-    private static final int COST = 2;
-    private static final int UPGRADE_PLUS_COST = 1;
+    private static final int COST = 3;
+    private static final int UPGRADE_PLUS_COST = 2;
 
     private static final int DOUBLE = 1;
 

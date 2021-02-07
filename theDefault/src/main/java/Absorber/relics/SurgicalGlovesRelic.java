@@ -42,13 +42,13 @@ public class SurgicalGlovesRelic extends CustomRelic { // You must implement thi
 
     public SurgicalGlovesRelic() {
         super(ID, FRESH, OUTLINE, RelicTier.COMMON, LandingSound.CLINK);
-        logger.info("ah");
+//        logger.info("ah");
         tips.clear();
         tips.add(new PowerTip(name, description));
     }
     @Override
     public void atBattleStart() {
-        logger.info("battlestart?");
+//        logger.info("battlestart?");
         AbstractPlayer p  = AbstractDungeon.player;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new ProtectedPower(p,2,false)));
     }
@@ -57,7 +57,7 @@ public class SurgicalGlovesRelic extends CustomRelic { // You must implement thi
     // Description
     @Override
     public String getUpdatedDescription() {
-        logger.info("description?");
+//        logger.info("description?");
         return DESCRIPTIONS[0];
     }
 

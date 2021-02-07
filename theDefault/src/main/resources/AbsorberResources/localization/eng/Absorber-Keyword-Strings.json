@@ -19,5 +19,12 @@
       "drain"
     ],
     "DESCRIPTION": "Enemy Loses HP and you gain HP"
+  },
+  {
+    "NAMES": [
+      "False",
+      "false"
+    ],
+    "DESCRIPTION": "Brings enemy to 1 hp on kill"
   }
 ]

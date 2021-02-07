@@ -69,10 +69,11 @@ public class DrainPatch {// Don't worry about the "never used" warning - *You* u
 //        BloodyFeather.first_turn = true;
         LivingDagger.first_turn = true;
 //        OrbSpray.first_turn = true;
-        if(temporaryCard != null){
-            AbstractDungeon.actionManager.addToBottom(new AddCardToDeckAction(temporaryCard));
-            temporaryCard = null;
-        }
+
+//        if(temporaryCard != null){
+//            AbstractDungeon.actionManager.addToBottom(new AddCardToDeckAction(temporaryCard));
+//            temporaryCard = null;
+//        }
 //        DefaultMod.DidConsume = false;
 //        DefaultMod.consumed = null;
         // Incredible.

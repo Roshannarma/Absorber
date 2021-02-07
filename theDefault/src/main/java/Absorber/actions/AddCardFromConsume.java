@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.beyond.*;
 import com.megacrit.cardcrawl.monsters.city.*;
 import com.megacrit.cardcrawl.monsters.exordium.*;
 import Absorber.cards.ConsumeCards.*;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -62,12 +63,18 @@ public class AddCardFromConsume {
 //        CardMonsterList.put(Centurion.class.getName(),new KneeStrike());
     }
 
-    public static AbstractCard getMonsterCard(String m){
+    public static AbstractCard getMonsterCard(String m, boolean upgraded){
         AbstractCard c = CardMonsterList.get(m);
         if(c == null){
             return null;
         }
         else{
+//            for(AbstractRelic r: AbstractDungeon.player.relics){
+//                logger.info(r.relicId);
+//            }
+            if(upgraded && c.canUpgrade() & c.canUpgrade()){
+                c.upgrade();
+            }
             if (c.type == AbstractCard.CardType.ATTACK && c.canUpgrade() && !c.upgraded && AbstractDungeon.player.hasRelic("Molten_Egg_2")){
                 c.upgrade();
             }
@@ -82,9 +89,9 @@ public class AddCardFromConsume {
     }
 
 
-    public AddCardFromConsume(AbstractCreature target) {
+    public AddCardFromConsume(AbstractCreature target,boolean upgraded) {
         String m = target.getClass().getName();
-        AbstractCard temp = getMonsterCard(m);
+        AbstractCard temp = getMonsterCard(m,upgraded);
         if(temp != null){
             DefaultMod.consumed = temp.makeCopy();
         }
@@ -92,9 +99,9 @@ public class AddCardFromConsume {
             DefaultMod.consumed = new StimNeedle();
         }
     }
-    public static AbstractCard displaycard(AbstractMonster target) {
+    public static AbstractCard displaycard(AbstractMonster target,boolean upgraded) {
         String m = target.getClass().getName();
-        AbstractCard temp = getMonsterCard(m);
+        AbstractCard temp = getMonsterCard(m, upgraded);
         if(temp != null){
             return temp.makeCopy();
         }

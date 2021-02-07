@@ -43,7 +43,7 @@ public class ChannelRelic extends CustomRelic { // You must implement things you
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("default_clickable_relic.png"));
 
     public ChannelRelic() {
-        super(ID, FRESH, OUTLINE, RelicTier.UNCOMMON, LandingSound.CLINK);
+        super(ID, FRESH, OUTLINE, RelicTier.COMMON, LandingSound.CLINK);
         tips.clear();
         tips.add(new PowerTip(name, description));
     }

@@ -1,3 +1,55 @@
+Patch 0.0.14:
+
+New Content:
+EvolvingDagger Relic
+DrainAllRelic(temporary name) Relic
+
+
+Cards:
+False Sword
+False Dagger
+FalseAOE
+
+
+
+
+
+
+
+
+Balance Changes:
+Double Trouble: Cost: 2 -> 3
+Double Trouble+: Cost 1 -> 2
+Double Trouble higher amount than 2, will double on the first two cards, not multiple 3 times the first card
+Spherical Shield: Block 40 -> 35
+Spherical Shield+: Block 55 -> 45
+Fungi Strength: Strength 3 -> 2, Protected 0 -> 1
+Fungi Strength: Strength 4 -> 3, Protected 0 -> 1
+LifeLeech: Drain Amount 2 -> 3
+LifeLeech+: Drain Amount 2 -> 4, turns 3- >  2
+BigDrain: Drain Amount 6 -> 7
+BigDrain: Drain 9 -> 10
+Harden: Block 0 -> 3
+Harden+: Block 0 -> 5, Cost 0 -> 1
+LivingDagger: Damage 7 -> 4
+LivingDagger+: Damage 12 -> 6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Patch 0.0.13:
 
 
@@ -16,7 +68,7 @@ Dagger saves damage buff
 
 Balance Changes:
 Buffed DrainLash: Damage 3 -> 4
-Buffed DrainLash+: Damage 5 -> 5
+Buffed DrainLash+: Damage 5 -> 6
 Nerfed Double Trouble: Rarity Uncommon -> Rare
 Changed Pacifism: Rarity Rare -> Uncommon, Effect 1 Energized -> 7 Block
 Changed Pacifism+: Rarity Rare -> Uncommon, Effect 2 Energized -> 11 Block
@@ -26,7 +78,7 @@ Buffed Drain Damage: Scaling 2x -> 3x
 Buffed OrbSpray: Scales Damage on turn 1
 Buffed BloodyFeather: Scales Damage on turn 1
 Nerfed Operation: Damage 7 -> 6
-Nerfed Operation+: Damage 10 ->
+Nerfed Operation+: Damage 10 -> 9
 Changed Leeches -> LifeLeeches
 
 

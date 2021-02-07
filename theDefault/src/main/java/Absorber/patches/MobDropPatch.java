@@ -2,6 +2,7 @@ package Absorber.patches;
 
 import Absorber.DefaultMod;
 import Absorber.actions.DrainAction;
+import Absorber.relics.EvolvingDaggerRelic;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -65,6 +66,13 @@ public class MobDropPatch {
 //                temp.add(DefaultMod.consumed);
                 cards[0].add(DefaultMod.consumed);
                 logger.info("Hey our patch triggered. The relic we're about to get is " + cards[0]);
+//                for(AbstractRelic a: AbstractDungeon.player.relics){
+//                    if(a instanceof EvolvingDaggerRelic){
+//                        ((EvolvingDaggerRelic) a).Evolve();
+//                        logger.info("done");
+//                    }
+//                }
+
                 DefaultMod.DidConsume = false;
                 DefaultMod.consumed = null;
 //                __instance.text = __instance.TEXT[2];

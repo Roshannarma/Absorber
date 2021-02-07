@@ -35,8 +35,8 @@ public class SphericShield extends AbstractDynamicCard {
 
     private static final int COST = 3;
 
-    private static final int BLOCK = 40;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_BLOCK = 15;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int BLOCK = 35;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_BLOCK = 10;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     public SphericShield() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
