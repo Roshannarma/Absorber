@@ -72,10 +72,10 @@ public class AddCardFromConsume {
 //            for(AbstractRelic r: AbstractDungeon.player.relics){
 //                logger.info(r.relicId);
 //            }
-            if(upgraded && c.canUpgrade() & c.canUpgrade()){
+            if(upgraded && c.canUpgrade()){
                 c.upgrade();
             }
-            if (c.type == AbstractCard.CardType.ATTACK && c.canUpgrade() && !c.upgraded && AbstractDungeon.player.hasRelic("Molten_Egg_2")){
+            else if (c.type == AbstractCard.CardType.ATTACK && c.canUpgrade() && !c.upgraded && AbstractDungeon.player.hasRelic("Molten_Egg_2")){
                 c.upgrade();
             }
             else if (c.type == AbstractCard.CardType.POWER && c.canUpgrade() && !c.upgraded && AbstractDungeon.player.hasRelic("Frozen_Egg_2")) {

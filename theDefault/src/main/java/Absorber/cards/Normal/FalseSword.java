@@ -30,7 +30,7 @@ public class FalseSword extends AbstractDynamicCard {
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 21;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 24;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 6;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     public FalseSword() {

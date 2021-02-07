@@ -72,12 +72,13 @@ public class StimAOE extends StimulatedCards {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ArrayList<AbstractMonster> temp = new ArrayList<AbstractMonster>();
-        for(AbstractMonster mon: AbstractDungeon.getCurrRoom().monsters.monsters){
-            if (!mon.isDeadOrEscaped()){
-                temp.add(mon);
-            }
-        }
+//        ArrayList<AbstractMonster> temp = new ArrayList<AbstractMonster>();
+//        for(AbstractMonster mon: AbstractDungeon.getCurrRoom().monsters.monsters){
+//            if (!mon.isDeadOrEscaped()){
+//                temp.add(mon);
+//            }
+//        }
+        ArrayList<AbstractMonster> temp = AbstractDungeon.getCurrRoom().monsters.monsters;
         int[] damageList = new int[temp.size()];
         if(Stimulated.update()){
             for(int i=0;i<temp.size();i++){
