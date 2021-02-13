@@ -40,7 +40,7 @@ public class Cycle extends AbstractDynamicCard {
     private static final int BLOCK = 9;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_BLOCK = 4;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}\
 
-    private static final int DRAW = 1;
+    private static final int DRAW = 2;
 
 
 //    private static final int ODD_TURNS = 2;

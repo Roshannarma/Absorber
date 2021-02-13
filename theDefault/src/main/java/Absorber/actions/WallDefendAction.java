@@ -5,7 +5,6 @@ import Absorber.cards.DrainCard;
 import Absorber.characters.TheDefault;
 import Absorber.powers.DrainPower;
 import basemod.abstracts.CustomPlayer;
-import basemod.patches.com.megacrit.cardcrawl.events.SensoryStone.CustomCharacterText;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;

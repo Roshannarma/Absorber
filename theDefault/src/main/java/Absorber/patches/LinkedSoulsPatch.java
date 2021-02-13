@@ -106,7 +106,7 @@ public class LinkedSoulsPatch {// Don't worry about the "never used" warning - *
         // You can execute any other static method you have, you can save retVal to your personal public static variable to always be able to
         // reference the last relic you grabbed - etc. etc. The possibilities are endless. We're gonna do the following:
         if(AbstractDungeon.player instanceof TheDefault){
-            AbstractDungeon.player.damage(new DamageInfo(null, AbstractDungeon.player.currentHealth / 8 * 3, DamageInfo.DamageType.HP_LOSS));
+            AbstractDungeon.player.damage(new DamageInfo(null, AbstractDungeon.player.currentHealth / 13 * 3, DamageInfo.DamageType.HP_LOSS));
             AbstractDungeon.getCurrRoom().spawnRelicAndObtain((Settings.WIDTH / 2), (Settings.HEIGHT / 2), new LinkedSoulsRelic());
             return SpireReturn.Return(null);
         }

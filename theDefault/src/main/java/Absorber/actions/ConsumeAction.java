@@ -7,6 +7,7 @@ import Absorber.relics.LinkedSoulsRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -77,6 +78,12 @@ public class ConsumeAction extends AbstractGameAction {
 //                        ((LivingDagger) c).buff(c.magicNumber);
 //                    }
 //                }
+            }
+            else{
+                if(AbstractDungeon.player.hasRelic("Absorber:EvolvingDaggerRelic")){
+                    AddCardFromConsume temp = new AddCardFromConsume(target,upgrade_cards);
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(DefaultMod.consumed,1));
+                }
             }
 
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {

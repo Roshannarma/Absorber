@@ -7,6 +7,7 @@ import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -47,6 +48,12 @@ public class StabbingBook extends AbstractDynamicCard {
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 0;
     }
+    public StabbingBook(int turns){
+        super(ID,IMG,COST,TYPE,COLOR,RARITY,TARGET);
+        baseDamage = DAMAGE;
+        baseMagicNumber = 0;
+        magicNumber = turns;
+    }
 
 //    @Override
 //    public void triggerAtStartOfTurn() {
@@ -77,5 +84,9 @@ public class StabbingBook extends AbstractDynamicCard {
             upgradeDamage(UPGRADE_PLUS_DMG);
             initializeDescription();
         }
+    }
+    @Override
+    public AbstractCard makeCopy(){
+        return new StabbingBook(magicNumber);
     }
 }

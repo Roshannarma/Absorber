@@ -39,9 +39,9 @@ public class LivingDagger extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
     private static final Logger logger = LogManager.getLogger(LivingDagger.class.getName());
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
-    private static final int DAMAGE = 4;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 3;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     public static boolean first_turn;

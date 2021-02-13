@@ -76,8 +76,8 @@
     "DESCRIPTION": "Gain !B! Block."
   },
   "Absorber:StimNeedle": {
-    "NAME" : "Stim Needle",
-    "DESCRIPTION": "Deal !D! damage. NL Next turn, gain !M! mana and draw !Absorber:SecondMagic! extra card."
+    "NAME" : "False Syringe",
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, gain !M! mana. NL absorber:False."
   },
   "Absorber:DarklingDrain": {
     "NAME" : "Darkling Drain",
@@ -129,15 +129,15 @@
   },
   "Absorber:ChosenAttack": {
     "NAME" : "Chosen Attack",
-    "DESCRIPTION": "Deal !D! damage. NL If the target is not attacking, gain !M! artifact."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! artifact."
   },
   "Absorber:EntangleThem": {
     "NAME" : "Entangle Them",
-    "DESCRIPTION": "This turn, deal 0 damage."
+    "DESCRIPTION": "This turn, enemies deal 0 damage. NL Exhaust."
   },
   "Absorber:FungiStrength": {
     "NAME" : "Fungi Strength",
-    "DESCRIPTION": "Gain !M! Strength."
+    "DESCRIPTION": "Gain !M! Strength. NL Gain !Absorber:SecondMagic! Protected."
   },
   "Absorber:GremlinRally": {
     "NAME" : "Gremlin Rally",
@@ -252,7 +252,7 @@
   },
   "Absorber:NemesisIntangible": {
     "NAME": "Nemesis Protection",
-    "DESCRIPTION": "Gain !M! Intangible. NL Exhaust. NL Ethereal."
+    "DESCRIPTION": "Gain !M! Intangible. NL Exhaust."
   },
   "Absorber:SetupSkill": {
     "NAME": "Steady Hands",

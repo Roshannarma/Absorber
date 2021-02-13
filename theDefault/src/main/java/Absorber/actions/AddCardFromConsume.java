@@ -72,19 +72,25 @@ public class AddCardFromConsume {
 //            for(AbstractRelic r: AbstractDungeon.player.relics){
 //                logger.info(r.relicId);
 //            }
+            AbstractCard temp = c.makeCopy();
+//            logger.info("does it get here");
             if(upgraded && c.canUpgrade()){
-                c.upgrade();
+//                logger.info("daggger_upgraded");
+                temp.upgrade();
             }
-            else if (c.type == AbstractCard.CardType.ATTACK && c.canUpgrade() && !c.upgraded && AbstractDungeon.player.hasRelic("Molten_Egg_2")){
-                c.upgrade();
+            else if (temp.type == AbstractCard.CardType.ATTACK && temp.canUpgrade() && !temp.upgraded && AbstractDungeon.player.hasRelic("Molten Egg 2")){
+//                logger.info("molten");
+                temp.upgrade();
             }
-            else if (c.type == AbstractCard.CardType.POWER && c.canUpgrade() && !c.upgraded && AbstractDungeon.player.hasRelic("Frozen_Egg_2")) {
-                c.upgrade();
+            else if (temp.type == AbstractCard.CardType.POWER && temp.canUpgrade() && !temp.upgraded && AbstractDungeon.player.hasRelic("Frozen Egg 2")) {
+//                logger.info("frozen");
+                temp.upgrade();
             }
-            else if (c.type == AbstractCard.CardType.SKILL && c.canUpgrade() && !c.upgraded && AbstractDungeon.player.hasRelic("Toxic_Egg_2")) {
-                c.upgrade();
+            else if (temp.type == AbstractCard.CardType.SKILL && temp.canUpgrade() && !temp.upgraded && AbstractDungeon.player.hasRelic("Toxic Egg 2")) {
+//                logger.info("toxic");
+                temp.upgrade();
             }
-            return c;
+            return temp;
         }
     }
 
@@ -93,7 +99,7 @@ public class AddCardFromConsume {
         String m = target.getClass().getName();
         AbstractCard temp = getMonsterCard(m,upgraded);
         if(temp != null){
-            DefaultMod.consumed = temp.makeCopy();
+            DefaultMod.consumed = temp;
         }
         else{
             DefaultMod.consumed = new StimNeedle();
@@ -103,7 +109,7 @@ public class AddCardFromConsume {
         String m = target.getClass().getName();
         AbstractCard temp = getMonsterCard(m, upgraded);
         if(temp != null){
-            return temp.makeCopy();
+            return temp;
         }
         else{
             return new StimNeedle();

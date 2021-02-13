@@ -7,7 +7,7 @@ import Absorber.powers.DrainPower;
 import Absorber.relics.DrainRelic;
 import Absorber.relics.EKGRelic;
 import basemod.abstracts.CustomPlayer;
-import basemod.patches.com.megacrit.cardcrawl.events.SensoryStone.CustomCharacterText;
+//import basemod.patches.com.megacrit.cardcrawl.events.SensoryStone.CustomCharacterText;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;

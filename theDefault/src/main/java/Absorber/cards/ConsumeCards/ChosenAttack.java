@@ -49,9 +49,9 @@ public class ChosenAttack extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (m != null && !(m.getIntentBaseDmg() >= 0)){
+//        if (m != null && !(m.getIntentBaseDmg() >= 0)){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new ArtifactPower(p,magicNumber),magicNumber));
-        }
+//        }
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }

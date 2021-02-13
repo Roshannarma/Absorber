@@ -89,7 +89,7 @@ public class LinkedSoulsStringPatch {// Don't worry about the "never used" warni
     // Do keep in mind that "A patch class must be a public static class."
 
     private static final Logger logger = LogManager.getLogger(LinkedSoulsPatch.class.getName()); // This is our logger! It prints stuff out in the console.
-    private static final String description = "[ #rTake #r" + AbstractDungeon.player.currentHealth / 8 * 3 + " #rdamage #gLink #gsouls #gwith #gLiving #gDagger ]";
+    private static final String description = "[ #rTake #r" + AbstractDungeon.player.currentHealth / 13 * 3 + " #rdamage #gLink #gsouls #gwith #gLiving #gDagger ]";
     // It's like a very fancy System.out.println();
 
     @SpireInsertPatch( rloc = 47, localvars = {"rewardOptions"})

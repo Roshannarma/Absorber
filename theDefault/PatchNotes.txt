@@ -33,6 +33,14 @@ Harden: Block 0 -> 3
 Harden+: Block 0 -> 5, Cost 0 -> 1
 LivingDagger: Damage 7 -> 4
 LivingDagger+: Damage 12 -> 6
+Cycle: Draw 1 -> 2
+StimNeedle Changed to FalseSyringe
+CorrosiveDagger: Damage 9 -> 10
+CorrosiveDagger+: Damage 12 -> 13
+
+
+Bug Fixes:
+Eggs work with the monster cards
 
 
 

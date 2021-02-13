@@ -35,31 +35,34 @@ public class StimNeedle extends AbstractDynamicCard {
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 9;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 12;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     private static final int ENERGY = 1;
     private static final int ENERGY_PLUS_DRAW = 1;
 
-    private static final int DRAW = 1;
-    private static final int UPGRADE_PLUS_DRAW = 1;
+//    private static final int DRAW = 1;
+//    private static final int UPGRADE_PLUS_DRAW = 1;
 
 //    private boolean next_turn = false;
     public StimNeedle() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
         baseMagicNumber = magicNumber = ENERGY;
-        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = DRAW;
+//        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = DRAW;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if(damage >= m.currentBlock + m.currentHealth){
+            damage = m.currentBlock + m.currentHealth - 1;
+        }
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, magicNumber), magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, defaultSecondMagicNumber), defaultSecondMagicNumber));
+//        addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, defaultSecondMagicNumber), defaultSecondMagicNumber));
     }
 
 

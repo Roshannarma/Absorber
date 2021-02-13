@@ -6,7 +6,7 @@
     <groupId>defaultmod</groupId>
     <artifactId>Absorber</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
     <name>Default Mod</name>
-    <version>0.0.14</version>
+    <version>0.0.15</version>
     <description>A default base to start your own mod from.</description>
 
     <properties>
@@ -16,7 +16,7 @@
         <ModTheSpire.version>3.8.0</ModTheSpire.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
-        <Steam.path>D:\SteamLibrary\steamapps</Steam.path>
+        <Steam.path>D:\Steam\steamapps</Steam.path>
     </properties>
 
     <dependencies>
