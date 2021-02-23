@@ -85,7 +85,7 @@
   },
   "Absorber:Leeches": {
     "NAME" : "Leeches",
-    "DESCRIPTION": "absorber:Drain !Absorber:DrainVariable! HP for the next 2 turns. NL Exhaust."
+    "DESCRIPTION": "absorber:Drain !Absorber:DrainVariable! HP for the next 3 turns. NL Exhaust."
   },
   "Absorber:VesselBurst": {
     "NAME" : "Vessel Burst",
@@ -397,5 +397,9 @@
   "Absorber:FalseAOE": {
     "NAME": "False AOE",
     "DESCRIPTION": "Deal !D! damage to all enemies. NL absorber:False."
+  },
+  "Absorber:DarklingShift": {
+    "NAME": "Darkling Shift",
+    "DESCRIPTION": "Whenever you change HP gain !M! block."
   }
 }

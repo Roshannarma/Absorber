@@ -43,7 +43,7 @@ public class LifeLeeches extends AbstractDynamicCard {
 //    private static final int DAMAGE = 7;
 //    private static final int UPGRADE_PLUS_DAMAGE = 2;
 
-    private static final int DRAIN_AMOUNT = 3;
+    private static final int DRAIN_AMOUNT = 2;
     private static final int UPGRADE_PLUS_DRAIN_AMOUNT = 1;
 
     // /STAT DECLARATION/

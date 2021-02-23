@@ -62,5 +62,9 @@
 "Absorber:LifeLeechPower": {
         "NAME" : "Life Leech",
         "DESCRIPTIONS": ["At the Start of the Turn, Drain ",  " HP, for the next ", " turns."]
+},
+"Absorber:BloodShifting": {
+        "NAME" : "Shifting Blood",
+        "DESCRIPTIONS": ["Whenever you change HP gain ",  " block."]
 }
 }

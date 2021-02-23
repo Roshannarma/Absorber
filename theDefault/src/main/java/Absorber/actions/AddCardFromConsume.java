@@ -52,7 +52,7 @@ public class AddCardFromConsume {
         CardMonsterList.put(OrbWalker.class.getName(), new OrbSpray());
         CardMonsterList.put(Lagavulin.class.getName(), new LagavulinDrain());
         CardMonsterList.put(Sentry.class.getName(), new SentrySlam());
-        CardMonsterList.put(Darkling.class.getName(), new DarklingDrain());
+        CardMonsterList.put(Darkling.class.getName(), new DarklingShift());
         CardMonsterList.put(Healer.class.getName(), new MysticHeal());
         CardMonsterList.put(Nemesis.class.getName(),new NemesisIntangible());
         CardMonsterList.put(GremlinNob.class.getName(),new GremlinSmashCard());
