@@ -35,11 +35,11 @@ public class StimNeedle extends AbstractDynamicCard {
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 12;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 8;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     private static final int ENERGY = 1;
-    private static final int ENERGY_PLUS_DRAW = 1;
+    private static final int UPGRADE_PLUS_ENERGY = 1;
 
 //    private static final int DRAW = 1;
 //    private static final int UPGRADE_PLUS_DRAW = 1;
@@ -73,7 +73,7 @@ public class StimNeedle extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
 //            upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_DRAW);
-            upgradeMagicNumber(ENERGY_PLUS_DRAW);
+            upgradeMagicNumber(UPGRADE_PLUS_ENERGY);
             initializeDescription();
         }
     }

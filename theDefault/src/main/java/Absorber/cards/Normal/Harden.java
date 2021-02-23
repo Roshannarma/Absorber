@@ -60,14 +60,15 @@ public class Harden extends AbstractDynamicCard {
     public Harden() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = DEX;
-        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = ARMOR_GAIN;
+        baseBlock = block = ARMOR_GAIN;
+//        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = ARMOR_GAIN;
     }
 
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new DexterityPower(p,magicNumber),magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,defaultSecondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,block));
     }
     //Upgraded stats.
     @Override

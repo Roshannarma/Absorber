@@ -65,7 +65,7 @@ public class CorrosiveDagger_M extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
 //            upgradeBaseCost(UPGRADED_COST);
-//            upgradeMagicNumber(UPGRADE_PLUS_WEAKEN);
+            upgradeMagicNumber(UPGRADE_PLUS_WEAKEN);
             initializeDescription();
         }
     }

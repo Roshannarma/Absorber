@@ -45,7 +45,7 @@ public class DoctorScrubsRelic extends CustomRelic { // You must implement thing
     private boolean firstTurn = false;
 
     public DoctorScrubsRelic() {
-        super(ID, FRESH, OUTLINE, RelicTier.RARE, LandingSound.CLINK);
+        super(ID, FRESH, OUTLINE, RelicTier.UNCOMMON, LandingSound.CLINK);
 
         tips.clear();
         tips.add(new PowerTip(name, description));

@@ -446,13 +446,15 @@ public class DefaultMod implements
 //        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
 //        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new EvolvingDaggerRelic(), TheDefault.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new LinkedSoulsRelic(), TheDefault.Enums.COLOR_GRAY);
 
+        BaseMod.addRelicToCustomPool(new LinkedSoulsRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new FreshSamplesRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new BloodSurgeRelic(),TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new SurgicalGlovesRelic(),TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new EKGRelic(),TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new DoctorScrubsRelic(),TheDefault.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new Catalyst(),TheDefault.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new DrainAllRelic(),TheDefault.Enums.COLOR_GRAY);
 //        BaseMod.addRelicToCustomPool(new SyringeHolder(),TheDefault.Enums.COLOR_GRAY);
 //        BaseMod.addRelicToCustomPool(new DoubleDoseRelic(),TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new ChannelRelic(),TheDefault.Enums.COLOR_GRAY);

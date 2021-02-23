@@ -108,5 +108,12 @@
     "DESCRIPTIONS": [
       "When killing a boss with the dagger, evolve your dagger"
     ]
+  },
+  "Absorber:CatalystRelic": {
+    "NAME": "Catalyst",
+    "FLAVOR": "Makes reactions happen with a lower inital energy",
+    "DESCRIPTIONS": [
+      "Stimulated works at max energy instead of above max energy"
+    ]
   }
 }

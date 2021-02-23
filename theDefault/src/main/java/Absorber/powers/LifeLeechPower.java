@@ -43,7 +43,7 @@ public class LifeLeechPower extends AbstractPower implements CloneablePowerInter
         this.owner = owner;
         this.amount = amount;
         this.source = source;
-        this.turns = 2;
+        this.turns = 1;
         type = PowerType.DEBUFF;
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);

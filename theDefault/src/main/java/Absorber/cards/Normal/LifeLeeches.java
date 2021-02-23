@@ -59,6 +59,7 @@ public class LifeLeeches extends AbstractDynamicCard {
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         addToBot(new ApplyPowerAction(m,p,new LifeLeechPower(m,p,magicNumber)));
+        this.exhaust = true;
     }
 
     //Upgraded stats.

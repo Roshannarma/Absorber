@@ -40,7 +40,7 @@ public class FreshSamplesRelic extends CustomRelic { // You must implement thing
     private static final int ENERGY_DRAW =1;
 
     public FreshSamplesRelic() {
-        super(ID, IMG, RelicTier.COMMON, LandingSound.CLINK);
+        super(ID, IMG, RelicTier.RARE, LandingSound.CLINK);
         tips.clear();
         tips.add(new PowerTip(name, description));
     }

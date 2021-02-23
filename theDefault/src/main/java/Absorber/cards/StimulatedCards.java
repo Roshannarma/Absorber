@@ -19,7 +19,12 @@ public abstract class StimulatedCards extends AbstractDynamicCard {
     }
     @Override
     public void triggerOnCardPlayed(AbstractCard cardPlayed) {
-        is_stimulated = EnergyPanel.totalCount-cardPlayed.costForTurn> AbstractDungeon.player.energy.energy;
+        if (AbstractDungeon.player.hasRelic("Absorber:Catalyst")){
+            is_stimulated = EnergyPanel.totalCount - 1 - cardPlayed.costForTurn > AbstractDungeon.player.energy.energy;
+        }
+        else{
+            is_stimulated = EnergyPanel.totalCount-cardPlayed.costForTurn> AbstractDungeon.player.energy.energy;
+        }
         update_glow();
     }
     @Override
