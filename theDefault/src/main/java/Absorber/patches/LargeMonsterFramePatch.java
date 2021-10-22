@@ -136,29 +136,33 @@ public class LargeMonsterFramePatch {// Don't worry about the "never used" warni
             switch(___card[0].type){
                 case SKILL:
 //                    logger.info("skill");
-                    tWidth[0] = AbstractCard.typeWidthSkill;
-                    tOffset[0] = AbstractCard.typeOffsetSkill;
+                    tWidth[0] = AbstractCard.typeWidthSkill+10;
+                    tOffset[0] = AbstractCard.typeOffsetSkill+40;
                     tmpImg[0] = CARD_FRAME_MONSTER_SKILL_L_ATLAS;
+                    logger.info("Hello i am right here");
                     break;
                 case POWER:
 //                    logger.info("power");
-                    tWidth[0] = AbstractCard.typeWidthPower;
-                    tOffset[0] = AbstractCard.typeOffsetPower;
+                    tWidth[0] = AbstractCard.typeWidthPower+2;
+                    tOffset[0] = AbstractCard.typeOffsetPower+111;
                     tmpImg[0] = CARD_FRAME_MONSTER_POWER_L_ATLAS;
                     break;
                 case ATTACK:
 //                    logger.info("attack");
-                    tWidth[0] = AbstractCard.typeWidthAttack;
-                    tOffset[0] = AbstractCard.typeOffsetAttack;
+                    tWidth[0] = AbstractCard.typeWidthAttack+1;
+                    tOffset[0] = AbstractCard.typeOffsetAttack +25;
                     tmpImg[0] = CARD_FRAME_MONSTER_ATTACK_L_ATLAS;
                     break;
                 default:
-//                    logger.info("default");
-                    tmpImg[0] = ImageMaster.CARD_FRAME_SKILL_UNCOMMON_L;
+                    tWidth[0] = AbstractCard.typeWidthAttack;
+                    tOffset[0] = AbstractCard.typeOffsetAttack;
+                    tmpImg[0] = CARD_FRAME_MONSTER_ATTACK_L_ATLAS;
+                    logger.info("this is not correct");
                     break;
             }
-            logger.info(tmpImg[0]);
-            AbsorberRenderHelper.helper(__instance,sb, (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F, tmpImg[0]);
+            logger.info(tWidth[0]);
+            logger.info(tOffset[0]);
+            AbsorberRenderHelper.helper(__instance,sb, (float) (Settings.WIDTH / 2.0F)+0 + tWidth[0], (float)(Settings.HEIGHT / 2.0F) + 125 + tOffset[0], tmpImg[0]);
 
 //            AbsorberRenderHelper.renderDynamicFrame(__instance, ___card[0], sb, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F, tOffset[0], tWidth[0]);
             return SpireReturn.Return(null);

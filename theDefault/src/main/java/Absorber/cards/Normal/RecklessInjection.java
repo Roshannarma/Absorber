@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Absorber.DefaultMod;
 import Absorber.characters.TheDefault;
-import org.graalvm.compiler.core.common.type.ArithmeticOpTable;
+//import org.graalvm.compiler.core.common.type.ArithmeticOpTable;
 
 import static Absorber.DefaultMod.makeCardPath;
 import static Absorber.DefaultMod.makeFinalCardPath;

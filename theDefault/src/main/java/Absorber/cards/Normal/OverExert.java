@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.powers.DrawReductionPower;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import org.graalvm.compiler.core.common.type.ArithmeticOpTable;
+//import org.graalvm.compiler.core.common.type.ArithmeticOpTable;
 
 import static Absorber.DefaultMod.makeCardPath;
 

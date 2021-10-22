@@ -124,7 +124,7 @@ public class BannerPortraitPatch {// Don't worry about the "never used" warning 
         if(___card[0].rarity == MonsterRarityEnum.MONSTER){
 //            logger.info(__instance.rarity);
             tmpImg[0] = MONSTER_BANNER_ATLAS;
-            AbsorberRenderHelper.helper(__instance,sb, (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F, tmpImg[0]);
+            AbsorberRenderHelper.helper(__instance,sb, (float) Settings.WIDTH / 2.0F, (float)(Settings.HEIGHT / 2.0F)+400, tmpImg[0]);
             return SpireReturn.Return(null);
         }
         return SpireReturn.Continue();
